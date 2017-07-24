@@ -1,0 +1,2 @@
+# lotteryAides
+Lottery Aides App
