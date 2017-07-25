@@ -16,14 +16,10 @@
 		9539D64F1F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; };
 		9539D6501F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
-		95CF92281F271F2C00E71892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* ViewController.swift */; };
+		95CF92281F271F2C00E71892 /* ZCRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* ZCRootViewController.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
 		95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922C1F271F2C00E71892 /* Assets.xcassets */; };
 		95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */; };
-		95CF923C1F27265F00E71892 /* common in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92371F27265F00E71892 /* common */; };
-		95CF923D1F27265F00E71892 /* lib in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92381F27265F00E71892 /* lib */; };
-		95CF923E1F27265F00E71892 /* lottery in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92391F27265F00E71892 /* lottery */; };
-		95CF923F1F27265F00E71892 /* personal in Resources */ = {isa = PBXBuildFile; fileRef = 95CF923A1F27265F00E71892 /* personal */; };
 		95CF92461F27276D00E71892 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; };
 		95CF92471F27276D00E71892 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; };
 		95CF92481F27276D00E71892 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92451F27276D00E71892 /* SwiftyJSON.framework */; };
@@ -41,6 +37,10 @@
 		95CF92641F272AD600E71892 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92631F272AD600E71892 /* libz.tbd */; };
 		95CF92661F272AE000E71892 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92651F272AE000E71892 /* UserNotifications.framework */; };
 		95CF92681F272AE800E71892 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92671F272AE800E71892 /* libresolv.tbd */; };
+		95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD697D1F278C920032A4C2 /* ToastUIView.m */; };
+		95DD69851F278F1A0032A4C2 /* TXRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */; };
+		95DD69861F278F1A0032A4C2 /* TXServerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69831F278F1A0032A4C2 /* TXServerBase.swift */; };
+		95DD69871F278F1A0032A4C2 /* TXServerResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,15 +63,11 @@
 /* Begin PBXFileReference section */
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95CF92271F271F2C00E71892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95CF92271F271F2C00E71892 /* ZCRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCRootViewController.swift; sourceTree = "<group>"; };
 		95CF922A1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95CF922C1F271F2C00E71892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CF922F1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95CF92311F271F2C00E71892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95CF92371F27265F00E71892 /* common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = common; sourceTree = "<group>"; };
-		95CF92381F27265F00E71892 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lib; sourceTree = "<group>"; };
-		95CF92391F27265F00E71892 /* lottery */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lottery; sourceTree = "<group>"; };
-		95CF923A1F27265F00E71892 /* personal */ = {isa = PBXFileReference; lastKnownFileType = folder; path = personal; sourceTree = "<group>"; };
 		95CF92411F27269600E71892 /* lotteryAides.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = lotteryAides.entitlements; sourceTree = "<group>"; };
 		95CF92431F27276D00E71892 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
@@ -91,6 +87,12 @@
 		95CF92631F272AD600E71892 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		95CF92651F272AE000E71892 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		95CF92671F272AE800E71892 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		95DD697C1F278C920032A4C2 /* ToastUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastUIView.h; path = lib/ToastUIView/ToastUIView.h; sourceTree = "<group>"; };
+		95DD697D1F278C920032A4C2 /* ToastUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastUIView.m; path = lib/ToastUIView/ToastUIView.m; sourceTree = "<group>"; };
+		95DD697F1F278CB60032A4C2 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPush/JPUSHService.h; sourceTree = "<group>"; };
+		95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXRequestBase.swift; path = common/TXRequestBase.swift; sourceTree = "<group>"; };
+		95DD69831F278F1A0032A4C2 /* TXServerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXServerBase.swift; path = common/TXServerBase.swift; sourceTree = "<group>"; };
+		95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXServerResponseBase.swift; path = common/TXServerResponseBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		9539D6511F2733B500D0F8C4 /* system */ = {
 			isa = PBXGroup;
 			children = (
+				95CF92251F271F2C00E71892 /* AppDelegate.swift */,
 				95CF92411F27269600E71892 /* lotteryAides.entitlements */,
 				95CF92311F271F2C00E71892 /* Info.plist */,
 				95CF924F1F2729C200E71892 /* lotteryAides-Bridging-Header.h */,
@@ -155,16 +158,11 @@
 		95CF92241F271F2C00E71892 /* lotteryAides */ = {
 			isa = PBXGroup;
 			children = (
-				95CF92251F271F2C00E71892 /* AppDelegate.swift */,
+				95DD69801F278E640032A4C2 /* common */,
+				95DD696F1F27881A0032A4C2 /* lib */,
+				95DD69681F277EA20032A4C2 /* main */,
 				9539D6511F2733B500D0F8C4 /* system */,
-				95CF92271F271F2C00E71892 /* ViewController.swift */,
-				95CF92291F271F2C00E71892 /* Main.storyboard */,
 				95CF922C1F271F2C00E71892 /* Assets.xcassets */,
-				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
-				95CF92371F27265F00E71892 /* common */,
-				95CF92381F27265F00E71892 /* lib */,
-				95CF92391F27265F00E71892 /* lottery */,
-				95CF923A1F27265F00E71892 /* personal */,
 			);
 			path = lotteryAides;
 			sourceTree = "<group>";
@@ -191,6 +189,76 @@
 				95CF92451F27276D00E71892 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95DD69681F277EA20032A4C2 /* main */ = {
+			isa = PBXGroup;
+			children = (
+				95CF92271F271F2C00E71892 /* ZCRootViewController.swift */,
+				95CF92291F271F2C00E71892 /* Main.storyboard */,
+				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+		95DD696F1F27881A0032A4C2 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				95DD697B1F278C710032A4C2 /* ToastUIView */,
+				95DD69791F278C560032A4C2 /* JPush */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		95DD69791F278C560032A4C2 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				95DD697F1F278CB60032A4C2 /* JPUSHService.h */,
+			);
+			name = JPush;
+			sourceTree = "<group>";
+		};
+		95DD697B1F278C710032A4C2 /* ToastUIView */ = {
+			isa = PBXGroup;
+			children = (
+				95DD697C1F278C920032A4C2 /* ToastUIView.h */,
+				95DD697D1F278C920032A4C2 /* ToastUIView.m */,
+			);
+			name = ToastUIView;
+			sourceTree = "<group>";
+		};
+		95DD69801F278E640032A4C2 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				95DD69971F278F4F0032A4C2 /* extension */,
+				95DD69881F278F360032A4C2 /* util */,
+				95DD69811F278F0B0032A4C2 /* base */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+		95DD69811F278F0B0032A4C2 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */,
+				95DD69831F278F1A0032A4C2 /* TXServerBase.swift */,
+				95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
+		95DD69881F278F360032A4C2 /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		95DD69971F278F4F0032A4C2 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,13 +328,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CF923E1F27265F00E71892 /* lottery in Resources */,
-				95CF923F1F27265F00E71892 /* personal in Resources */,
 				95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */,
-				95CF923D1F27265F00E71892 /* lib in Resources */,
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
 				95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */,
-				95CF923C1F27265F00E71892 /* common in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CF92281F271F2C00E71892 /* ViewController.swift in Sources */,
+				95CF92281F271F2C00E71892 /* ZCRootViewController.swift in Sources */,
+				95DD69861F278F1A0032A4C2 /* TXServerBase.swift in Sources */,
+				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
+				95DD69851F278F1A0032A4C2 /* TXRequestBase.swift in Sources */,
+				95DD69871F278F1A0032A4C2 /* TXServerResponseBase.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,8 +479,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = lotteryAides/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,8 +508,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = lotteryAides/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
