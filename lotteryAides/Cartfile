@@ -1,0 +1,4 @@
+github "jdg/MBProgressHUD" ~> 1.0.0
+github "Alamofire/Alamofire" ~> 4.4
+github "hackiftekhar/IQKeyboardManager"
+github "SwiftyJSON/SwiftyJSON"
