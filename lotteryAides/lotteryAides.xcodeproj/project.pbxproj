@@ -125,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9539D6511F2733B500D0F8C4 /* system */ = {
+			isa = PBXGroup;
+			children = (
+				95CF92411F27269600E71892 /* lotteryAides.entitlements */,
+				95CF92311F271F2C00E71892 /* Info.plist */,
+				95CF924F1F2729C200E71892 /* lotteryAides-Bridging-Header.h */,
+			);
+			name = system;
+			sourceTree = "<group>";
+		};
 		95CF92191F271F2C00E71892 = {
 			isa = PBXGroup;
 			children = (
@@ -145,18 +155,16 @@
 		95CF92241F271F2C00E71892 /* lotteryAides */ = {
 			isa = PBXGroup;
 			children = (
-				95CF92411F27269600E71892 /* lotteryAides.entitlements */,
 				95CF92251F271F2C00E71892 /* AppDelegate.swift */,
+				9539D6511F2733B500D0F8C4 /* system */,
 				95CF92271F271F2C00E71892 /* ViewController.swift */,
 				95CF92291F271F2C00E71892 /* Main.storyboard */,
 				95CF922C1F271F2C00E71892 /* Assets.xcassets */,
 				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
-				95CF92311F271F2C00E71892 /* Info.plist */,
 				95CF92371F27265F00E71892 /* common */,
 				95CF92381F27265F00E71892 /* lib */,
 				95CF92391F27265F00E71892 /* lottery */,
 				95CF923A1F27265F00E71892 /* personal */,
-				95CF924F1F2729C200E71892 /* lotteryAides-Bridging-Header.h */,
 			);
 			path = lotteryAides;
 			sourceTree = "<group>";
