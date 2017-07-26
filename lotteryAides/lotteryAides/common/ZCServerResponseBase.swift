@@ -1,5 +1,5 @@
 //
-//  TXServerResponseBase.swift
+//  ZCServerResponseBase.swift
 //  Heymow
 //
 //  Created by hgy on 16/4/12.
@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TXServerResponseBase: NSObject {
+class ZCServerResponseBase: NSObject {
     var code = ""
     var message = ""
     var js : SwiftyJSON.JSON?

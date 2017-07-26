@@ -38,9 +38,9 @@
 		95CF92661F272AE000E71892 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92651F272AE000E71892 /* UserNotifications.framework */; };
 		95CF92681F272AE800E71892 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92671F272AE800E71892 /* libresolv.tbd */; };
 		95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD697D1F278C920032A4C2 /* ToastUIView.m */; };
-		95DD69851F278F1A0032A4C2 /* TXRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */; };
-		95DD69861F278F1A0032A4C2 /* TXServerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69831F278F1A0032A4C2 /* TXServerBase.swift */; };
-		95DD69871F278F1A0032A4C2 /* TXServerResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */; };
+		95DD69851F278F1A0032A4C2 /* ZCRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */; };
+		95DD69861F278F1A0032A4C2 /* ZCServerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */; };
+		95DD69871F278F1A0032A4C2 /* ZCServerResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,9 +90,9 @@
 		95DD697C1F278C920032A4C2 /* ToastUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastUIView.h; path = lib/ToastUIView/ToastUIView.h; sourceTree = "<group>"; };
 		95DD697D1F278C920032A4C2 /* ToastUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastUIView.m; path = lib/ToastUIView/ToastUIView.m; sourceTree = "<group>"; };
 		95DD697F1F278CB60032A4C2 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPush/JPUSHService.h; sourceTree = "<group>"; };
-		95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXRequestBase.swift; path = common/TXRequestBase.swift; sourceTree = "<group>"; };
-		95DD69831F278F1A0032A4C2 /* TXServerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXServerBase.swift; path = common/TXServerBase.swift; sourceTree = "<group>"; };
-		95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TXServerResponseBase.swift; path = common/TXServerResponseBase.swift; sourceTree = "<group>"; };
+		95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCRequestBase.swift; path = common/ZCRequestBase.swift; sourceTree = "<group>"; };
+		95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCServerBase.swift; path = common/ZCServerBase.swift; sourceTree = "<group>"; };
+		95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCServerResponseBase.swift; path = common/ZCServerResponseBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,9 +240,9 @@
 		95DD69811F278F0B0032A4C2 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				95DD69821F278F1A0032A4C2 /* TXRequestBase.swift */,
-				95DD69831F278F1A0032A4C2 /* TXServerBase.swift */,
-				95DD69841F278F1A0032A4C2 /* TXServerResponseBase.swift */,
+				95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */,
+				95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */,
+				95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -342,10 +342,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CF92281F271F2C00E71892 /* ZCRootViewController.swift in Sources */,
-				95DD69861F278F1A0032A4C2 /* TXServerBase.swift in Sources */,
+				95DD69861F278F1A0032A4C2 /* ZCServerBase.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
-				95DD69851F278F1A0032A4C2 /* TXRequestBase.swift in Sources */,
-				95DD69871F278F1A0032A4C2 /* TXServerResponseBase.swift in Sources */,
+				95DD69851F278F1A0032A4C2 /* ZCRequestBase.swift in Sources */,
+				95DD69871F278F1A0032A4C2 /* ZCServerResponseBase.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,6 +1,6 @@
 
 //
-//  TXServerBase.swift
+//  ZCServerBase.swift
 //  Heymow
 //
 //  Created by hgy on 16/4/12.
@@ -11,8 +11,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class TXServerBase: NSObject {    
-    func parseResponse(_ serverRequest: TXRequestBase, serverResponse: Alamofire.DataResponse<Any>, response: TXServerResponseBase, call: ((_ isOK: Bool, _ response: TXServerResponseBase, _ responseData: Alamofire.DataResponse<Any>) -> Void)?){
+class ZCServerBase: NSObject {    
+    func parseResponse(_ serverRequest: TXRequestBase, serverResponse: Alamofire.DataResponse<Any>, response: ZCServerResponseBase, call: ((_ isOK: Bool, _ response: ZCServerResponseBase, _ responseData: Alamofire.DataResponse<Any>) -> Void)?){
         if serverResponse.response != nil{
             let statusCode = serverResponse.response!.statusCode
             if statusCode == 200 {
