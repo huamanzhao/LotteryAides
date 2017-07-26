@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class ZCServerBase: NSObject {    
-    func parseResponse(_ serverRequest: TXRequestBase, serverResponse: Alamofire.DataResponse<Any>, response: ZCServerResponseBase, call: ((_ isOK: Bool, _ response: ZCServerResponseBase, _ responseData: Alamofire.DataResponse<Any>) -> Void)?){
+    func parseResponse(_ serverRequest: ZCRequestBase, serverResponse: Alamofire.DataResponse<Any>, response: ZCServerResponseBase, call: ((_ isOK: Bool, _ response: ZCServerResponseBase, _ responseData: Alamofire.DataResponse<Any>) -> Void)?){
         if serverResponse.response != nil{
             let statusCode = serverResponse.response!.statusCode
             if statusCode == 200 {

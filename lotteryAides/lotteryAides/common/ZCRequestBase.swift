@@ -1,5 +1,5 @@
 //
-//  TXRequestBase.swift
+//  ZCRequestBase.swift
 //  Heymow
 //
 //  Created by hgy on 16/5/27.
@@ -9,6 +9,6 @@
 import UIKit
 import Alamofire
 
-protocol TXRequestBase {
+protocol ZCRequestBase {
     func generateRequest() -> Alamofire.DataRequest
 }
