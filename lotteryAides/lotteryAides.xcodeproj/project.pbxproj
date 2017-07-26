@@ -16,7 +16,7 @@
 		9539D64F1F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; };
 		9539D6501F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
-		95CF92281F271F2C00E71892 /* ZCRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* ZCRootViewController.swift */; };
+		95CF92281F271F2C00E71892 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* RootViewController.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
 		95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922C1F271F2C00E71892 /* Assets.xcassets */; };
 		95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */; };
@@ -38,9 +38,15 @@
 		95CF92661F272AE000E71892 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92651F272AE000E71892 /* UserNotifications.framework */; };
 		95CF92681F272AE800E71892 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92671F272AE800E71892 /* libresolv.tbd */; };
 		95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DD697D1F278C920032A4C2 /* ToastUIView.m */; };
-		95DD69851F278F1A0032A4C2 /* ZCRequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */; };
-		95DD69861F278F1A0032A4C2 /* ZCServerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */; };
-		95DD69871F278F1A0032A4C2 /* ZCServerResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */; };
+		95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69821F278F1A0032A4C2 /* RequestBase.swift */; };
+		95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69831F278F1A0032A4C2 /* ServerBase.swift */; };
+		95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69841F278F1A0032A4C2 /* ServerResponseBase.swift */; };
+		95DD69B11F2839790032A4C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69B01F2839790032A4C2 /* Constants.swift */; };
+		95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69B21F2840200032A4C2 /* ExtString.swift */; };
+		95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69B31F2840200032A4C2 /* ExtUIColor.swift */; };
+		95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */; };
+		95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69BA1F28420D0032A4C2 /* Util.swift */; };
+		95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,7 +69,7 @@
 /* Begin PBXFileReference section */
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95CF92271F271F2C00E71892 /* ZCRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZCRootViewController.swift; sourceTree = "<group>"; };
+		95CF92271F271F2C00E71892 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		95CF922A1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95CF922C1F271F2C00E71892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CF922F1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,9 +96,15 @@
 		95DD697C1F278C920032A4C2 /* ToastUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastUIView.h; path = lib/ToastUIView/ToastUIView.h; sourceTree = "<group>"; };
 		95DD697D1F278C920032A4C2 /* ToastUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastUIView.m; path = lib/ToastUIView/ToastUIView.m; sourceTree = "<group>"; };
 		95DD697F1F278CB60032A4C2 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JPUSHService.h; path = lib/JPush/JPUSHService.h; sourceTree = "<group>"; };
-		95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCRequestBase.swift; path = common/ZCRequestBase.swift; sourceTree = "<group>"; };
-		95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCServerBase.swift; path = common/ZCServerBase.swift; sourceTree = "<group>"; };
-		95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZCServerResponseBase.swift; path = common/ZCServerResponseBase.swift; sourceTree = "<group>"; };
+		95DD69821F278F1A0032A4C2 /* RequestBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestBase.swift; path = common/RequestBase.swift; sourceTree = "<group>"; };
+		95DD69831F278F1A0032A4C2 /* ServerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerBase.swift; path = common/ServerBase.swift; sourceTree = "<group>"; };
+		95DD69841F278F1A0032A4C2 /* ServerResponseBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerResponseBase.swift; path = common/ServerResponseBase.swift; sourceTree = "<group>"; };
+		95DD69B01F2839790032A4C2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		95DD69B21F2840200032A4C2 /* ExtString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtString.swift; path = common/extension/ExtString.swift; sourceTree = "<group>"; };
+		95DD69B31F2840200032A4C2 /* ExtUIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtUIColor.swift; path = common/extension/ExtUIColor.swift; sourceTree = "<group>"; };
+		95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtUIViewController.swift; path = common/extension/ExtUIViewController.swift; sourceTree = "<group>"; };
+		95DD69BA1F28420D0032A4C2 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = common/utils/Util.swift; sourceTree = "<group>"; };
+		95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtDispatchQueue.swift; path = common/utils/ExtDispatchQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +206,7 @@
 		95DD69681F277EA20032A4C2 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				95CF92271F271F2C00E71892 /* ZCRootViewController.swift */,
+				95CF92271F271F2C00E71892 /* RootViewController.swift */,
 				95CF92291F271F2C00E71892 /* Main.storyboard */,
 				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
 			);
@@ -240,9 +252,9 @@
 		95DD69811F278F0B0032A4C2 /* base */ = {
 			isa = PBXGroup;
 			children = (
-				95DD69821F278F1A0032A4C2 /* ZCRequestBase.swift */,
-				95DD69831F278F1A0032A4C2 /* ZCServerBase.swift */,
-				95DD69841F278F1A0032A4C2 /* ZCServerResponseBase.swift */,
+				95DD69821F278F1A0032A4C2 /* RequestBase.swift */,
+				95DD69831F278F1A0032A4C2 /* ServerBase.swift */,
+				95DD69841F278F1A0032A4C2 /* ServerResponseBase.swift */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -250,6 +262,8 @@
 		95DD69881F278F360032A4C2 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				95DD69B01F2839790032A4C2 /* Constants.swift */,
+				95DD69BA1F28420D0032A4C2 /* Util.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -257,6 +271,10 @@
 		95DD69971F278F4F0032A4C2 /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				95DD69B21F2840200032A4C2 /* ExtString.swift */,
+				95DD69B31F2840200032A4C2 /* ExtUIColor.swift */,
+				95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */,
+				95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -341,12 +359,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CF92281F271F2C00E71892 /* ZCRootViewController.swift in Sources */,
-				95DD69861F278F1A0032A4C2 /* ZCServerBase.swift in Sources */,
+				95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */,
+				95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */,
+				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
+				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
+				95CF92281F271F2C00E71892 /* RootViewController.swift in Sources */,
+				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
-				95DD69851F278F1A0032A4C2 /* ZCRequestBase.swift in Sources */,
-				95DD69871F278F1A0032A4C2 /* ZCServerResponseBase.swift in Sources */,
+				95DD69B11F2839790032A4C2 /* Constants.swift in Sources */,
+				95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */,
+				95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
+				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

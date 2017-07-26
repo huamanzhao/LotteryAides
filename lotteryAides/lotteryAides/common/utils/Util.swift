@@ -1,5 +1,5 @@
 //
-//  TXUtils.swift
+//  ZCUtils.swift
 //  Heymow
 //
 //  Created by zhouchao on 16/4/12.
@@ -11,7 +11,7 @@ import UIKit
 import Photos
 import HealthKit
 
-class TXUtil: NSObject {
+class ZCUtil: NSObject {
     //检查是否为整型数据
     static func chechNumber(_ value: String) -> Bool {
         let NUMBER = "[0-9]?"
@@ -193,65 +193,6 @@ class TXUtil: NSObject {
         return NSString(format: "%.0f000", date!.timeIntervalSince1970) as String
     }
     
-    //MARK: 键盘弹出、退出动画
-    
-    /*
-     * 获取键盘高度
-     */
-//    func getKeyBoardHeight() -> CGFloat {
-//        var keyboardHeight = NSUserDefaults.standardUserDefaults().objectForKey("keyBoardHeight")
-//        
-//        if keyboardHeight == nil {
-//            keyboardHeight = 224  //首次弹出时，textfieldAppear先于keyboardShow, UserDefault尚未获取到键盘高度
-//        }
-//        
-//        let height = keyboardHeight as! CGFloat
-//        
-//        return height
-//    }
-//    
-//    /*
-//     * 键盘弹出，视图上移的动画
-//     */
-//    func keyboardAppearAnimation(inView currView:UIView, textBottom bottom:CGFloat) {
-//        let keyboardHeight = HBUtil().getKeyBoardHeight()
-//        
-//        keyboardShowOffset = keyboardHeight - (currView.frame.size.height - bottom);
-//        if keyboardShowOffset > 0 {
-//            UIView.animateWithDuration(0.3) { () -> Void in
-//                var viewFrame = currView.frame
-//                viewFrame.origin.y -= keyboardShowOffset!
-//                currView.frame = viewFrame
-//            }
-//        }
-//    }
-//    
-//    /*
-//     * 键盘收起，视图下移的动画
-//     */
-//    func keyboardDisappearAnimation(inView currView:UIView) {
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            var viewFrame = currView.frame
-//            viewFrame.origin.y += keyboardShowOffset!
-//            currView.frame = viewFrame
-//        }
-//    }
-    
-    /*
-     * 键盘高度变化，视图上下移动的动画
-     func keyboardFrameChangedAnimation(currHeight:CGFloat) {
-     UIView.animateWithDuration(0.25) { () -> Void in
-     let prevHeight  = HBUtil().getKeyBoardHeight()
-     
-     let window: UIWindow = UIApplication.sharedApplication().keyWindow!
-     let currView = window.rootViewController?.view
-     var viewFrame = currView?.frame
-     viewFrame?.origin.y -= currHeight - prevHeight
-     currView?.frame = viewFrame!
-     }
-     }
-     */
-    
     /* 生成数据库的主键ID */
     static func generateID() -> String {
         let uuid = UUID().uuidString
@@ -268,7 +209,7 @@ class TXUtil: NSObject {
 //        }
         
         if !imageUrlStr.contains("http://") {
-            imageUrl = URL(string: TXConstants.imageBaseUrl + "/" + imageUrlStr)
+            imageUrl = URL(string: ZCConstants.imageBaseUrl + "/" + imageUrlStr)
         }
         
         return imageUrl!
@@ -330,49 +271,6 @@ class TXUtil: NSObject {
         return boundingRect.size.height
     }
     
-    //TODO
-    static func getRegistTime() -> Date {
-        
-//        let timeInterval = Double(TXUserConfig.getInstance().getSelfInfo().createTime)
-//        if timeInterval == nil {
-//            return NSDate()
-//        }
-        
-       // let registDate = NSDate(timeIntervalSince1970: timeInterval! / 1000)
-        
-//        return registDate
-        return Date()
-    }
-    
-    //根据ID获取商圈名称
-    static func getAreaNameById(_ areaId: String) -> String {
-        if areaId.isEmpty {
-            return "空"
-        }
-        
-        //TODO
-        return "商圈"
-    }
-    
-    //获取目标地点到自己的距离
-    static func getDistanceToMe() -> String {
-        //TODO
-        
-        return "1.4km"
-    }
-    
-    //显示可读米数
-    static func getReadableDistance(_ distance: Double) -> String {
-        if distance > 1000 {
-            return NSString(format: "%.1fkm", distance/1000) as String
-        }else if distance < 100 {
-            return "<100m"
-        }else if distance <= 1000 {
-            return NSString(format: "%.0fm", distance) as String
-        }
-        return "1"
-    }
-    
     /** 交换两个方法的实现（使A方法名指向B方法的实现，使B方法名指向A方法的实现） */
     static func swizzleMethodImplements (_ clazz: AnyClass, originalSelector: Selector, targetSelector: Selector, originalImpl: Method, targetImpl: Method) {
         //使original的方法名（引用），指向target方法的实现
@@ -392,86 +290,5 @@ class TXUtil: NSObject {
         }
     }
     
-    /** 创建二维码 */
-    static func createQRCode(_ string: String) -> UIImage {
-        // 建立一个滤镜
-        let qrFilter = CIFilter(name: "CIQRCodeGenerator")
-        // 重设滤镜的初始值
-        qrFilter!.setDefaults()
-        // 通过 KVC 设置滤镜的内容
-        qrFilter!.setValue(string.data(using: String.Encoding.utf8, allowLossyConversion: true), forKey: "inputMessage")
-        qrFilter?.setValue("H", forKey: "inputCorrectionLevel")
-        // 输出图像
-        let ciImage = qrFilter!.outputImage
-        // 打印生成图片的大小，生成的图像 23 * 23
-        print(ciImage!.extent)
-        
-        // 过滤图像单色彩以及`形变`的滤镜
-        let colorFilter = CIFilter(name: "CIFalseColor")
-        colorFilter!.setDefaults()
-        colorFilter!.setValue(ciImage, forKey: "inputImage")
-        // 不能直接用 UIColor 转换，会崩溃
-        //  colorFilter.setValue(UIColor.redColor().CIColor, forKey: "inputColor0")
-        // 前景色
-        colorFilter!.setValue(CIColor(red: 0, green: 0, blue: 0), forKey: "inputColor0")
-        // 背景色
-        colorFilter!.setValue(CIColor(red: 1, green: 1, blue: 1), forKey: "inputColor1")
-        
-        let transform = CGAffineTransform(scaleX: 9, y: 9)
-        let transformImage = colorFilter!.outputImage!.applying(transform)
-        
-        let codeImage = UIImage(ciImage: transformImage)
-        /* 合成二维码时中间的头像部位 */
-        let avatarImage = UIImage(named: "qrCode_image")
-        
-        let QRImage = insertAvatarImage(codeImage, avatarImage: avatarImage!)
-        return QRImage
-    }
-    
-    /** 合成二维码中心图像 */
-    static func insertAvatarImage(_ codeImage: UIImage, avatarImage: UIImage) -> UIImage {
-        
-        let size = codeImage.size
-        // 1. 开启图像的上下文
-        UIGraphicsBeginImageContext(size)
-        // 2. 绘制二维码图像
-        codeImage.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        // 3. 计算头像的大小
-        let w = size.width * 0.25
-        let h = size.height * 0.25
-        let x = (size.width - w) * 0.5
-        let y = (size.height - h) * 0.5
-        
-        avatarImage.draw(in: CGRect(x: x, y: y, width: w, height: h))
-        // 4. 从上下文中取出图像
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        // 5. 关闭上下文
-        UIGraphicsEndImageContext()
-        return image!
-    }
-    
-    static func formatCodeNo (_ code: String) -> String {
-        var codeStrs = [NSString]()
-        var codeStr: NSString = code as NSString
-        
-        while codeStr.length >= 4 {
-            codeStrs.append(codeStr.substring(to: 4) as NSString)
-            codeStr = codeStr.substring(from: 4) as NSString
-        }
-        
-        if codeStr.length > 0 {
-            codeStrs.append(codeStr)
-        }
-        
-        var codeNo = ""
-        for (index, str) in codeStrs.enumerated() {
-            codeNo.append(str as String)
-            if index < codeStrs.count - 1 {
-                codeNo.append(" ")
-            }
-        }
-        
-        return codeNo
-    }
 
 }

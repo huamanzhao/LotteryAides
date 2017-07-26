@@ -1,5 +1,5 @@
 //
-//  ZCRootViewController.swift
+//  RootViewController.swift
 //  lotteryAides
 //
 //  Created by zhccc on 2017/7/25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ZCRootViewController: UIViewController {
+class RootViewController: UIViewController {
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     

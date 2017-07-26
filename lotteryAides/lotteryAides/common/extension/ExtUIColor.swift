@@ -1,5 +1,5 @@
 //
-//  TXUIColorExtension.swift
+//  UIColorExtension.swift
 //  Heymow
 //
 //  Created by apple on 16/4/11.
