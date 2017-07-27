@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+
+let refreshConsumeEvent = "refreshConsumeEvent"
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        IQKeyboardManager.sharedManager().enable = true
+        
+        //极光推送
+        JPUSHService.register(forRemoteNotificationTypes: UIUserNotificationType.alert.rawValue | UIUserNotificationType.sound.rawValue | UIUserNotificationType.badge.rawValue, categories: nil)
+        JPUSHService.setup(withOption: launchOptions, appKey: "3f83347939ed7375e64e48b8", channel: "APPLESTORE", apsForProduction: false)
+        JPUSHService.resetBadge()
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         return true
     }
 
@@ -41,6 +51,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        /* 当程序在前台收到推送或者在后台点击推送通知后进入程序走这个方法，获得的通知内容在userINfo中 */
+        JPUSHService.handleRemoteNotification(userInfo)
+        let notification = Notification(name: Notification.Name(rawValue: refreshConsumeEvent), object: nil, userInfo: userInfo)
+        NotificationCenter.default.post(notification)
+    }
+    
+    
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        print(notificationSettings.types.rawValue)
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        let localNotification = Notification(name: Notification.Name(rawValue: "localNotification"), object: nil, userInfo: notification.userInfo)
+        NotificationCenter.default.post(localNotification)
+    }
 }
 

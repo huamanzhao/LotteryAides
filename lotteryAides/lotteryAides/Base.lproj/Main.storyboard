@@ -20,18 +20,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-qG-0hO">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWe-qG-0hO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tik-BZ-KlS"/>
+                                </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-iF-1mh">
                                 <rect key="frame" x="160" y="610" width="55" height="37"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paq-h2-kED">
+                                <rect key="frame" x="156" y="562" width="62" height="30"/>
+                                <state key="normal" title="即刻启程">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MoE-J4-29c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LUV-iF-1mh" firstAttribute="top" secondItem="Paq-h2-kED" secondAttribute="bottom" constant="18" id="4cK-G1-Bml"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LUV-iF-1mh" secondAttribute="bottom" constant="20" id="60D-jE-Vw2"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9Ad-6J-9AH"/>
                             <constraint firstItem="LUV-iF-1mh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeE-21-Slu"/>
+                            <constraint firstItem="Paq-h2-kED" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAg-q1-zAV"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Py4-lH-g6N"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7W-Ho-U8H"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EWe-qG-0hO" secondAttribute="bottom" id="dzr-dn-hUA"/>
@@ -40,6 +54,7 @@
                     <connections>
                         <outlet property="pageControl" destination="LUV-iF-1mh" id="mX8-2A-4DO"/>
                         <outlet property="scroll" destination="EWe-qG-0hO" id="uEE-uH-9HK"/>
+                        <outlet property="startButton" destination="Paq-h2-kED" id="USi-8V-Uvx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

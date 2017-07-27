@@ -1,5 +1,5 @@
 //
-//  ZCUtil.swift
+//  Util.swift
 //  lotteryAides
 //
 //  Created by zhccc on 2017/7/26.
@@ -30,9 +30,9 @@ let farmUrl = "http://www.techealth.cn:8080/HealthServiceTest/live.html#https://
 //缓存路径
 let cacheUrl = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Caches"
 
-struct ZCConstants {
+struct Constants {
     //屏幕尺寸获取
-    static let screenSize   = UIScreen.main.bounds
+    static let screenSize   = UIScreen.main.bounds.size
     static let screenWidth  = UIScreen.main.bounds.maxX
     static let screenHeight = UIScreen.main.bounds.maxY
     static let screenCenter = CGPoint(x: UIScreen.main.bounds.maxX / 2, y: UIScreen.main.bounds.maxY / 2)
@@ -43,9 +43,9 @@ struct ZCConstants {
     static var textColor = UIColor(hex: 0xDDDDDD)
     static var sectionTextColor = UIColor(hex: 0x888888)
     
-    static var mainColor = UIColor(hex: 0x8ec232)   //草绿
-    static var subColor = UIColor(hex: 0x79cc32)
-    static var barColor = UIColor(hex: 0x262626)
+    static var mainColor = UIColor(hex: 0xf9d247)   //杏黄
+    static var subColor = UIColor(hex: 0xd42d38)    //玫红
+    static var barColor = UIColor(hex: 0xf9d247)
     
     static var detailBg = UIColor.white
     static var deatilSubBg = UIColor(hex: 0xeeeeee)

@@ -41,7 +41,7 @@ extension UIViewController: UIGestureRecognizerDelegate {
         if self.navigationItem.rightBarButtonItem == nil {
             button = UIButton(frame: CGRect(x: 0, y: 0, width: 35, height: 30))
             //        button.setTitleColor(TXSettings.subColor, forState: .Normal)
-            button.setTitleColor(ZCConstants.bgColor, for: .highlighted)
+            button.setTitleColor(Constants.bgColor, for: .highlighted)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 16) //UIFont.defaultFontOfSize(16, fitScreen: true)
             button.addTarget(self, action:#selector(UIViewController.rightTextClicked(_:)), for: UIControlEvents.touchUpInside)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)

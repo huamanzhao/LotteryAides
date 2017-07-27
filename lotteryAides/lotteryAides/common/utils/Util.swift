@@ -1,5 +1,5 @@
 //
-//  ZCUtils.swift
+//  Utils.swift
 //  Heymow
 //
 //  Created by zhouchao on 16/4/12.
@@ -11,7 +11,7 @@ import UIKit
 import Photos
 import HealthKit
 
-class ZCUtil: NSObject {
+class Util: NSObject {
     //检查是否为整型数据
     static func chechNumber(_ value: String) -> Bool {
         let NUMBER = "[0-9]?"
@@ -209,7 +209,7 @@ class ZCUtil: NSObject {
 //        }
         
         if !imageUrlStr.contains("http://") {
-            imageUrl = URL(string: ZCConstants.imageBaseUrl + "/" + imageUrlStr)
+            imageUrl = URL(string: Constants.imageBaseUrl + "/" + imageUrlStr)
         }
         
         return imageUrl!
