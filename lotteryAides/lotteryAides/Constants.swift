@@ -8,6 +8,8 @@
 
 import Foundation
 
+let SENIOR_TYPE = "senior"
+let BASIC_TYPE  = "basic"
 
 /*本地服务地址 */
 let localServerUrl  = "http://192.168.4.88:8080/HealthService"
@@ -38,16 +40,16 @@ struct Constants {
     static let screenCenter = CGPoint(x: UIScreen.main.bounds.maxX / 2, y: UIScreen.main.bounds.maxY / 2)
     
     //系统颜色设置
-    static var bgColor = UIColor(hex: 0x1b1b1b)
-    static var subBgColor = UIColor(hex: 0x202020)
+//    static var bgColor = UIColor(hex: 0x1b1b1b)
+//    static var subBgColor = UIColor(hex: 0x202020)
     static var textColor = UIColor(hex: 0xDDDDDD)
-    static var sectionTextColor = UIColor(hex: 0x888888)
+//    static var sectionTextColor = UIColor(hex: 0x888888)
     
     static var mainColor = UIColor(hex: 0xf9d247)   //杏黄
     static var subColor = UIColor(hex: 0xd42d38)    //玫红
-    static var barColor = UIColor(hex: 0xf9d247)
-    
-    static var detailBg = UIColor.white
+//    static var barColor = UIColor(hex: 0xf9d247)
+//    
+//    static var detailBg = UIColor.white
     static var deatilSubBg = UIColor(hex: 0xeeeeee)
     
     static let serverBaseUrl = serverUrlTest

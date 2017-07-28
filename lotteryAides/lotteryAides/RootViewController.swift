@@ -56,14 +56,12 @@ class RootViewController: UIViewController {
     }
 
     func getUserUpdateType() -> String {
-        return "senior"
+        return SENIOR_TYPE
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "showLoginId", sender: self)
     }
-    
-
 }
 
 extension RootViewController : UIScrollViewDelegate {
