@@ -44,13 +44,14 @@ class RootViewController: UIViewController {
     }
     
     func setupStartButton() {
-        startButton.backgroundColor = UIColor(colorLiteralRed: 0.97, green: 0.82, blue: 0.28, alpha: 0.8)//UIColor(hex: 0xf9d247)
-        startButton.layer.cornerRadius = 4.0
-        startButton.layer.masksToBounds = true
-        startButton.layer.borderColor = Constants.subColor.cgColor
-        startButton.layer.borderWidth = 1.0
+        startButton.backgroundColor = UIColor(white: 1, alpha: 0.37)
         
-        startButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 36, bottom: 8, right: 36)
+        startButton.layer.masksToBounds = true
+        startButton.layer.cornerRadius = 5.0
+        startButton.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor
+        startButton.layer.borderWidth = 1.5
+        
+        startButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 36, bottom: 10, right: 36)
         
         startButton.isHidden = true
     }

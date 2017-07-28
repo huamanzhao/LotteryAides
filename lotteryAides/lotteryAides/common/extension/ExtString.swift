@@ -8,9 +8,20 @@
 
 import UIKit
 
-extension String {    
+extension String {
     func isPhoneNumber() -> Bool {
         let MOBILE_PATTEN = "^[1][3,4,5,7,8][0-9]{9}$"
+        let regextestmobile = NSPredicate(format: "SELF MATCHES %@", MOBILE_PATTEN)
+        
+        if regextestmobile.evaluate(with: self) == true {
+            return true
+        }
+        
+        return false
+    }
+    
+    func isValidPassword() -> Bool {
+        let MOBILE_PATTEN = "^[0-9a-zA-Z]{6,8}$"
         let regextestmobile = NSPredicate(format: "SELF MATCHES %@", MOBILE_PATTEN)
         
         if regextestmobile.evaluate(with: self) == true {

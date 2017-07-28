@@ -17,6 +17,8 @@
 		9539D64E1F27325400D0F8C4 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF924D1F2728F300E71892 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9539D64F1F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; };
 		9539D6501F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77A1F2AE34000B4BE83 /* lottery.storyboard */; };
+		9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77C1F2AE34D00B4BE83 /* personal.storyboard */; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
 		95CF92281F271F2C00E71892 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* RootViewController.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		9529A1481F2A0B4F00B55BB1 /* RegistLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistLoginViewController.swift; sourceTree = "<group>"; };
 		9529A14A1F2A1D8A00B55BB1 /* ExtUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtUIImageView.swift; sourceTree = "<group>"; };
+		9549B77A1F2AE34000B4BE83 /* lottery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lottery.storyboard; sourceTree = "<group>"; };
+		9549B77C1F2AE34D00B4BE83 /* personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = personal.storyboard; sourceTree = "<group>"; };
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CF92271F271F2C00E71892 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,22 @@
 			name = system;
 			sourceTree = "<group>";
 		};
+		9549B7781F2AE31300B4BE83 /* lottery */ = {
+			isa = PBXGroup;
+			children = (
+				9549B77A1F2AE34000B4BE83 /* lottery.storyboard */,
+			);
+			name = lottery;
+			sourceTree = "<group>";
+		};
+		9549B7791F2AE31F00B4BE83 /* personal */ = {
+			isa = PBXGroup;
+			children = (
+				9549B77C1F2AE34D00B4BE83 /* personal.storyboard */,
+			);
+			name = personal;
+			sourceTree = "<group>";
+		};
 		95CF92191F271F2C00E71892 = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +194,11 @@
 		95CF92241F271F2C00E71892 /* lotteryAides */ = {
 			isa = PBXGroup;
 			children = (
+				95DD69681F277EA20032A4C2 /* main */,
+				9549B7781F2AE31300B4BE83 /* lottery */,
+				9549B7791F2AE31F00B4BE83 /* personal */,
 				95DD69801F278E640032A4C2 /* common */,
 				95DD696F1F27881A0032A4C2 /* lib */,
-				95DD69681F277EA20032A4C2 /* main */,
 				9539D6511F2733B500D0F8C4 /* system */,
 				95CF922C1F271F2C00E71892 /* Assets.xcassets */,
 			);
@@ -352,6 +374,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */,
+				9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */,
 				95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */,
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
 				95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */,
