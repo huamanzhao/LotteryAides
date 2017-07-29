@@ -40,7 +40,7 @@
         <!--Navigation Controller-->
         <scene sceneID="cpN-Rc-AkB">
             <objects>
-                <navigationController id="BRu-pk-0a9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="lottery" id="BRu-pk-0a9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tjx-bk-gLa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

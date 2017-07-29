@@ -290,5 +290,9 @@ class Util: NSObject {
         }
     }
     
+    //获取系统版本号
+    static func getSystemVersion() -> Float {
+        return UIDevice.current.systemVersion.toFloat()
+    }
 
 }

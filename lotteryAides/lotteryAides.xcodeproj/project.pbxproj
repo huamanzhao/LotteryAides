@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9529A1491F2A0B4F00B55BB1 /* RegistLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529A1481F2A0B4F00B55BB1 /* RegistLoginViewController.swift */; };
-		9529A14B1F2A1D8A00B55BB1 /* ExtUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9529A14A1F2A1D8A00B55BB1 /* ExtUIImageView.swift */; };
 		9539D6481F27322700D0F8C4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; };
 		9539D6491F27322700D0F8C4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9539D64A1F27322700D0F8C4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92451F27276D00E71892 /* SwiftyJSON.framework */; };
@@ -19,8 +17,26 @@
 		9539D6501F27325400D0F8C4 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92441F27276D00E71892 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77A1F2AE34000B4BE83 /* lottery.storyboard */; };
 		9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77C1F2AE34D00B4BE83 /* personal.storyboard */; };
+		956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */; };
+		956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */; };
+		956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */; };
+		956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */; };
+		956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */; };
+		956E0A7C1F2C39C100E65DF0 /* LotteryListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */; };
+		956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */; };
+		956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */; };
+		956E0A7F1F2C39C100E65DF0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */; };
+		956E0A831F2C3A1500E65DF0 /* AdverticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A801F2C3A1500E65DF0 /* AdverticeViewController.swift */; };
+		956E0A841F2C3A1500E65DF0 /* RegistLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A811F2C3A1500E65DF0 /* RegistLoginViewController.swift */; };
+		956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A821F2C3A1500E65DF0 /* RootViewController.swift */; };
+		956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */; };
+		956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */; };
+		956E0A8F1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */; };
+		956E0A901F2C645F00E65DF0 /* LotteryWaitOpenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */; };
+		956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */; };
+		956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */; };
+		956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
-		95CF92281F271F2C00E71892 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92271F271F2C00E71892 /* RootViewController.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
 		95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922C1F271F2C00E71892 /* Assets.xcassets */; };
 		95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */; };
@@ -71,13 +87,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9529A1481F2A0B4F00B55BB1 /* RegistLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistLoginViewController.swift; sourceTree = "<group>"; };
-		9529A14A1F2A1D8A00B55BB1 /* ExtUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtUIImageView.swift; sourceTree = "<group>"; };
 		9549B77A1F2AE34000B4BE83 /* lottery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lottery.storyboard; sourceTree = "<group>"; };
 		9549B77C1F2AE34D00B4BE83 /* personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = personal.storyboard; sourceTree = "<group>"; };
+		956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInfo.swift; path = lottery/LotteryInfo.swift; sourceTree = "<group>"; };
+		956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryAddViewController.swift; path = lottery/LotteryAddViewController.swift; sourceTree = "<group>"; };
+		956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryDetailViewController.swift; path = lottery/LotteryDetailViewController.swift; sourceTree = "<group>"; };
+		956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryMainViewController.swift; path = lottery/LotteryMainViewController.swift; sourceTree = "<group>"; };
+		956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryScanViewController.swift; path = lottery/LotteryScanViewController.swift; sourceTree = "<group>"; };
+		956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryListMainViewController.swift; path = personal/LotteryListMainViewController.swift; sourceTree = "<group>"; };
+		956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryListViewController.swift; path = personal/LotteryListViewController.swift; sourceTree = "<group>"; };
+		956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalMainViewController.swift; path = personal/PersonalMainViewController.swift; sourceTree = "<group>"; };
+		956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = personal/SettingsViewController.swift; sourceTree = "<group>"; };
+		956E0A801F2C3A1500E65DF0 /* AdverticeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdverticeViewController.swift; path = main/AdverticeViewController.swift; sourceTree = "<group>"; };
+		956E0A811F2C3A1500E65DF0 /* RegistLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegistLoginViewController.swift; path = main/RegistLoginViewController.swift; sourceTree = "<group>"; };
+		956E0A821F2C3A1500E65DF0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = main/RootViewController.swift; sourceTree = "<group>"; };
+		956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInOpenCell.swift; path = lottery/LotteryInOpenCell.swift; sourceTree = "<group>"; };
+		956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LotteryInOpenCell.xib; path = lottery/LotteryInOpenCell.xib; sourceTree = "<group>"; };
+		956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryWaitOpenCell.swift; path = lottery/LotteryWaitOpenCell.swift; sourceTree = "<group>"; };
+		956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LotteryWaitOpenCell.xib; path = lottery/LotteryWaitOpenCell.xib; sourceTree = "<group>"; };
+		956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryNumberView.swift; path = lottery/LotteryNumberView.swift; sourceTree = "<group>"; };
+		956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtUIView.swift; sourceTree = "<group>"; };
+		956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistRequest.swift; sourceTree = "<group>"; };
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95CF92271F271F2C00E71892 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		95CF922A1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95CF922C1F271F2C00E71892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CF922F1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -161,7 +193,9 @@
 		9549B7781F2AE31300B4BE83 /* lottery */ = {
 			isa = PBXGroup;
 			children = (
-				9549B77A1F2AE34000B4BE83 /* lottery.storyboard */,
+				956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */,
+				956E0A8C1F2C3D0100E65DF0 /* view */,
+				956E0A6C1F2C381A00E65DF0 /* controller */,
 			);
 			name = lottery;
 			sourceTree = "<group>";
@@ -169,9 +203,51 @@
 		9549B7791F2AE31F00B4BE83 /* personal */ = {
 			isa = PBXGroup;
 			children = (
-				9549B77C1F2AE34D00B4BE83 /* personal.storyboard */,
+				956E0A6D1F2C38F600E65DF0 /* controller */,
 			);
 			name = personal;
+			sourceTree = "<group>";
+		};
+		956E0A6C1F2C381A00E65DF0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */,
+				956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */,
+				956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */,
+				956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		956E0A6D1F2C38F600E65DF0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */,
+				956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */,
+				956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */,
+				956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		956E0A8C1F2C3D0100E65DF0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */,
+				956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */,
+				956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */,
+				956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */,
+				956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		956E0A961F2CDB8A00E65DF0 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */,
+			);
+			name = server;
 			sourceTree = "<group>";
 		};
 		95CF92191F271F2C00E71892 = {
@@ -194,12 +270,13 @@
 		95CF92241F271F2C00E71892 /* lotteryAides */ = {
 			isa = PBXGroup;
 			children = (
+				95DD69801F278E640032A4C2 /* common */,
 				95DD69681F277EA20032A4C2 /* main */,
 				9549B7781F2AE31300B4BE83 /* lottery */,
 				9549B7791F2AE31F00B4BE83 /* personal */,
-				95DD69801F278E640032A4C2 /* common */,
 				95DD696F1F27881A0032A4C2 /* lib */,
 				9539D6511F2733B500D0F8C4 /* system */,
+				956E0A961F2CDB8A00E65DF0 /* server */,
 				95CF922C1F271F2C00E71892 /* Assets.xcassets */,
 			);
 			path = lotteryAides;
@@ -232,9 +309,12 @@
 		95DD69681F277EA20032A4C2 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				95CF92271F271F2C00E71892 /* RootViewController.swift */,
-				9529A1481F2A0B4F00B55BB1 /* RegistLoginViewController.swift */,
+				956E0A801F2C3A1500E65DF0 /* AdverticeViewController.swift */,
+				956E0A811F2C3A1500E65DF0 /* RegistLoginViewController.swift */,
+				956E0A821F2C3A1500E65DF0 /* RootViewController.swift */,
 				95CF92291F271F2C00E71892 /* Main.storyboard */,
+				9549B77A1F2AE34000B4BE83 /* lottery.storyboard */,
+				9549B77C1F2AE34D00B4BE83 /* personal.storyboard */,
 				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
 			);
 			name = main;
@@ -302,7 +382,7 @@
 				95DD69B31F2840200032A4C2 /* ExtUIColor.swift */,
 				95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */,
 				95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */,
-				9529A14A1F2A1D8A00B55BB1 /* ExtUIImageView.swift */,
+				956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */,
 			);
 			name = extension;
 			sourceTree = "<group>";
@@ -378,7 +458,9 @@
 				9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */,
 				95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */,
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
+				956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */,
 				95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */,
+				956E0A901F2C645F00E65DF0 /* LotteryWaitOpenCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,19 +472,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */,
+				956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */,
+				956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */,
+				956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */,
+				956E0A7C1F2C39C100E65DF0 /* LotteryListMainViewController.swift in Sources */,
 				95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */,
 				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
 				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
-				9529A14B1F2A1D8A00B55BB1 /* ExtUIImageView.swift in Sources */,
-				95CF92281F271F2C00E71892 /* RootViewController.swift in Sources */,
-				9529A1491F2A0B4F00B55BB1 /* RegistLoginViewController.swift in Sources */,
+				956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */,
+				956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */,
+				956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */,
+				956E0A8F1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift in Sources */,
+				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
+				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
+				956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */,
 				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
+				956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */,
+				956E0A841F2C3A1500E65DF0 /* RegistLoginViewController.swift in Sources */,
 				95DD69B11F2839790032A4C2 /* Constants.swift in Sources */,
+				956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */,
 				95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */,
 				95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */,
+				956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
 				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
+				956E0A831F2C3A1500E65DF0 /* AdverticeViewController.swift in Sources */,
+				956E0A7F1F2C39C100E65DF0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
