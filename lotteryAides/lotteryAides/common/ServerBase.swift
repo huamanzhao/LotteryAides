@@ -16,28 +16,31 @@ class ServerBase: NSObject {
         if serverResponse.response != nil{
             let statusCode = serverResponse.response!.statusCode
             if statusCode == 200 {
-                if serverResponse.result.isFailure{
-                    response.code = "1"
-                    response.message = serverResponse.result.error.debugDescription
-                    call!(false, response, serverResponse)
-                }else {
-                    call!(true, response, serverResponse)
+                if let value = serverResponse.result.value {
+                    let errMsgDic = SwiftyJSON.JSON(value).dictionaryValue
+                    if let messageJSON = errMsgDic["errorMessage"] {
+                        let errorMessage = messageJSON.stringValue
+                        if errorMessage.isEmpty {
+                            call!(true, response, serverResponse)
+                            return
+                        }
+                        
+                        response.message = errorMessage
+                        response.code = "1"
+                    }
                 }
-            } else if statusCode == 401 {
-                response.code = "1"
-                response.message = "登录失败"
                 call!(false, response, serverResponse)
-            } else if statusCode == 400 {
+            } else if statusCode == 100 {
                 response.code = "1"
                 response.message = "参数错误"
                 call!(false, response, serverResponse)
-            } else if statusCode == 302 || statusCode == 405  {
+            } else if statusCode == 403 {
                 response.code = "1"
-                response.message = "操作失败：未登录"
+                response.message = "权限错误"
                 call!(false, response, serverResponse)
             }else {//TODO: 调试时的返回404，走这里，记得去掉
                 response.code = "1"
-                response.message = "未知错误"
+                response.message = "错误：statusCode=\(statusCode)"
                 call!(false, response, serverResponse)
             }
         }else {

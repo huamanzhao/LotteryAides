@@ -1,5 +1,5 @@
 //
-//  RegistRequest.swift
+//  LoginRequest.swift
 //  lotteryAides
 //
 //  Created by zhccc on 2017/7/29.
@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class RegistRequest: RequestBase {
+class LoginRequest: RequestBase {
     var phoneNumber : String = ""
     var password : String = ""
     var deviceId : String = ""
@@ -41,6 +41,6 @@ class RegistRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_register", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_login", method: .post, parameters: getRequest())
     }
 }

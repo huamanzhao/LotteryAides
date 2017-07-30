@@ -1,5 +1,5 @@
 //
-//  RegistRequest.swift
+//  LogoutRequest.swift
 //  lotteryAides
 //
 //  Created by zhccc on 2017/7/29.
@@ -9,20 +9,7 @@
 import Foundation
 import Alamofire
 
-class RegistRequest: RequestBase {
-    var phoneNumber : String = ""
-    var password : String = ""
-    var deviceId : String = ""
-    
-    func getRequest() -> [String : String]{
-        let request = [
-            "phoneNumber" : phoneNumber,
-            "password" : password,
-            "deviceId" : deviceId
-        ]
-        
-        return request
-    }
+class LogoutRequest: RequestBase {
     
     func doRequest(_ callback : ((_ isOK: Bool, _ response: ServerResponseBase) -> Void)?){
         let res = ServerResponseBase()
@@ -41,6 +28,6 @@ class RegistRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_register", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/customer/client/logout", method: .post, parameters: nil)
     }
 }

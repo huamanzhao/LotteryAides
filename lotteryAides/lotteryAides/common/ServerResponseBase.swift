@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class ServerResponseBase: NSObject {
-    var code = ""
+    var code = "0"
     var message = ""
     var js : SwiftyJSON.JSON?
     

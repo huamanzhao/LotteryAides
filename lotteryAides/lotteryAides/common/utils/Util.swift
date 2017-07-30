@@ -209,7 +209,7 @@ class Util: NSObject {
 //        }
         
         if !imageUrlStr.contains("http://") {
-            imageUrl = URL(string: Constants.imageBaseUrl + "/" + imageUrlStr)
+            imageUrl = URL(string: Constants.serverBaseUrl + "/" + imageUrlStr)
         }
         
         return imageUrl!

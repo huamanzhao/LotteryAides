@@ -140,8 +140,19 @@ class RegistLoginViewController: UIViewController {
             return
         }
         
+        let request = LoginRequest()
+        request.phoneNumber = phoneTF.text!
+        request.password    = passwordTF.text!
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                print(isOK)
+                print(response.code)
+            }
+        }
+        
+        
         //TODO
-        self.performSegue(withIdentifier: "showAdvertice", sender: self)
+//        self.performSegue(withIdentifier: "showAdvertice", sender: self)
     }
     
     //用户注册

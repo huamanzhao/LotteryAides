@@ -36,6 +36,14 @@
 		956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */; };
 		956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */; };
 		956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */; };
+		956E0A9A1F2CE5FB00E65DF0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A991F2CE5FB00E65DF0 /* LoginRequest.swift */; };
+		956E0A9C1F2CE63B00E65DF0 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A9B1F2CE63B00E65DF0 /* LogoutRequest.swift */; };
+		956E0A9E1F2CE69300E65DF0 /* ChangePasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A9D1F2CE69300E65DF0 /* ChangePasswordRequest.swift */; };
+		956E0AA01F2CE70900E65DF0 /* AddLotteryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A9F1F2CE70900E65DF0 /* AddLotteryRequest.swift */; };
+		956E0AA21F2CE80800E65DF0 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AA11F2CE80800E65DF0 /* DateUtil.swift */; };
+		956E0AA41F2D5EE200E65DF0 /* LotteryCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AA31F2D5EE200E65DF0 /* LotteryCode.swift */; };
+		956E0AA61F2D7B1D00E65DF0 /* GetLotteryPublishResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AA51F2D7B1D00E65DF0 /* GetLotteryPublishResponse.swift */; };
+		956E0AA81F2D7B8D00E65DF0 /* LotteryPublish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AA71F2D7B8D00E65DF0 /* LotteryPublish.swift */; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
 		95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922C1F271F2C00E71892 /* Assets.xcassets */; };
@@ -108,6 +116,14 @@
 		956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryNumberView.swift; path = lottery/LotteryNumberView.swift; sourceTree = "<group>"; };
 		956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtUIView.swift; sourceTree = "<group>"; };
 		956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistRequest.swift; sourceTree = "<group>"; };
+		956E0A991F2CE5FB00E65DF0 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		956E0A9B1F2CE63B00E65DF0 /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		956E0A9D1F2CE69300E65DF0 /* ChangePasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordRequest.swift; sourceTree = "<group>"; };
+		956E0A9F1F2CE70900E65DF0 /* AddLotteryRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLotteryRequest.swift; sourceTree = "<group>"; };
+		956E0AA11F2CE80800E65DF0 /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUtil.swift; path = common/utils/DateUtil.swift; sourceTree = "<group>"; };
+		956E0AA31F2D5EE200E65DF0 /* LotteryCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryCode.swift; path = lottery/LotteryCode.swift; sourceTree = "<group>"; };
+		956E0AA51F2D7B1D00E65DF0 /* GetLotteryPublishResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLotteryPublishResponse.swift; sourceTree = "<group>"; };
+		956E0AA71F2D7B8D00E65DF0 /* LotteryPublish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryPublish.swift; sourceTree = "<group>"; };
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CF922A1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -194,6 +210,8 @@
 			isa = PBXGroup;
 			children = (
 				956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */,
+				956E0AA31F2D5EE200E65DF0 /* LotteryCode.swift */,
+				956E0AA71F2D7B8D00E65DF0 /* LotteryPublish.swift */,
 				956E0A8C1F2C3D0100E65DF0 /* view */,
 				956E0A6C1F2C381A00E65DF0 /* controller */,
 			);
@@ -246,6 +264,11 @@
 			isa = PBXGroup;
 			children = (
 				956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */,
+				956E0A991F2CE5FB00E65DF0 /* LoginRequest.swift */,
+				956E0A9B1F2CE63B00E65DF0 /* LogoutRequest.swift */,
+				956E0A9D1F2CE69300E65DF0 /* ChangePasswordRequest.swift */,
+				956E0A9F1F2CE70900E65DF0 /* AddLotteryRequest.swift */,
+				956E0AA51F2D7B1D00E65DF0 /* GetLotteryPublishResponse.swift */,
 			);
 			name = server;
 			sourceTree = "<group>";
@@ -371,6 +394,7 @@
 			children = (
 				95DD69B01F2839790032A4C2 /* Constants.swift */,
 				95DD69BA1F28420D0032A4C2 /* Util.swift */,
+				956E0AA11F2CE80800E65DF0 /* DateUtil.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -476,12 +500,16 @@
 				956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */,
 				956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */,
 				956E0A7C1F2C39C100E65DF0 /* LotteryListMainViewController.swift in Sources */,
+				956E0AA81F2D7B8D00E65DF0 /* LotteryPublish.swift in Sources */,
 				95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */,
 				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
+				956E0AA01F2CE70900E65DF0 /* AddLotteryRequest.swift in Sources */,
 				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
 				956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */,
 				956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */,
 				956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */,
+				956E0AA21F2CE80800E65DF0 /* DateUtil.swift in Sources */,
+				956E0AA41F2D5EE200E65DF0 /* LotteryCode.swift in Sources */,
 				956E0A8F1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift in Sources */,
 				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
@@ -491,11 +519,15 @@
 				956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */,
 				956E0A841F2C3A1500E65DF0 /* RegistLoginViewController.swift in Sources */,
 				95DD69B11F2839790032A4C2 /* Constants.swift in Sources */,
+				956E0A9E1F2CE69300E65DF0 /* ChangePasswordRequest.swift in Sources */,
+				956E0AA61F2D7B1D00E65DF0 /* GetLotteryPublishResponse.swift in Sources */,
 				956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */,
 				95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */,
 				95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */,
 				956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
+				956E0A9C1F2CE63B00E65DF0 /* LogoutRequest.swift in Sources */,
+				956E0A9A1F2CE5FB00E65DF0 /* LoginRequest.swift in Sources */,
 				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
 				956E0A831F2C3A1500E65DF0 /* AdverticeViewController.swift in Sources */,
 				956E0A7F1F2C39C100E65DF0 /* SettingsViewController.swift in Sources */,

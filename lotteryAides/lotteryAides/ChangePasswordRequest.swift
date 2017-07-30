@@ -1,5 +1,5 @@
 //
-//  RegistRequest.swift
+//  ChangePasswordRequest.swift
 //  lotteryAides
 //
 //  Created by zhccc on 2017/7/29.
@@ -9,16 +9,14 @@
 import Foundation
 import Alamofire
 
-class RegistRequest: RequestBase {
-    var phoneNumber : String = ""
-    var password : String = ""
-    var deviceId : String = ""
+class ChangePasswordRequest: RequestBase {
+    var oldPswd : String = ""
+    var newPswd : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phoneNumber" : phoneNumber,
-            "password" : password,
-            "deviceId" : deviceId
+            "oldPswd" : oldPswd,
+            "newPswd" : newPswd
         ]
         
         return request
@@ -41,6 +39,6 @@ class RegistRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_register", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/customer/client/changePassword", method: .post, parameters: getRequest())
     }
 }

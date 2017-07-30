@@ -11,23 +11,10 @@ import Foundation
 let SENIOR_TYPE = "senior"
 let BASIC_TYPE  = "basic"
 
-/*本地服务地址 */
-let localServerUrl  = "http://192.168.4.88:8080/HealthService"
 
 /*正式服务地址 */
-let serverUrl = "http://www.techealth.cn"
-let imageUrl = "http://www.techealth.cn/HealthService"
+let serverUrl = "https://www.szlexuetang.com/"
 
-/*Test服务地址 */
-let serverUrlTest = "http://www.techealth.cn:8080/HealthService"
-let imageUrlTest = "http://www.techealth.cn:8080/HealthService"
-
-let plistUrl = "https://dn-hebca.qbox.me/qjtree1225.plist"
-let downloadPlist = "itms-services://?action=download-manifest&url=https://dn-hebca.qbox.me/qjtree1225.plist"
-
-let chunyuTestUrl = "https://test.chunyu.me"
-let chunyuUrl = "https://www.chunyuyisheng.com"
-let farmUrl = "http://www.techealth.cn:8080/HealthServiceTest/live.html#https://open.ys7.com/view/h5/4289d1a6d4154960aea6f81e938ae1ad"
 
 //缓存路径
 let cacheUrl = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.libraryDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] + "/Caches"
@@ -52,6 +39,5 @@ struct Constants {
 //    static var detailBg = UIColor.white
     static var deatilSubBg = UIColor(hex: 0xeeeeee)
     
-    static let serverBaseUrl = serverUrlTest
-    static let imageBaseUrl = serverUrlTest
+    static let serverBaseUrl = serverUrl
 }
