@@ -12,16 +12,17 @@ import Alamofire
 class AddLotteryRequest: RequestBase {
     var name : String = ""
     var term : String = ""
-    var publishDate : Date!
+    var publishDate = ""
     var multiple: Int = 0
     var cost : Int = 0
     var codes : [LotteryCode]!
     
     func getRequest() -> [String : String]{
         let request = [
+            "phone" : "15076128501",    //ZC_DEBUG
             "name" : name,
             "term" : term,
-            "publishDate" : publishDate.toString(FORMAT_DATE_TIME),
+            "publishDate" : publishDate,
             "multiple" : "\(multiple)",
             "cost" : "\(cost)",
             "codes" : getCodesString()
@@ -47,7 +48,7 @@ class AddLotteryRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "/customer/client/login", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_user_order", method: .post, parameters: getRequest())
     }
     
     func getCodesString() -> String {

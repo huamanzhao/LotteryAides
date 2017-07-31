@@ -1,44 +1,46 @@
 //
-//  ChangePasswordRequest.swift
+//  GetPublishRequest.swift
 //  lotteryAides
 //
-//  Created by zhccc on 2017/7/29.
+//  Created by zhccc on 2017/7/30.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class ChangePasswordRequest: RequestBase {
-    var phone : String = ""
-    var newPswd : String = ""
+class GetPublishRequest: RequestBase {
+    var name : String = ""
+    var term : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phone" : phone,
-            "newPswd" : newPswd
+            "name" : name,
+            "term" : term
         ]
         
         return request
     }
     
-    func doRequest(_ callback : ((_ isOK: Bool, _ response: ServerResponseBase) -> Void)?){
-        let res = ServerResponseBase()
+    func doRequest(_ callback : ((_ isOK: Bool, _ response: GetPublishResponse) -> Void)?) {
+        let res = GetPublishResponse()
         let util = ServerBase()
         let request = generateRequest()
         request.responseJSON { (data) in
             util.parseResponse(self, serverResponse: data, response: res){ (isOK, response, responseData) in
                 if isOK {
-                    res.parseResponse(data.result)
+                    res.parseResponse(responseData.result)
                     callback!(true, res)
                 }else {
-                    callback!(false, response)
+                    res.code = response.code
+                    res.message = res.message
+                    callback!(false, res)
                 }
             }
         }
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_changepwd", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_getPublish", method: .post, parameters: getRequest())
     }
 }

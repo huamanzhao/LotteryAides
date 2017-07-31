@@ -68,7 +68,7 @@
         <!--Advertice View Controller-->
         <scene sceneID="Im6-I3-Vk6">
             <objects>
-                <viewController id="90N-CJ-cRH" customClass="AdverticeViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="advertice" id="90N-CJ-cRH" customClass="AdverticeViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZsN-13-gHj"/>
                         <viewControllerLayoutGuide type="bottom" id="2NZ-84-p5x"/>
@@ -162,9 +162,9 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLT-Ai-hXZ">
-                                        <rect key="frame" x="62" y="16.5" width="211" height="17"/>
+                                        <rect key="frame" x="62" y="16" width="211" height="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="Kfe-Cs-o8f" id="kFw-EO-InD"/>
@@ -202,12 +202,12 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入密码(6~8位)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I4P-ke-2Hd">
-                                        <rect key="frame" x="62" y="15" width="171" height="20"/>
+                                        <rect key="frame" x="62" y="15.5" width="171" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="Yjy-PF-QIh"/>
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="namePhonePad" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="Kfe-Cs-o8f" id="CEK-FA-FLc"/>

@@ -10,6 +10,15 @@ import Foundation
 import Alamofire
 
 class LogoutRequest: RequestBase {
+    var phone : String = ""
+    
+    func getRequest() -> [String : String]{
+        let request = [
+            "phone" : phone
+        ]
+        
+        return request
+    }
     
     func doRequest(_ callback : ((_ isOK: Bool, _ response: ServerResponseBase) -> Void)?){
         let res = ServerResponseBase()
@@ -28,6 +37,6 @@ class LogoutRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "/customer/client/logout", method: .post, parameters: nil)
+        return Alamofire.request(Constants.serverBaseUrl + "cp_logout", method: .post, parameters: getRequest())
     }
 }

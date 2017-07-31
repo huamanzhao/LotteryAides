@@ -61,6 +61,10 @@ class RootViewController: UIViewController {
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
+        let config = UserConfig.getInstance()
+        config.setNeedGuide(false)
+        config.saveUserInfo()
+        
         self.performSegue(withIdentifier: "showAdvertice", sender: self)
     }
 }

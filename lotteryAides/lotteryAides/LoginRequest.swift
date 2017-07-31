@@ -10,13 +10,13 @@ import Foundation
 import Alamofire
 
 class LoginRequest: RequestBase {
-    var phoneNumber : String = ""
+    var phone : String = ""
     var password : String = ""
     var deviceId : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phoneNumber" : phoneNumber,
+            "phone" : phone,
             "password" : password,
             "deviceId" : deviceId
         ]

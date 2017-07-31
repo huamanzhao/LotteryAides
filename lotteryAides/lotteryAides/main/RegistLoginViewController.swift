@@ -37,6 +37,10 @@ class RegistLoginViewController: UIViewController {
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
 
         setupSubView()
+        
+        //ZC_DEBUG
+        phoneTF.text = "15076128501"
+        passwordTF.text = "222222"
     }
     
     func setupSubView() {
@@ -96,12 +100,14 @@ class RegistLoginViewController: UIViewController {
     
     //立即注册按钮
     @IBAction func registButtonPressed(_ sender: Any) {
+        //ZC_DEBUG
+        tempTest1()
+        return
+        
         funcType = FuncType.regist
         
-        phoneTF.text = ""
         passwordTF.text = ""
         
-        displayCorrectLayer(phoneBgView)
         displayCorrectLayer(passwordBgView)
         
         displayAnimationChange("注册")
@@ -141,12 +147,19 @@ class RegistLoginViewController: UIViewController {
         }
         
         let request = LoginRequest()
-        request.phoneNumber = phoneTF.text!
+        request.phone = phoneTF.text!
         request.password    = passwordTF.text!
         request.doRequest { (isOK, response) in
             if isOK && response.code == "0" {
-                print(isOK)
-                print(response.code)
+                let config = UserConfig.getInstance()
+                config.setPhone(self.phoneTF.text!)
+                config.saveUserInfo()
+                
+                self.view.makeToast("登陆成功")
+            }
+            else {
+                
+                self.view.makeToast("登陆失败")
             }
         }
         
@@ -160,8 +173,20 @@ class RegistLoginViewController: UIViewController {
         if !checkPhoneInput() || !checkPasswordInput() {
             return
         }
-        
-        //TODO
+
+        let request = RegistRequest()
+        request.phone = phoneTF.text!
+        request.password = passwordTF.text!
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                //TODO: 自动登录
+                
+                self.view.makeToast("注册成功")
+            }
+            else {
+                self.view.makeToast("注册失败")
+            }
+        }
     }
     
     //找回密码 
@@ -170,6 +195,14 @@ class RegistLoginViewController: UIViewController {
             return
         }
         
+        let request = ChangePasswordRequest()
+        request.phone = phoneTF.text!
+        request.newPswd = passwordTF.text!
+        request.doRequest { (isOK, response) in
+            print("isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            self.view.makeToast("重置成功：" + "\(isOK)")
+        }
         
         //TODO
     }
@@ -197,17 +230,62 @@ class RegistLoginViewController: UIViewController {
         displayCorrectLayer(passwordBgView)
         return true
     }
+    
+    //ZC_DEBUG
+    func tempTest() {
+        let code1 = LotteryCode("8,11,22,30,35,3,7")
+        
+        let request = AddLotteryRequest()
+        request.name = "1"
+        request.term = "17083"
+        request.publishDate = "2017/07/19"
+        request.cost = 6
+        request.multiple = 1
+        request.codes = [code1]
+        request.doRequest { (isOK, response) in
+            print("isOK:" + "\(isOK)")
+            print("code:" + response.code)
+        }
+        
+    }
+    
+    func tempTest1() {
+        let request = GetPublishRequest()
+        request.name = "1"
+        request.term = "17072927"
+        request.doRequest { (isOK, response) in
+            print("isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            print("message:" + response.message)
+        }
+    }
+    
 }
 
 extension RegistLoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         //验证手机号码
         if textField.tag == 0 {
+            phoneTF.resignFirstResponder()
             checkPhoneInput()
         }
         else {        //验证密码
+            passwordTF.resignFirstResponder()
             checkPasswordInput()
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.tag == 0 {
+            phoneTF.resignFirstResponder()
+            checkPhoneInput()
+        }
+        else {        //验证密码
+            passwordTF.resignFirstResponder()
+            checkPasswordInput()
+        }
+        
+        return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

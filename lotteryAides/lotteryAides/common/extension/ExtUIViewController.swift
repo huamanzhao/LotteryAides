@@ -8,6 +8,8 @@
 
 import UIKit
 import Photos
+import MBProgressHUD
+
 @objc
 public protocol ResultForViewControllerDelegate {
     func onViewControllerResult(_ sender: AnyClass, result: [String: Any])
@@ -218,3 +220,4 @@ extension UIViewController {
         }
     }
 }
+

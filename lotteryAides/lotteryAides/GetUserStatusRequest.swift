@@ -1,22 +1,20 @@
 //
-//  ChangePasswordRequest.swift
+//  GetUserStatusRequest.swift
 //  lotteryAides
 //
-//  Created by zhccc on 2017/7/29.
+//  Created by zhccc on 2017/7/30.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class ChangePasswordRequest: RequestBase {
+class GetUserStatusRequest: RequestBase {
     var phone : String = ""
-    var newPswd : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phone" : phone,
-            "newPswd" : newPswd
+            "phone" : phone
         ]
         
         return request
@@ -39,6 +37,6 @@ class ChangePasswordRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_changepwd", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_logout", method: .post, parameters: nil)//getRequest())
     }
 }

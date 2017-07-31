@@ -14,7 +14,11 @@ class LotteryCode: NSObject {
     
     override init() {
         super.init()
+        
+        codes = [String]()
     }
+    
+    
     
     func getJSONString() -> String {
         let codeStr = codes.joined(separator: ",")
@@ -23,11 +27,24 @@ class LotteryCode: NSObject {
     }
     
     func parseJson(_ js: SwiftyJSON.JSON) {
-        let data = js.dictionary!
+        let dataArr = js.arrayValue
         
-//        if let codesJS = data["codes"] {
-//            let json = codesJS.json
-//            
-//        }
+        for valueJS in dataArr {
+            let value = valueJS.stringValue
+            codes.append(value)
+        }
+    }
+    
+    init(_ js: SwiftyJSON.JSON) {
+        super.init()
+        
+        codes = [String]()
+        parseJson(js)
+    }
+    
+    init(_ codesStr: String) {
+        super.init()
+        
+        codes = codesStr.components(separatedBy: ",")
     }
 }

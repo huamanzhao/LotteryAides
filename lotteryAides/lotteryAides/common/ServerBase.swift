@@ -17,8 +17,8 @@ class ServerBase: NSObject {
             let statusCode = serverResponse.response!.statusCode
             if statusCode == 200 {
                 if let value = serverResponse.result.value {
-                    let errMsgDic = SwiftyJSON.JSON(value).dictionaryValue
-                    if let messageJSON = errMsgDic["errorMessage"] {
+                    let resultDic = SwiftyJSON.JSON(value).dictionaryValue
+                    if let messageJSON = resultDic["errorMessage"] {
                         let errorMessage = messageJSON.stringValue
                         if errorMessage.isEmpty {
                             call!(true, response, serverResponse)

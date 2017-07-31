@@ -10,15 +10,13 @@ import Foundation
 import Alamofire
 
 class RegistRequest: RequestBase {
-    var phoneNumber : String = ""
+    var phone : String = ""
     var password : String = ""
-    var deviceId : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phoneNumber" : phoneNumber,
-            "password" : password,
-            "deviceId" : deviceId
+            "phone" : phone,
+            "password" : password
         ]
         
         return request

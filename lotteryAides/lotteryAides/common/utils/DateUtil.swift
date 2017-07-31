@@ -617,4 +617,12 @@ extension Date {
 
 }
 
+extension String {
+    //字符串按照指定格式转换成NSDate
+    public func toDate(format: String) -> Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: self)
+    }
+}
 

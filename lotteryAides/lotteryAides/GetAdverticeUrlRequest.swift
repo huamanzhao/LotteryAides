@@ -1,27 +1,15 @@
 //
-//  ChangePasswordRequest.swift
+//  GetAdverticeUrlRequest.swift
 //  lotteryAides
 //
-//  Created by zhccc on 2017/7/29.
+//  Created by zhccc on 2017/7/30.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class ChangePasswordRequest: RequestBase {
-    var phone : String = ""
-    var newPswd : String = ""
-    
-    func getRequest() -> [String : String]{
-        let request = [
-            "phone" : phone,
-            "newPswd" : newPswd
-        ]
-        
-        return request
-    }
-    
+class GetAdverticeUrlRequest: RequestBase {
     func doRequest(_ callback : ((_ isOK: Bool, _ response: ServerResponseBase) -> Void)?){
         let res = ServerResponseBase()
         let util = ServerBase()
@@ -39,6 +27,6 @@ class ChangePasswordRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_changepwd", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_index", method: .post, parameters: nil)//getRequest())
     }
 }

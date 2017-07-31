@@ -14,15 +14,17 @@ class ServerResponseBase: NSObject {
     var code = "0"
     var message = ""
     var js : SwiftyJSON.JSON?
+    var resultDic : [String : SwiftyJSON.JSON]!
     
     func parseResponse(_ json : Alamofire.Result<Any>){
-        if let value = json.value {
-            js = SwiftyJSON.JSON(value)
-            code = js!["code"].stringValue
-            message = js!["message"].stringValue
-        }else {
+        if json.value == nil {
             code = "1"
             message = "未知错误"
+            return
         }
+        
+        
+        let value = json.value!
+        resultDic = SwiftyJSON.JSON(value).dictionaryValue
     }
 }

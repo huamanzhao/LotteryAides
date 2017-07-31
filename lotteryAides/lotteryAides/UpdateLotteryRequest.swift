@@ -1,22 +1,28 @@
 //
-//  ChangePasswordRequest.swift
+//  UpdateLotteryRequest.swift
 //  lotteryAides
 //
-//  Created by zhccc on 2017/7/29.
+//  Created by zhccc on 2017/7/30.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class ChangePasswordRequest: RequestBase {
-    var phone : String = ""
-    var newPswd : String = ""
+class UpdateLotteryRequest: RequestBase {
+    var id = ""
+    var isRead = true
+    var isLucky = false
+    var level = 0
+    var prize = 0
     
     func getRequest() -> [String : String]{
         let request = [
-            "phone" : phone,
-            "newPswd" : newPswd
+            "id" : id,
+            "isRead" : isRead ? "1" : "2",
+            "isLucky" : isLucky ? "1" : "2",
+            "level" : "\(level)",
+            "prize" : "\(prize)"
         ]
         
         return request
@@ -39,6 +45,6 @@ class ChangePasswordRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_changepwd", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_updateTicket", method: .post, parameters: getRequest())
     }
 }

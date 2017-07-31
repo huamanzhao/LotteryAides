@@ -15,7 +15,7 @@ let refreshConsumeEvent = "refreshConsumeEvent"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var config: UserConfig! 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
@@ -27,6 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         JPUSHService.setup(withOption: launchOptions, appKey: "3f83347939ed7375e64e48b8", channel: "APPLESTORE", apsForProduction: false)
         JPUSHService.resetBadge()
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        config = getUserConfig()
+        if !config.getNeedGuide() {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            let adverticeVC = main.instantiateViewController(withIdentifier: "advertice")
+            
+            window?.rootViewController = adverticeVC
+            window?.makeKeyAndVisible()
+        }
         
         return true
     }
@@ -68,6 +78,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         let localNotification = Notification(name: Notification.Name(rawValue: "localNotification"), object: nil, userInfo: notification.userInfo)
         NotificationCenter.default.post(localNotification)
+    }
+    
+    func getUserConfig() -> UserConfig {
+        if config == nil {
+            config = UserConfig()
+            config.getLocalUserInfo()
+        }
+        
+        return config
     }
 }
 
