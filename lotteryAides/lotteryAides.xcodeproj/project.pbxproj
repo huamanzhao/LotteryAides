@@ -51,6 +51,8 @@
 		956E0AB21F2E060200E65DF0 /* GetAdverticeUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */; };
 		956E0AB41F2E061400E65DF0 /* GetAdverticeUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */; };
 		958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDA1F2E187D002330AA /* UserConfig.swift */; };
+		958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDC1F2ED695002330AA /* GetLotteryListRequest.swift */; };
+		958A5EDF1F2ED6B5002330AA /* GetLotteryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDE1F2ED6B5002330AA /* GetLotteryListResponse.swift */; };
 		95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF92251F271F2C00E71892 /* AppDelegate.swift */; };
 		95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CF92291F271F2C00E71892 /* Main.storyboard */; };
 		95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CF922C1F271F2C00E71892 /* Assets.xcassets */; };
@@ -138,6 +140,8 @@
 		956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlRequest.swift; sourceTree = "<group>"; };
 		956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlResponse.swift; sourceTree = "<group>"; };
 		958A5EDA1F2E187D002330AA /* UserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
+		958A5EDC1F2ED695002330AA /* GetLotteryListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetLotteryListRequest.swift; path = server/GetLotteryListRequest.swift; sourceTree = "<group>"; };
+		958A5EDE1F2ED6B5002330AA /* GetLotteryListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLotteryListResponse.swift; sourceTree = "<group>"; };
 		95CF92221F271F2C00E71892 /* lotteryAides.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotteryAides.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CF92251F271F2C00E71892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CF922A1F271F2C00E71892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				956E0A9D1F2CE69300E65DF0 /* ChangePasswordRequest.swift */,
 				956E0A9F1F2CE70900E65DF0 /* AddLotteryRequest.swift */,
 				956E0AAB1F2DE15F00E65DF0 /* UpdateLotteryRequest.swift */,
+				958A5EDC1F2ED695002330AA /* GetLotteryListRequest.swift */,
+				958A5EDE1F2ED6B5002330AA /* GetLotteryListResponse.swift */,
 				956E0AA91F2DE0A700E65DF0 /* GetPublishRequest.swift */,
 				956E0AA51F2D7B1D00E65DF0 /* GetPublishResponse.swift */,
 				956E0AAD1F2E048100E65DF0 /* GetUserStatusRequest.swift */,
@@ -516,8 +522,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				958A5EDF1F2ED6B5002330AA /* GetLotteryListResponse.swift in Sources */,
 				95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */,
 				956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */,
+				958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */,
 				956E0AAC1F2DE15F00E65DF0 /* UpdateLotteryRequest.swift in Sources */,
 				956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */,
 				956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */,

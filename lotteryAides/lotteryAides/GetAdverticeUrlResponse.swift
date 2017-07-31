@@ -13,11 +13,13 @@ import SwiftyJSON
 class GetAdverticeUrlResponse : ServerResponseBase {
     var adUrl = ""
     
-    override func parseResponse(_ json: Alamofire.Result<Any>) {
-        super.parseResponse(json)
+    override func parseResponse(_ result: Alamofire.Result<Any>) {
+        super.parseResponse(result)
+        if code == "1" {
+            return
+        }
         
-        let value = json.value as! JSON
-        if let data = value.dictionary {
+        if let data = json.dictionary {
             if let statusJS = data["url"] {
                 adUrl = statusJS.stringValue
             }

@@ -13,18 +13,15 @@ import SwiftyJSON
 class ServerResponseBase: NSObject {
     var code = "0"
     var message = ""
-    var js : SwiftyJSON.JSON?
-    var resultDic : [String : SwiftyJSON.JSON]!
+    var json : SwiftyJSON.JSON!
     
-    func parseResponse(_ json : Alamofire.Result<Any>){
-        if json.value == nil {
+    func parseResponse(_ result : Alamofire.Result<Any>){
+        if result.value == nil {
             code = "1"
             message = "未知错误"
             return
         }
         
-        
-        let value = json.value!
-        resultDic = SwiftyJSON.JSON(value).dictionaryValue
+        json = SwiftyJSON.JSON(result.value!)
     }
 }

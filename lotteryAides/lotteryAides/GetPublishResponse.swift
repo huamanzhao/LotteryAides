@@ -13,13 +13,13 @@ import SwiftyJSON
 class GetPublishResponse : ServerResponseBase {
     var publishInfo : LotteryPublish!
     
-    override func parseResponse(_ json : Alamofire.Result<Any>) {
-        super.parseResponse(json)
+    override func parseResponse(_ result : Alamofire.Result<Any>) {
+        super.parseResponse(result)
         if code == "1" {
             return
         }
         
         publishInfo = LotteryPublish()
-        publishInfo.parseJson(resultDic)
+        publishInfo.parseJson(json)
     }
 }

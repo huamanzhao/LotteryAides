@@ -101,7 +101,7 @@ class RegistLoginViewController: UIViewController {
     //立即注册按钮
     @IBAction func registButtonPressed(_ sender: Any) {
         //ZC_DEBUG
-        tempTest1()
+        tempTest5()
         return
         
         funcType = FuncType.regist
@@ -199,12 +199,10 @@ class RegistLoginViewController: UIViewController {
         request.phone = phoneTF.text!
         request.newPswd = passwordTF.text!
         request.doRequest { (isOK, response) in
-            print("isOK:" + "\(isOK)")
+            print("findPassword isOK:" + "\(isOK)")
             print("code:" + response.code)
             self.view.makeToast("重置成功：" + "\(isOK)")
         }
-        
-        //TODO
     }
     
     func checkPhoneInput() -> Bool {
@@ -233,17 +231,18 @@ class RegistLoginViewController: UIViewController {
     
     //ZC_DEBUG
     func tempTest() {
-        let code1 = LotteryCode("8,11,22,30,35,3,7")
+        let code1 = LotteryCode("1,6,17,18,22,26,27")
+        let code2 = LotteryCode("3,5,6,10,12,20,22")
         
         let request = AddLotteryRequest()
-        request.name = "1"
-        request.term = "17083"
+        request.name = "4"
+        request.term = "17084"
         request.publishDate = "2017/07/19"
-        request.cost = 6
-        request.multiple = 1
-        request.codes = [code1]
+        request.cost = 20
+        request.multiple = 10
+        request.codes = [code1, code2]
         request.doRequest { (isOK, response) in
-            print("isOK:" + "\(isOK)")
+            print("tempTest isOK:" + "\(isOK)")
             print("code:" + response.code)
         }
         
@@ -254,7 +253,73 @@ class RegistLoginViewController: UIViewController {
         request.name = "1"
         request.term = "17072927"
         request.doRequest { (isOK, response) in
-            print("isOK:" + "\(isOK)")
+            print("tempTest1 isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            print("message:" + response.message)
+        }
+    }
+    
+    func tempTest2() {
+        let request = GetLotteryListRequest()
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                self.view.makeToast("获取订单列表OK")
+            }
+            else {
+                self.view.makeToast("获取订单列表Failed")
+            }
+            print("tempTest2 isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            print("message:" + response.message)
+        }
+    }
+    
+    func tempTest3() {
+        let request = UpdateLotteryRequest()
+        request.id = ""
+        request.isLucky = true
+        request.isRead = true
+        request.level = 1
+        request.prize = 20000
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                self.view.makeToast("更新彩票中奖信息OK")
+            }
+            else {
+                self.view.makeToast("更新彩票中奖信息Failed")
+            }
+            print("tempTest3 isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            print("message:" + response.message)
+        }
+    }
+    
+    func tempTest4() {
+        let request = GetUserStatusRequest()
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                self.view.makeToast("获取用户状态OK")
+            }
+            else {
+                self.view.makeToast("获取用户状态Failed")
+            }
+            print("tempTest4 isOK:" + "\(isOK)")
+            print("code:" + response.code)
+            print("message:" + response.message)
+        }
+    }
+    
+    func tempTest5() {
+        let request = GetAdverticeUrlRequest()
+        request.doRequest { (isOK, response) in
+            if isOK && response.code == "0" {
+                self.view.makeToast("获取广告URlOK")
+            }
+            else {
+                self.view.makeToast("获取广告URlFailed")
+            }
+            
+            print("GetAdverticeUrl isOK:" + "\(isOK)")
             print("code:" + response.code)
             print("message:" + response.message)
         }

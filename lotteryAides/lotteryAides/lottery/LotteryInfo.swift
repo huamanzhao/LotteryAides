@@ -31,10 +31,10 @@ class LotteryInfo: NSObject {
         super.init()
         
         codes = [LotteryCode]()
-        parse(js)
+        parseJson(js)
     }
     
-    func parse(_ js: SwiftyJSON.JSON) {
+    func parseJson(_ js: SwiftyJSON.JSON) {
         let data = js.dictionary
         if data != nil {
             if let idJS = data!["id"] {

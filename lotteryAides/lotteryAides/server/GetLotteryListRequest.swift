@@ -1,29 +1,26 @@
 //
-//  GetPublishRequest.swift
+//  GetLotteryListRequest.swift
 //  lotteryAides
 //
-//  Created by zhccc on 2017/7/30.
+//  Created by zhccc on 2017/7/31.
 //  Copyright © 2017年 zhccc. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-class GetPublishRequest: RequestBase {
-    var name : String = ""
-    var term : String = ""
+class GetLotteryListRequest: RequestBase {
     
     func getRequest() -> [String : String]{
         let request = [
-            "name" : name,
-            "term" : term
+            "phone" : UserConfig.getInstance().getPhone()
         ]
         
         return request
     }
     
-    func doRequest(_ callback : ((_ isOK: Bool, _ response: GetPublishResponse) -> Void)?) {
-        let res = GetPublishResponse()
+    func doRequest(_ callback : ((_ isOK: Bool, _ response: GetLotteryListResponse) -> Void)?) {
+        let res = GetLotteryListResponse()
         let util = ServerBase()
         let request = generateRequest()
         request.responseJSON { (data) in
@@ -41,6 +38,6 @@ class GetPublishRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_getPublish", method: .get, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_getTickets", method: .get, parameters: getRequest())
     }
 }
