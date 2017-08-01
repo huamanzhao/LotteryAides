@@ -18,6 +18,7 @@ class UpdateLotteryRequest: RequestBase {
     
     func getRequest() -> [String : String]{
         let request = [
+            "phone" : UserConfig.getInstance().getPhone(),
             "id" : id,
             "isRead" : isRead ? "1" : "2",
             "isLucky" : isLucky ? "1" : "2",

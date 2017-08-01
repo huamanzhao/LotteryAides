@@ -15,9 +15,11 @@ class UserConfig: AnyObject {
     private var userType = BASIC_TYPE
     private var adUrl = ""
     private var needGuide = true
+    private var password = ""
     
     private var userDefault : UserDefaults!
     private let default_phone  = "default_phone"
+    private let default_password  = "default_password"
     private let default_status = "default_status"
     private let default_type   = "default_type"
     private let default_adUrl  = "default_adUrl"
@@ -35,6 +37,10 @@ class UserConfig: AnyObject {
     
     func getPhone() -> String {
         return phone
+    }
+    
+    func getPassword() -> String {
+        return password
     }
     
     func getStatus() -> String {
@@ -57,6 +63,10 @@ class UserConfig: AnyObject {
         self.phone = phone
     }
     
+    func setPassword(_ password: String) {
+        self.password = password
+    }
+    
     func setPromptStatus(_ status: String) {
         self.promptStatus = status
     }
@@ -71,6 +81,7 @@ class UserConfig: AnyObject {
     
     func saveUserInfo() {
         userDefault.setValue(phone, forKey: default_phone)
+        userDefault.setValue(password, forKey: default_password)
         userDefault.setValue(promptStatus, forKey: default_status)
         userDefault.setValue(userType, forKey: default_type)
         userDefault.setValue(adUrl, forKey: default_adUrl)
@@ -81,6 +92,7 @@ class UserConfig: AnyObject {
     
     func getLocalUserInfo() {
         phone = readLocalData(default_phone)
+        password = readLocalData(default_password)
         promptStatus = readLocalData(default_status)
         userType = readLocalData(default_type)
         adUrl = readLocalData(default_adUrl)
@@ -93,9 +105,10 @@ class UserConfig: AnyObject {
     func clearData() {
         //清空登录信息
         userDefault.setValue(nil, forKey: default_phone)
-        userDefault.setValue(nil, forKey: default_status)
+        userDefault.setValue(nil, forKey: default_password)
         
         phone = ""
+        password = ""
         promptStatus = "0"
         
         userDefault.synchronize()
@@ -103,7 +116,7 @@ class UserConfig: AnyObject {
     
     func readLocalData(_ key: String) -> String {
         var result = userDefault.string(forKey: key)
-        if result == nil {
+        if result == nil  {
             result = ""
         }
         

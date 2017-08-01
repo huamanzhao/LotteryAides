@@ -21,7 +21,7 @@ class GetLotteryListResponse : ServerResponseBase {
         
         lotteryList = [LotteryInfo]()
         
-        let datas = json["data"].arrayValue
+        let datas = json["codes"].arrayValue
         for data in datas {
             let lottery = LotteryInfo(data)
             lotteryList.append(lottery)

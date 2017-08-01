@@ -41,6 +41,6 @@ class GetPublishRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_getPublish", method: .get, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "cp_getPublish", method: .post, parameters: getRequest())
     }
 }

@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var config: UserConfig! 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
-        
         IQKeyboardManager.sharedManager().enable = true
         
         //极光推送

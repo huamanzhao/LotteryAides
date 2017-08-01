@@ -5,38 +5,11 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="qPi-5z-hbv">
-            <objects>
-                <tableViewController id="LFl-lx-zjF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="w8U-l3-cx7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QgG-gD-43p">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QgG-gD-43p" id="eRV-bY-MLR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="LFl-lx-zjF" id="TUu-Yo-k4O"/>
-                            <outlet property="delegate" destination="LFl-lx-zjF" id="1yq-xq-SXV"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DfG-C5-0nG"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="32g-Kl-p1v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481" y="125"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cpN-Rc-AkB">
             <objects>
@@ -46,12 +19,101 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="LFl-lx-zjF" kind="relationship" relationship="rootViewController" id="JhV-x8-aUb"/>
+                        <segue destination="8gu-4q-Qf8" kind="relationship" relationship="rootViewController" id="45l-Uv-v2m"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6g4-E7-PMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-346" y="125"/>
         </scene>
+        <!--Lottery Main View Controller-->
+        <scene sceneID="WfM-Y5-0Do">
+            <objects>
+                <viewController storyboardIdentifier="lotteryMain" id="8gu-4q-Qf8" customClass="LotteryMainViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W3c-t2-6Xn"/>
+                        <viewControllerLayoutGuide type="bottom" id="zWs-sJ-VcR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="k0E-da-cYm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mk-ne-HdC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZhW-CW-1G3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdH-EU-MNk">
+                                        <rect key="frame" x="112" y="329" width="150" height="142"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZdH-EU-MNk" secondAttribute="height" multiplier="75:71" id="AFM-hG-1FI"/>
+                                        </constraints>
+                                        <size key="titleShadowOffset" width="8" height="8"/>
+                                        <state key="normal" image="btn_add_large">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点此添加新彩票" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt0-oL-KwO">
+                                        <rect key="frame" x="75" y="479" width="225" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在查询您的彩票..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-gy-9w4">
+                                        <rect key="frame" x="111" y="223" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cei-s4-Jn1">
+                                        <rect key="frame" x="83" y="224" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="1.2" id="AmQ-rD-1jL"/>
+                                    <constraint firstItem="ZhW-CW-1G3" firstAttribute="top" secondItem="8mk-ne-HdC" secondAttribute="top" id="PEO-HS-zWr"/>
+                                    <constraint firstItem="ZhW-CW-1G3" firstAttribute="leading" secondItem="8mk-ne-HdC" secondAttribute="leading" id="Q7T-u7-ucv"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" id="WX5-bM-i7b"/>
+                                    <constraint firstItem="lt0-oL-KwO" firstAttribute="width" secondItem="ZhW-CW-1G3" secondAttribute="width" multiplier="0.6" id="XIk-Zc-kBr"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="cei-s4-Jn1" secondAttribute="centerY" id="gvj-s0-o5k"/>
+                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerX" secondItem="ZhW-CW-1G3" secondAttribute="centerX" id="iOo-bl-aoI"/>
+                                    <constraint firstItem="lt0-oL-KwO" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" id="jQ5-Mi-XEW"/>
+                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="width" secondItem="ZhW-CW-1G3" secondAttribute="width" multiplier="0.4" id="k4L-3m-oPU"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="leading" secondItem="cei-s4-Jn1" secondAttribute="trailing" constant="8" id="kLq-ux-YGT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZhW-CW-1G3" secondAttribute="bottom" id="vpw-3O-5JY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZhW-CW-1G3" secondAttribute="trailing" id="xNE-vV-eM3"/>
+                                    <constraint firstItem="lt0-oL-KwO" firstAttribute="top" secondItem="ZdH-EU-MNk" secondAttribute="bottom" constant="8" id="yaU-V2-dDh"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="0.7" id="yqS-X5-CP9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8mk-ne-HdC" firstAttribute="centerX" secondItem="k0E-da-cYm" secondAttribute="centerX" id="9zL-XE-yuJ"/>
+                            <constraint firstItem="8mk-ne-HdC" firstAttribute="width" secondItem="k0E-da-cYm" secondAttribute="width" id="SrE-fE-5T2"/>
+                            <constraint firstItem="8mk-ne-HdC" firstAttribute="top" secondItem="k0E-da-cYm" secondAttribute="top" id="XT8-g4-iom"/>
+                            <constraint firstItem="zWs-sJ-VcR" firstAttribute="top" secondItem="8mk-ne-HdC" secondAttribute="bottom" id="ilj-yn-iE8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6df-5b-uGO"/>
+                    <connections>
+                        <outlet property="addButton" destination="ZdH-EU-MNk" id="1P4-ij-kxp"/>
+                        <outlet property="addLabel" destination="lt0-oL-KwO" id="ykt-tv-dFg"/>
+                        <outlet property="descriptLabel" destination="ndi-gy-9w4" id="hy1-FC-KhU"/>
+                        <outlet property="descriptView" destination="8mk-ne-HdC" id="EQP-eo-ZBt"/>
+                        <outlet property="indicatorView" destination="cei-s4-Jn1" id="XKK-bY-OPa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0T0-Dt-NI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="437.60000000000002" y="122.78860569715144"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="bg_gray" width="320" height="538"/>
+        <image name="btn_add_large" width="150" height="142"/>
+    </resources>
 </document>

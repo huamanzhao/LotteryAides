@@ -227,6 +227,7 @@
 		9549B7781F2AE31300B4BE83 /* lottery */ = {
 			isa = PBXGroup;
 			children = (
+				9549B77A1F2AE34000B4BE83 /* lottery.storyboard */,
 				956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */,
 				956E0AA31F2D5EE200E65DF0 /* LotteryCode.swift */,
 				956E0AA71F2D7B8D00E65DF0 /* LotteryPublish.swift */,
@@ -239,6 +240,7 @@
 		9549B7791F2AE31F00B4BE83 /* personal */ = {
 			isa = PBXGroup;
 			children = (
+				9549B77C1F2AE34D00B4BE83 /* personal.storyboard */,
 				956E0A6D1F2C38F600E65DF0 /* controller */,
 			);
 			name = personal;
@@ -247,9 +249,9 @@
 		956E0A6C1F2C381A00E65DF0 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */,
 				956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */,
 				956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */,
-				956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */,
 				956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */,
 			);
 			name = controller;
@@ -362,8 +364,6 @@
 				956E0A811F2C3A1500E65DF0 /* RegistLoginViewController.swift */,
 				956E0A821F2C3A1500E65DF0 /* RootViewController.swift */,
 				95CF92291F271F2C00E71892 /* Main.storyboard */,
-				9549B77A1F2AE34000B4BE83 /* lottery.storyboard */,
-				9549B77C1F2AE34D00B4BE83 /* personal.storyboard */,
 				95CF922E1F271F2C00E71892 /* LaunchScreen.storyboard */,
 			);
 			name = main;

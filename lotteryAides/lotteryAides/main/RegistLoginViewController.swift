@@ -34,7 +34,7 @@ class RegistLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
+//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
 
         setupSubView()
         
@@ -100,10 +100,6 @@ class RegistLoginViewController: UIViewController {
     
     //立即注册按钮
     @IBAction func registButtonPressed(_ sender: Any) {
-        //ZC_DEBUG
-        tempTest5()
-        return
-        
         funcType = FuncType.regist
         
         passwordTF.text = ""
@@ -153,19 +149,17 @@ class RegistLoginViewController: UIViewController {
             if isOK && response.code == "0" {
                 let config = UserConfig.getInstance()
                 config.setPhone(self.phoneTF.text!)
+                config.setPassword(self.passwordTF.text!)
                 config.saveUserInfo()
                 
                 self.view.makeToast("登陆成功")
+                
+                self.openLotteryVC()
             }
             else {
-                
                 self.view.makeToast("登陆失败")
             }
         }
-        
-        
-        //TODO
-//        self.performSegue(withIdentifier: "showAdvertice", sender: self)
     }
     
     //用户注册
@@ -199,8 +193,6 @@ class RegistLoginViewController: UIViewController {
         request.phone = phoneTF.text!
         request.newPswd = passwordTF.text!
         request.doRequest { (isOK, response) in
-            print("findPassword isOK:" + "\(isOK)")
-            print("code:" + response.code)
             self.view.makeToast("重置成功：" + "\(isOK)")
         }
     }
@@ -227,6 +219,12 @@ class RegistLoginViewController: UIViewController {
         
         displayCorrectLayer(passwordBgView)
         return true
+    }
+    
+    func openLotteryVC() {
+        let lotteryStory = UIStoryboard(name: "lottery", bundle: nil)
+        let naviVC = lotteryStory.instantiateViewController(withIdentifier: "lottery")
+        self.present(naviVC, animated: true, completion: nil)
     }
     
     //ZC_DEBUG
@@ -257,73 +255,7 @@ class RegistLoginViewController: UIViewController {
             print("code:" + response.code)
             print("message:" + response.message)
         }
-    }
-    
-    func tempTest2() {
-        let request = GetLotteryListRequest()
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("获取订单列表OK")
-            }
-            else {
-                self.view.makeToast("获取订单列表Failed")
-            }
-            print("tempTest2 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
-    }
-    
-    func tempTest3() {
-        let request = UpdateLotteryRequest()
-        request.id = ""
-        request.isLucky = true
-        request.isRead = true
-        request.level = 1
-        request.prize = 20000
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("更新彩票中奖信息OK")
-            }
-            else {
-                self.view.makeToast("更新彩票中奖信息Failed")
-            }
-            print("tempTest3 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
-    }
-    
-    func tempTest4() {
-        let request = GetUserStatusRequest()
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("获取用户状态OK")
-            }
-            else {
-                self.view.makeToast("获取用户状态Failed")
-            }
-            print("tempTest4 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
-    }
-    
-    func tempTest5() {
-        let request = GetAdverticeUrlRequest()
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("获取广告URlOK")
-            }
-            else {
-                self.view.makeToast("获取广告URlFailed")
-            }
-            
-            print("GetAdverticeUrl isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
-    }
+    }    
     
 }
 

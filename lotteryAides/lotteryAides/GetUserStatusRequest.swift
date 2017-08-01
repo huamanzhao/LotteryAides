@@ -30,6 +30,6 @@ class GetUserStatusRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_getStatus", method: .get, parameters: nil)//getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "interface/getUserStatus", method: .post, parameters: nil)
     }
 }
