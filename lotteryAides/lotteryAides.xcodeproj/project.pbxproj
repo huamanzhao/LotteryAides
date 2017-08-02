@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
 		9539D6481F27322700D0F8C4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; };
 		9539D6491F27322700D0F8C4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9539D64A1F27322700D0F8C4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92451F27276D00E71892 /* SwiftyJSON.framework */; };
@@ -104,6 +105,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryCodeView.swift; sourceTree = "<group>"; };
 		9549B77A1F2AE34000B4BE83 /* lottery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lottery.storyboard; sourceTree = "<group>"; };
 		9549B77C1F2AE34D00B4BE83 /* personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = personal.storyboard; sourceTree = "<group>"; };
 		956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInfo.swift; path = lottery/LotteryInfo.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */,
 				956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */,
 				956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */,
+				9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				956E0AB21F2E060200E65DF0 /* GetAdverticeUrlRequest.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
 				956E0A9C1F2CE63B00E65DF0 /* LogoutRequest.swift in Sources */,
+				9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */,
 				956E0A9A1F2CE5FB00E65DF0 /* LoginRequest.swift in Sources */,
 				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
 				956E0A831F2C3A1500E65DF0 /* AdverticeViewController.swift in Sources */,

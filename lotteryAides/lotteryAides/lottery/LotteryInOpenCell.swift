@@ -8,6 +8,9 @@
 
 import UIKit
 
+let LotteryInOpenCellName = "LotteryInOpenCell"
+let LotteryInOpenCellId   = "LotteryInOpenCellId"
+
 class LotteryInOpenCell: UITableViewCell {
 
     override func awakeFromNib() {
