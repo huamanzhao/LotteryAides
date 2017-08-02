@@ -607,11 +607,11 @@ public extension Int {
 
 extension Date {
     //MARK- 比较
-    public func isGreaterThan(_ date: Date) -> Bool {
+    public func isLaterThan(_ date: Date) -> Bool {
         return (self.compare(date) == .orderedDescending)
     }
     
-    public func isLessThan(_ date: Date) -> Bool {
+    public func isEarlierThan(_ date: Date) -> Bool {
         return (self.compare(date) == .orderedAscending)
     }
 

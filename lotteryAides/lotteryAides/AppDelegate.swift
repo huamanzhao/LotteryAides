@@ -15,7 +15,10 @@ let refreshConsumeEvent = "refreshConsumeEvent"
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var config: UserConfig! 
+    var config: UserConfig!
+    var lotteryList: [LotteryInfo]!
+    var waitingLotteries: [LotteryInfo]!
+    var publishLotteries: [LotteryInfo]!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.sharedManager().enable = true
@@ -35,6 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = adverticeVC
             window?.makeKeyAndVisible()
         }
+        
+        lotteryList = [LotteryInfo]()
+        waitingLotteries = [LotteryInfo]()
+        publishLotteries = [LotteryInfo]()
         
         return true
     }
@@ -85,6 +92,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return config
+    }
+    
+    func updateLotteryList(_ list: [LotteryInfo]) {
+        lotteryList = list
+        
+        let currTime = Date.localDate()
+        for lottery in list {
+            if lottery.publishDate.isLaterThan(currTime) {
+                waitingLotteries.append(lottery)
+            }
+            else {
+                if !lottery.isRead {
+                    publishLotteries.append(lottery)
+                }
+            }
+        }
     }
 }
 

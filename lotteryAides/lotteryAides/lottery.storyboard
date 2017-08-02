@@ -62,13 +62,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在查询您的彩票..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-gy-9w4">
-                                        <rect key="frame" x="111" y="223" width="153" height="21"/>
+                                        <rect key="frame" x="120.5" y="223" width="153" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cei-s4-Jn1">
-                                        <rect key="frame" x="83" y="224" width="20" height="20"/>
+                                        <rect key="frame" x="92.5" y="224" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +76,7 @@
                                     <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="1.2" id="AmQ-rD-1jL"/>
                                     <constraint firstItem="ZhW-CW-1G3" firstAttribute="top" secondItem="8mk-ne-HdC" secondAttribute="top" id="PEO-HS-zWr"/>
                                     <constraint firstItem="ZhW-CW-1G3" firstAttribute="leading" secondItem="8mk-ne-HdC" secondAttribute="leading" id="Q7T-u7-ucv"/>
-                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" id="WX5-bM-i7b"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" multiplier="1.05" id="WX5-bM-i7b"/>
                                     <constraint firstItem="lt0-oL-KwO" firstAttribute="width" secondItem="ZhW-CW-1G3" secondAttribute="width" multiplier="0.6" id="XIk-Zc-kBr"/>
                                     <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="cei-s4-Jn1" secondAttribute="centerY" id="gvj-s0-o5k"/>
                                     <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerX" secondItem="ZhW-CW-1G3" secondAttribute="centerX" id="iOo-bl-aoI"/>
@@ -110,6 +110,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0T0-Dt-NI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.60000000000002" y="122.78860569715144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Uld-s6-hri">
+            <objects>
+                <viewController id="faC-AK-LNp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pSZ-dP-Wcl"/>
+                        <viewControllerLayoutGuide type="bottom" id="XVt-l8-1f4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C4r-91-UUp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QBD-i4-OU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209" y="123"/>
         </scene>
     </scenes>
     <resources>

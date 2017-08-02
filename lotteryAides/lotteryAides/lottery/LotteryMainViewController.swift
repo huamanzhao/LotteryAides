@@ -16,6 +16,16 @@ class LotteryMainViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addLabel: UILabel!
     
+    @IBOutlet weak var centerYCS: NSLayoutConstraint!
+    @IBOutlet weak var widthPercentCS: NSLayoutConstraint!
+    
+    var lotteryList: [LotteryInfo]!
+    var waitingLotteries: [LotteryInfo]!
+    var publishLotteries: [LotteryInfo]!
+    
+    let NoFreshLotteriesDesc = "未查询到等待通知的彩票"
+    let QueryLotteriesError = "查询个人彩票信息失败"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,15 +52,30 @@ class LotteryMainViewController: UIViewController {
                 self.indicatorView.stopAnimating()
                 
                 if isOK && response.code == "0" {
+                    self.lotteryList = response.lotteryList
+                    UserConfig.updateLotteryList(self.lotteryList!)
+                    self.waitingLotteries = UserConfig.getWaitingLotteries()
+                    self.publishLotteries = UserConfig.getPublishLotteries()
                     
+                    //没有新彩票了
+                    if self.waitingLotteries.isEmpty && self.publishLotteries.isEmpty {
+                        self.descriptLabel.text = self.NoFreshLotteriesDesc
+                        return
+                    }
                     
-                    
+                    //有开奖的彩票、等待提醒的彩票
+                    self.showLotteryListTable()
+                }
+                else {
+                    self.descriptLabel.text = self.QueryLotteriesError
                 }
                 
             }
             
         }
-        
+    }
+    
+    func showLotteryListTable() {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
