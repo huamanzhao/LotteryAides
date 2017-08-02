@@ -13,7 +13,7 @@ class LotteryInfo: NSObject {
     var id = ""
     var name = ""
     var term = ""
-    var publishDate: Date!
+    var publishDate = Date()
     var mutiple = 0
     var cost = 0
     var addDate: Date!
@@ -47,7 +47,9 @@ class LotteryInfo: NSObject {
                 term = termJS.stringValue
             }
             if let publishJS = data!["publishDate"] {
-                publishDate = publishJS.stringValue.toDate(format: FORMAT_DATE_TIME)
+                if let date = publishJS.stringValue.toDate(format: FORMAT_DATE_TIME) {
+                    publishDate = date
+                }
             }
             if let mutipleJS = data!["mutiple"] {
                 mutiple = mutipleJS.intValue

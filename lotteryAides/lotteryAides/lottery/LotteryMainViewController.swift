@@ -7,24 +7,40 @@
 //
 
 import UIKit
+import MBProgressHUD
 
-class LotteryMainViewController: UIViewController {
+class LotteryMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var descriptView: UIView!
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addLabel: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
-    @IBOutlet weak var centerYCS: NSLayoutConstraint!
-    @IBOutlet weak var widthPercentCS: NSLayoutConstraint!
+    @IBOutlet weak var buttonWidthCS: NSLayoutConstraint!
+    @IBOutlet weak var buttonBottomGapCS: NSLayoutConstraint!
+    @IBOutlet weak var addLabelWidth: NSLayoutConstraint!
     
-    var lotteryList: [LotteryInfo]!
-    var waitingLotteries: [LotteryInfo]!
-    var publishLotteries: [LotteryInfo]!
+    let bigButtonWidth = Constants.screenWidth * 0.4
+    let bigButtonBottomGap = Constants.screenHeight * 0.4
+    let smallButtonWidth = Constants.screenWidth * 0.15
+    let smallButtonBottomGap = CGFloat(12)
     
-    let NoFreshLotteriesDesc = "未查询到等待通知的彩票"
+    let FindingLotteries = "查询记录"
+    let NoFreshLotteriesDesc = "没有需要通知的彩票，请录入新彩票吧~"
     let QueryLotteriesError = "查询个人彩票信息失败"
+    let FoundValidLotteries = "已经查询到您的彩票记录"
+    
+    var hud : MBProgressHUD!
+    var firstShow = 0
+    var startY : CGFloat = 0
+    
+    var lotteryList = [LotteryInfo]()
+    var waitingLotteries = [LotteryInfo]()
+    var publishLotteries = [LotteryInfo]()
+    
+    var interval_delayQueay :TimeInterval = 0.8     //延迟执行查询彩票列表的时间
+    var interval_btnScale   :TimeInterval = 0.2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +49,26 @@ class LotteryMainViewController: UIViewController {
         
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg_navi_bar"), for: .default)
+        
+        tableView.estimatedRowHeight = 60
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        getLotteryList()
+        if firstShow == 0 {
+            buttonWidthCS.constant = smallButtonWidth
+            buttonBottomGapCS.constant = smallButtonBottomGap
+            
+            firstShow = 1
+        }
+        
+        //获取服务端彩票列表
+        //先显示hud，然后延迟执行服务端请求
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = FindingLotteries
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getLotteryList), userInfo: nil, repeats: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,71 +79,123 @@ class LotteryMainViewController: UIViewController {
     func getLotteryList() {
         GetLotteryListRequest().doRequest { (isOK, response) in
             DispatchQueue.main.async{
-                self.indicatorView.stopAnimating()
+                self.hud.hide(animated: true)
                 
                 if isOK && response.code == "0" {
                     self.lotteryList = response.lotteryList
-                    UserConfig.updateLotteryList(self.lotteryList!)
-                    self.waitingLotteries = UserConfig.getWaitingLotteries()
-                    self.publishLotteries = UserConfig.getPublishLotteries()
+                    if !self.lotteryList.isEmpty {
+                        //缓存
+                        UserConfig.updateLotteryList(self.lotteryList)
+                        self.waitingLotteries = UserConfig.getWaitingLotteries()
+                        self.publishLotteries = UserConfig.getPublishLotteries()
+                    }
                     
-                    //没有新彩票了
+                    //没有新彩票
                     if self.waitingLotteries.isEmpty && self.publishLotteries.isEmpty {
                         self.descriptLabel.text = self.NoFreshLotteriesDesc
+                        
+                        //切换到添加视图
+                        self.hideLotteryListTable()
+                        
                         return
                     }
                     
                     //有开奖的彩票、等待提醒的彩票
-                    self.showLotteryListTable()
+                    if self.tableView.isHidden == true {
+                        self.showLotteryListTable()
+                    }
+                    self.tableView.reloadData()
                 }
                 else {
-                    self.descriptLabel.text = self.QueryLotteriesError
+                    self.view.makeToast("请求服务端数据失败")
                 }
-                
             }
             
         }
     }
     
-    func showLotteryListTable() {
-    }
-    
-    @IBAction func addButtonPressed(_ sender: Any) {
-        tempTest3()
-    }
-    
-    func tempTest2() {
-        let request = GetLotteryListRequest()
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("获取订单列表OK")
-            }
-            else {
-                self.view.makeToast("获取订单列表Failed")
-            }
-            print("tempTest2 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
+    //隐藏tableView，显示空白面板
+    func hideLotteryListTable() {
+        //按钮、界面变化
+        UIView.animate(withDuration: 0.3, animations: {
+            self.buttonWidthCS.constant = self.bigButtonWidth
+            self.buttonBottomGapCS.constant = self.bigButtonBottomGap
+            self.tableView.alpha = 0
+            
+            self.view.layoutIfNeeded()
+        }) { (finished) in
+            self.tableView.isHidden = true
+            self.view.sendSubview(toBack: self.tableView)
         }
     }
     
-    func tempTest3() {
-        let request = UpdateLotteryRequest()
-        request.id = "2"
-        request.isLucky = true
-        request.isRead = true
-        request.level = 1
-        request.prize = 20000
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("更新彩票中奖信息OK")
+    //显示tableView，隐藏空白面板
+    func showLotteryListTable() {
+        self.tableView.isHidden = false
+        self.view.bringSubview(toFront: self.tableView)
+        self.view.bringSubview(toFront: self.addButton)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.buttonWidthCS.constant = self.smallButtonWidth
+            self.buttonBottomGapCS.constant = self.smallButtonBottomGap
+            self.tableView.alpha = 1
+            
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    @IBAction func addButtonPressed(_ sender: Any) {
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}
+
+
+/* 拖动tableView时，按钮的显示隐藏逻辑
+ * 1. 向下拖动，隐藏按钮
+ * 2. 向上拖动，显示按钮
+ */
+
+extension LotteryMainViewController : UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startY = scrollView.contentOffset.y
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentY = scrollView.contentOffset.y
+        if currentY > startY { //1. 向下拖动，隐藏按钮
+            if !addButton.isHidden {
+                hideAddButton()
             }
-            else {
-                self.view.makeToast("更新彩票中奖信息Failed")
+        }
+        else {  //2. 向上拖动，显示按钮
+            if addButton.isHidden {
+                showAddButton()
             }
-            print("tempTest3 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
+        }
+    }
+    
+    func hideAddButton() {
+        UIView.animate(withDuration: 0.2, animations: { 
+            self.addButton.alpha = 0
+        }) { (finished) in
+            self.addButton.isHidden = true
+        }
+    }
+    
+    func showAddButton() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.addButton.alpha = 1
+        }) { (finished) in
+            self.addButton.isHidden = false
         }
     }
 }

@@ -44,90 +44,88 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="ZhW-CW-1G3">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdH-EU-MNk">
-                                        <rect key="frame" x="112" y="329" width="150" height="142"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="ZdH-EU-MNk" secondAttribute="height" multiplier="75:71" id="AFM-hG-1FI"/>
-                                        </constraints>
-                                        <size key="titleShadowOffset" width="8" height="8"/>
-                                        <state key="normal" image="btn_add_large">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点此添加新彩票" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lt0-oL-KwO">
-                                        <rect key="frame" x="75" y="479" width="225" height="20.5"/>
+                                        <rect key="frame" x="127" y="479" width="121.5" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="121.5" id="q22-Xz-6KU"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在查询您的彩票..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-gy-9w4">
-                                        <rect key="frame" x="120.5" y="223" width="153" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-gy-9w4">
+                                        <rect key="frame" x="47" y="217" width="281" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cei-s4-Jn1">
-                                        <rect key="frame" x="92.5" y="224" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="1.2" id="AmQ-rD-1jL"/>
                                     <constraint firstItem="ZhW-CW-1G3" firstAttribute="top" secondItem="8mk-ne-HdC" secondAttribute="top" id="PEO-HS-zWr"/>
                                     <constraint firstItem="ZhW-CW-1G3" firstAttribute="leading" secondItem="8mk-ne-HdC" secondAttribute="leading" id="Q7T-u7-ucv"/>
-                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" multiplier="1.05" id="WX5-bM-i7b"/>
-                                    <constraint firstItem="lt0-oL-KwO" firstAttribute="width" secondItem="ZhW-CW-1G3" secondAttribute="width" multiplier="0.6" id="XIk-Zc-kBr"/>
-                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="cei-s4-Jn1" secondAttribute="centerY" id="gvj-s0-o5k"/>
-                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerX" secondItem="ZhW-CW-1G3" secondAttribute="centerX" id="iOo-bl-aoI"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" id="WX5-bM-i7b"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="width" secondItem="8mk-ne-HdC" secondAttribute="width" multiplier="0.75" id="eWX-NA-P8e"/>
                                     <constraint firstItem="lt0-oL-KwO" firstAttribute="centerX" secondItem="8mk-ne-HdC" secondAttribute="centerX" id="jQ5-Mi-XEW"/>
-                                    <constraint firstItem="ZdH-EU-MNk" firstAttribute="width" secondItem="ZhW-CW-1G3" secondAttribute="width" multiplier="0.4" id="k4L-3m-oPU"/>
-                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="leading" secondItem="cei-s4-Jn1" secondAttribute="trailing" constant="8" id="kLq-ux-YGT"/>
+                                    <constraint firstAttribute="bottom" secondItem="lt0-oL-KwO" secondAttribute="bottom" constant="167.5" id="p25-xL-Dhb"/>
                                     <constraint firstAttribute="bottom" secondItem="ZhW-CW-1G3" secondAttribute="bottom" id="vpw-3O-5JY"/>
                                     <constraint firstAttribute="trailing" secondItem="ZhW-CW-1G3" secondAttribute="trailing" id="xNE-vV-eM3"/>
-                                    <constraint firstItem="lt0-oL-KwO" firstAttribute="top" secondItem="ZdH-EU-MNk" secondAttribute="bottom" constant="8" id="yaU-V2-dDh"/>
-                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="0.7" id="yqS-X5-CP9"/>
+                                    <constraint firstItem="ndi-gy-9w4" firstAttribute="centerY" secondItem="8mk-ne-HdC" secondAttribute="centerY" multiplier="0.65" id="yqS-X5-CP9"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Fte-X4-eBy">
+                                <rect key="frame" x="-0.5" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="8gu-4q-Qf8" id="3AZ-uD-jyz"/>
+                                    <outlet property="delegate" destination="8gu-4q-Qf8" id="keO-Fn-eYm"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdH-EU-MNk">
+                                <rect key="frame" x="112" y="513" width="150" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZdH-EU-MNk" secondAttribute="height" multiplier="75:71" id="AFM-hG-1FI"/>
+                                    <constraint firstAttribute="width" constant="150" id="wnO-k6-rKy"/>
+                                </constraints>
+                                <size key="titleShadowOffset" width="8" height="8"/>
+                                <state key="normal" image="btn_add_large">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="8gu-4q-Qf8" eventType="touchUpInside" id="w4h-qf-6xd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zWs-sJ-VcR" firstAttribute="top" secondItem="Fte-X4-eBy" secondAttribute="bottom" id="5Q3-IS-UQG"/>
                             <constraint firstItem="8mk-ne-HdC" firstAttribute="centerX" secondItem="k0E-da-cYm" secondAttribute="centerX" id="9zL-XE-yuJ"/>
+                            <constraint firstItem="Fte-X4-eBy" firstAttribute="centerX" secondItem="k0E-da-cYm" secondAttribute="centerX" id="CQv-Cv-nII"/>
+                            <constraint firstItem="Fte-X4-eBy" firstAttribute="top" secondItem="W3c-t2-6Xn" secondAttribute="bottom" id="Q3a-8N-ZDM"/>
                             <constraint firstItem="8mk-ne-HdC" firstAttribute="width" secondItem="k0E-da-cYm" secondAttribute="width" id="SrE-fE-5T2"/>
+                            <constraint firstItem="ZdH-EU-MNk" firstAttribute="centerX" secondItem="k0E-da-cYm" secondAttribute="centerX" id="U7s-cN-YuS"/>
+                            <constraint firstItem="zWs-sJ-VcR" firstAttribute="top" secondItem="ZdH-EU-MNk" secondAttribute="bottom" constant="12" id="UZ4-HL-lbS"/>
                             <constraint firstItem="8mk-ne-HdC" firstAttribute="top" secondItem="k0E-da-cYm" secondAttribute="top" id="XT8-g4-iom"/>
                             <constraint firstItem="zWs-sJ-VcR" firstAttribute="top" secondItem="8mk-ne-HdC" secondAttribute="bottom" id="ilj-yn-iE8"/>
+                            <constraint firstItem="Fte-X4-eBy" firstAttribute="width" secondItem="k0E-da-cYm" secondAttribute="width" id="tOl-jq-lrb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6df-5b-uGO"/>
                     <connections>
                         <outlet property="addButton" destination="ZdH-EU-MNk" id="1P4-ij-kxp"/>
                         <outlet property="addLabel" destination="lt0-oL-KwO" id="ykt-tv-dFg"/>
+                        <outlet property="addLabelWidth" destination="q22-Xz-6KU" id="IjK-BJ-AmD"/>
+                        <outlet property="buttonBottomGapCS" destination="UZ4-HL-lbS" id="I2p-SF-ERi"/>
+                        <outlet property="buttonWidthCS" destination="wnO-k6-rKy" id="Q03-Hp-tHS"/>
                         <outlet property="descriptLabel" destination="ndi-gy-9w4" id="hy1-FC-KhU"/>
                         <outlet property="descriptView" destination="8mk-ne-HdC" id="EQP-eo-ZBt"/>
-                        <outlet property="indicatorView" destination="cei-s4-Jn1" id="XKK-bY-OPa"/>
+                        <outlet property="tableView" destination="Fte-X4-eBy" id="9yc-Qe-Xcd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0T0-Dt-NI1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="437.60000000000002" y="122.78860569715144"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Uld-s6-hri">
-            <objects>
-                <viewController id="faC-AK-LNp" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pSZ-dP-Wcl"/>
-                        <viewControllerLayoutGuide type="bottom" id="XVt-l8-1f4"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="C4r-91-UUp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QBD-i4-OU3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1209" y="123"/>
         </scene>
     </scenes>
     <resources>
