@@ -34,6 +34,7 @@ struct Constants {
     
     static var mainColor = UIColor(hex: 0xf9d247)   //杏黄
     static var subColor = UIColor(hex: 0xfc6e13)    //玫红
+    static var cellColor = UIColor(hex: 0xf9e168)   //浅黄
 //    static var barColor = UIColor(hex: 0xf9d247)
 //    
 //    static var detailBg = UIColor.white

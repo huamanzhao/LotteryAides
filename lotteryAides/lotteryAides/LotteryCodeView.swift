@@ -21,6 +21,7 @@ class LotteryCodeView: UIView {
         super.init(coder: aDecoder)
     }
     
-    func setupCodeView(number: String, type: Int, bgColor: UIColor) {
+    func setupCodeView(type: Int, code: LotteryCode, publis: LotteryPublish?) {
+        
     }
 }

@@ -12,26 +12,35 @@ class LotteryNumberView: UIView {
     var circleView : UIView!
     var numLabel: UILabel!
     var radius : CGFloat!
+    var defalutFrame = CGRect(x: 0, y: 0, width: 36, height: 36)
     var type: Int = 0   //1-前区号码 2-后区号码 3-未中奖号码
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        radius = frame.size.width / 2
+        defalutFrame = frame
         
-        circleView = UIView.init(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: frame.size))
-        self.addSubview(circleView)
-        
-        numLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: frame.size))
-        numLabel.font = UIFont.systemFont(ofSize: 14)
-        circleView.addSubview(numLabel)
+        initSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        
+        initSubViews()
     }
     
-    func setupView(number: String, type: Int, bgColor: UIColor) {
+    func initSubViews() {
+        radius = defalutFrame.size.width / 2
+        
+        circleView = UIView.init(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: defalutFrame.size))
+        self.addSubview(circleView)
+        
+        numLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: defalutFrame.size))
+        numLabel.font = UIFont.systemFont(ofSize: 14)
+        circleView.addSubview(numLabel)
+    }
+    
+    func setupView(number: String, type: Int, bgColor: UIColor = Constants.cellColor) {
         circleView.backgroundColor = bgColor
         
         let subjectColor : UIColor!

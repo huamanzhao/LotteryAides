@@ -50,7 +50,14 @@ class AdverticeViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        openNextViewController()
+        let lottery = [7,6,5,4,3,2,1]
+        let publish = [7,6,5,5,3,2,2]
+        let resutlt = getLuckyResult(ltNumbers: lottery, pbNumbers: publish)
+        print(lottery)
+        print(publish)
+        print(resutlt)
+        print("------")
+        //openNextViewController()
     }
     
     func openNextViewController() {
@@ -97,11 +104,6 @@ class AdverticeViewController: UIViewController {
         let naviVC = lotteryStory.instantiateViewController(withIdentifier: "lottery")
         self.present(naviVC, animated: true, completion: nil)
     }
-}
-
-
-extension AdverticeViewController {
-    
     
     func tempTest4() {
         let request = GetUserStatusRequest()
@@ -116,5 +118,75 @@ extension AdverticeViewController {
             print("code:" + response.code)
             print("message:" + response.message)
         }
+    }
+    
+    
+    func getLuckyResult(ltNumbers: [Int], pbNumbers: [Int]) -> [Int]  {
+        let max_len = 7
+        
+        if ltNumbers.count != max_len || pbNumbers.count != max_len {
+            return [Int]()
+        }
+        
+        var results = [Int]()   //保存最终结果
+        var tempResults = [Int]()   //保存中间结果
+        
+        for (index, number) in ltNumbers.enumerated() {
+            //1. 当前位置两个数组的数字不同
+            if number != pbNumbers[index] {
+                if tempResults.isEmpty {    //1.1 temp为空
+                    continue
+                }
+                
+                //1.2 temp不为空
+                if results.isEmpty {    //1.2.1 result为空
+                    results = tempResults
+                    tempResults = [Int]()   //置为空
+                    continue
+                }
+                
+                if results.count < tempResults.count {  //1.2.2 result不为空
+                    results = tempResults
+                    tempResults = [Int]()   //置为空
+                    continue
+                }
+                
+                tempResults = [Int]()   //置为空
+                continue
+            }
+            
+            //2. 此位置两数字相同
+            //-- 如果前一个位置或者后一个位置数字相同，则此数位置入temp列
+            if index == 0 { //2.1 第一个
+                if ltNumbers[index+1] == pbNumbers[index+1] {
+                    tempResults.append(index)
+                }
+            }
+            else if index == max_len - 1 {  //2.2 最后一个
+                if ltNumbers[index-1] == pbNumbers[index-1] {
+                    tempResults.append(index)
+                }
+                
+                if results.isEmpty {    //2.2.1 result为空
+                    results = tempResults
+                    tempResults = [Int]()   //置为空
+                    continue
+                }
+                
+                if results.count < tempResults.count {  //2.2.2 result不为空
+                    results = tempResults
+                    tempResults = [Int]()   //置为空
+                    continue
+                }
+            }
+            else {  //2.3 中间的
+                if (ltNumbers[index-1] == pbNumbers[index-1]) || (ltNumbers[index+1] == pbNumbers[index+1]) {
+                    tempResults.append(index)
+                }
+            }
+            
+        }
+        
+        return results
     }
 }

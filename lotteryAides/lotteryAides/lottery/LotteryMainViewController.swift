@@ -35,6 +35,9 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     var firstShow = 0
     var startY : CGFloat = 0
     
+    var lotteryResponsed = false
+    var publishResponsed = false
+    
     var lotteryList = [LotteryInfo]()
     var waitingLotteries = [LotteryInfo]()
     var publishLotteries = [LotteryInfo]()
