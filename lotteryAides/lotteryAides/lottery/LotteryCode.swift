@@ -10,18 +10,18 @@ import Foundation
 import SwiftyJSON
 
 class LotteryCode: NSObject {
-    var codes : [String]!
+    var numbers : [String]!
     
     override init() {
         super.init()
         
-        codes = [String]()
+        numbers = [String]()
     }
     
     
     
     func getJSONString() -> String {
-        let codeStr = codes.joined(separator: ",")
+        let codeStr = numbers.joined(separator: ",")
         
         return "[" + codeStr + "]"
     }
@@ -31,20 +31,20 @@ class LotteryCode: NSObject {
         
         for valueJS in dataArr {
             let value = valueJS.stringValue
-            codes.append(value)
+            numbers.append(value)
         }
     }
     
     init(_ js: SwiftyJSON.JSON) {
         super.init()
         
-        codes = [String]()
+        numbers = [String]()
         parseJson(js)
     }
     
     init(_ codesStr: String) {
         super.init()
         
-        codes = codesStr.components(separatedBy: ",")
+        numbers = codesStr.components(separatedBy: ",")
     }
 }

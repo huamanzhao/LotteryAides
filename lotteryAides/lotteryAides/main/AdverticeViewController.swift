@@ -50,14 +50,7 @@ class AdverticeViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
-        let lottery = [7,6,5,4,3,2,1]
-        let publish = [7,6,5,5,3,2,2]
-        let resutlt = getLuckyResult(ltNumbers: lottery, pbNumbers: publish)
-        print(lottery)
-        print(publish)
-        print(resutlt)
-        print("------")
-        //openNextViewController()
+        openNextViewController()
     }
     
     func openNextViewController() {

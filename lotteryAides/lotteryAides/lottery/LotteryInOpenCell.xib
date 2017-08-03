@@ -6,32 +6,116 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LotteryInOpenCellId" id="KGk-i7-Jjw" customClass="LotteryInOpenCell" customModule="lotteryAides" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LotteryInOpenCellId" rowHeight="89" id="KGk-i7-Jjw" customClass="LotteryInOpenCell" customModule="lotteryAides" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-3u-yDG">
-                        <rect key="frame" x="8" y="8" width="42" height="35"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大乐透" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-3u-yDG">
+                        <rect key="frame" x="8" y="8" width="49" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="JqV-8t-ySQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGh-e7-mCA" customClass="LotteryCodeView" customModule="lotteryAides" customModuleProvider="target">
+                        <rect key="frame" x="8" y="34" width="232" height="48"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="Uo8-4h-yrO"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/07/29" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyZ-JU-A6y">
+                        <rect key="frame" x="214.5" y="11.5" width="64" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BWi-L4-mUu">
+                        <rect key="frame" x="282.5" y="11.5" width="29.5" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开奖时间:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJ2-S0-SW7">
+                        <rect key="frame" x="157.5" y="11.5" width="53" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017084期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6b-yI-qOu">
+                        <rect key="frame" x="86.5" y="11.5" width="63" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBd-sa-20S">
+                        <rect key="frame" x="248" y="34" width="64" height="48"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-Do-vXr">
+                                <rect key="frame" x="0.5" y="11" width="64" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未中奖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5j-NB-jU8">
+                                <rect key="frame" x="8" y="14.5" width="49" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IFl-Do-vXr" firstAttribute="width" secondItem="nBd-sa-20S" secondAttribute="width" id="0t1-y5-0ja"/>
+                            <constraint firstItem="IFl-Do-vXr" firstAttribute="centerX" secondItem="nBd-sa-20S" secondAttribute="centerX" id="Dfq-no-ZiK"/>
+                            <constraint firstAttribute="height" constant="48" id="H2M-mZ-dEb"/>
+                            <constraint firstAttribute="width" constant="64" id="SRh-rc-no8"/>
+                            <constraint firstItem="S5j-NB-jU8" firstAttribute="centerX" secondItem="nBd-sa-20S" secondAttribute="centerX" id="ccm-gn-wor"/>
+                            <constraint firstItem="S5j-NB-jU8" firstAttribute="centerY" secondItem="nBd-sa-20S" secondAttribute="centerY" id="sbE-lw-fyz"/>
+                            <constraint firstAttribute="bottom" secondItem="IFl-Do-vXr" secondAttribute="bottom" constant="8" id="xck-CR-du1"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Lwh-3u-yDG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0Vm-u5-BCk"/>
-                    <constraint firstItem="Lwh-3u-yDG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="eaJ-9w-RMZ"/>
-                    <constraint firstItem="Lwh-3u-yDG" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.3" constant="1" id="pWl-7q-5wg"/>
+                    <constraint firstItem="zyZ-JU-A6y" firstAttribute="bottom" secondItem="Q6b-yI-qOu" secondAttribute="bottom" id="74q-7e-9Re"/>
+                    <constraint firstAttribute="trailing" secondItem="nBd-sa-20S" secondAttribute="trailing" constant="8" id="BjV-es-Adn"/>
+                    <constraint firstItem="BWi-L4-mUu" firstAttribute="leading" secondItem="zyZ-JU-A6y" secondAttribute="trailing" constant="4" id="KHY-AE-QzA"/>
+                    <constraint firstItem="Lwh-3u-yDG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Kfm-08-NUC"/>
+                    <constraint firstItem="zyZ-JU-A6y" firstAttribute="leading" secondItem="zJ2-S0-SW7" secondAttribute="trailing" constant="4" id="KjO-JG-r6D"/>
+                    <constraint firstItem="zJ2-S0-SW7" firstAttribute="bottom" secondItem="Q6b-yI-qOu" secondAttribute="bottom" id="LM7-UK-87d"/>
+                    <constraint firstAttribute="bottom" secondItem="lGh-e7-mCA" secondAttribute="bottom" constant="6.5" id="QUV-IN-VPn"/>
+                    <constraint firstItem="Q6b-yI-qOu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lwh-3u-yDG" secondAttribute="trailing" id="QV8-P3-Kp8"/>
+                    <constraint firstItem="lGh-e7-mCA" firstAttribute="top" secondItem="Lwh-3u-yDG" secondAttribute="bottom" constant="6.5" id="UIW-N3-LsG"/>
+                    <constraint firstItem="zJ2-S0-SW7" firstAttribute="leading" secondItem="Q6b-yI-qOu" secondAttribute="trailing" constant="8" id="X0u-Rl-hiR"/>
+                    <constraint firstAttribute="bottom" secondItem="nBd-sa-20S" secondAttribute="bottom" constant="6.5" id="hAK-Ea-6rM"/>
+                    <constraint firstItem="BWi-L4-mUu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="haK-Rk-P2i"/>
+                    <constraint firstItem="lGh-e7-mCA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jAW-UY-wlg"/>
+                    <constraint firstItem="Q6b-yI-qOu" firstAttribute="baseline" secondItem="Lwh-3u-yDG" secondAttribute="baseline" id="jdt-0g-q6N"/>
+                    <constraint firstItem="nBd-sa-20S" firstAttribute="leading" secondItem="lGh-e7-mCA" secondAttribute="trailing" constant="8" id="rM9-ia-dNH"/>
+                    <constraint firstItem="BWi-L4-mUu" firstAttribute="bottom" secondItem="Q6b-yI-qOu" secondAttribute="bottom" id="zhv-XT-V9C"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="codeView" destination="lGh-e7-mCA" id="A4a-Ss-otN"/>
+                <outlet property="dateLabel" destination="zyZ-JU-A6y" id="LpV-EW-jWu"/>
+                <outlet property="nameLabel" destination="Lwh-3u-yDG" id="RCH-K2-qGC"/>
+                <outlet property="priceLabel" destination="IFl-Do-vXr" id="6V8-hD-h1c"/>
+                <outlet property="termLabel" destination="Q6b-yI-qOu" id="esd-5L-JHf"/>
+                <outlet property="timeLabel" destination="BWi-L4-mUu" id="lW0-2K-1TP"/>
+                <outlet property="unLuckyLabel" destination="S5j-NB-jU8" id="L9C-p8-2Uc"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="39.5"/>
         </tableViewCell>
     </objects>
 </document>

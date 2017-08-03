@@ -55,6 +55,9 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        tableView.register(UINib(nibName: LotteryInOpenCellName, bundle: nil), forCellReuseIdentifier: LotteryInOpenCellId)
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -151,12 +154,36 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
     
+    /*
+     * tableView
+     */
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if section == 0 {
+            return publishLotteries.count
+        }
+        else {
+            return waitingLotteries.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        if section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: LotteryInOpenCellId, for: indexPath) as! LotteryInOpenCell
+            
+            let lottery = publishLotteries[row]
+            cell.setupViewWith(lottery: lottery)
+            return cell
+        }
+        
+        
+        
         return UITableViewCell()
     }
 }

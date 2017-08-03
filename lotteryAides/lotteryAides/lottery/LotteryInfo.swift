@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class LotteryInfo: NSObject {
     var id = ""
-    var name = ""
+    var lt_type : LotteryType!
     var term = ""
     var publishDate = Date()
     var mutiple = 0
@@ -41,13 +41,16 @@ class LotteryInfo: NSObject {
                 id = idJS.stringValue
             }
             if let nameJS = data!["name"] {
-                name = nameJS.stringValue
+                lt_type = LotteryType(type: nameJS.intValue)
             }
             if let termJS = data!["term"] {
                 term = termJS.stringValue
             }
             if let publishJS = data!["publishDate"] {
                 if let date = publishJS.stringValue.toDate(format: FORMAT_DATE_TIME) {
+                    publishDate = date
+                }
+                else if let date = publishJS.stringValue.toDate(format: "yyyy/MM/dd") {
                     publishDate = date
                 }
             }
@@ -70,7 +73,9 @@ class LotteryInfo: NSObject {
                 let array = codesJS.arrayValue
                 for codeJS in array {
                     let code = LotteryCode(codeJS)
-                    codes.append(code)
+                    if code.numbers.count == 7 {
+                        codes.append(code)
+                    }
                 }
             }
             

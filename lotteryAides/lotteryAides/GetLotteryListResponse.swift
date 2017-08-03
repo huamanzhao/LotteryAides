@@ -24,7 +24,9 @@ class GetLotteryListResponse : ServerResponseBase {
         let datas = json["codes"].arrayValue
         for data in datas {
             let lottery = LotteryInfo(data)
-            lotteryList.append(lottery)
+            if lottery.codes.count != 0 {
+                lotteryList.append(lottery)
+            }
         }
     }
 }

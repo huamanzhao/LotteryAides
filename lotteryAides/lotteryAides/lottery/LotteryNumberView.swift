@@ -8,13 +8,15 @@
 
 import UIKit
 
+let Length_Number = CGFloat(36)
+
+//圆圈数字视图
 class LotteryNumberView: UIView {
     var circleView : UIView!
     var numLabel: UILabel!
     var radius : CGFloat!
-    var defalutFrame = CGRect(x: 0, y: 0, width: 36, height: 36)
-    var type: Int = 0   //1-前区号码 2-后区号码 3-未中奖号码
-
+    var defalutFrame = CGRect(x: 0, y: 0, width: Length_Number, height: Length_Number)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -40,21 +42,22 @@ class LotteryNumberView: UIView {
         circleView.addSubview(numLabel)
     }
     
-    func setupView(number: String, type: Int, bgColor: UIColor = Constants.cellColor) {
+    //region: 1-前区红球  2-后区篮球  3-未中奖灰色
+    func setupView(number: String, region: Int, bgColor: UIColor = Constants.cellColor) {
         circleView.backgroundColor = bgColor
         
         let subjectColor : UIColor!
-        if type == 1 {
+        if region == 1 {
             subjectColor = UIColor.red
         }
-        else if type == 2 {
+        else if region == 2 {
             subjectColor = UIColor.blue
         }
         else {
             subjectColor = UIColor.darkText
         }
         
-        circleView.addCorner(radius: radius, borderWidth: 2, backColor: bgColor, borderColor: subjectColor)
+        circleView.addCorner(radius: radius, borderWidth: 2, backColor: UIColor.white, borderColor: subjectColor)
         numLabel.textColor = subjectColor
         numLabel.text = number
     }
