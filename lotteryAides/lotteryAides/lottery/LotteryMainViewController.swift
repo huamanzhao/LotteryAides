@@ -57,7 +57,8 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.rowHeight = UITableViewAutomaticDimension
         
         tableView.register(UINib(nibName: LotteryInOpenCellName, bundle: nil), forCellReuseIdentifier: LotteryInOpenCellId)
-        self.automaticallyAdjustsScrollViewInsets = false
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
     }
     
     override func viewWillAppear(_ animated: Bool) {

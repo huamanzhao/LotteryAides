@@ -18,10 +18,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-fK-Wr7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yw3-fK-Wr7">
+                        <rect key="frame" x="0.0" y="1" width="320" height="86.5"/>
+                        <color key="backgroundColor" red="1" green="0.98391623985769128" blue="0.85480128345905571" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大乐透" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-3u-yDG">
                         <rect key="frame" x="8" y="8" width="49" height="19.5"/>
@@ -67,7 +66,7 @@
                         <rect key="frame" x="248" y="34" width="64" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-Do-vXr">
-                                <rect key="frame" x="0.5" y="11" width="64" height="29"/>
+                                <rect key="frame" x="0.5" y="9.5" width="64" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -78,16 +77,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23H-rG-9zb">
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查询中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-sQ-LQx">
+                                        <rect key="frame" x="12.5" y="4" width="40" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ad1-Nk-Wvd">
+                                        <rect key="frame" x="22" y="23" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ad1-Nk-Wvd" firstAttribute="top" secondItem="ycT-sQ-LQx" secondAttribute="bottom" constant="7" id="KSi-MT-tsx"/>
+                                    <constraint firstItem="ycT-sQ-LQx" firstAttribute="centerX" secondItem="23H-rG-9zb" secondAttribute="centerX" id="SeL-oB-CcA"/>
+                                    <constraint firstItem="ycT-sQ-LQx" firstAttribute="top" secondItem="23H-rG-9zb" secondAttribute="top" constant="4" id="kAS-Bw-VeG"/>
+                                    <constraint firstItem="Ad1-Nk-Wvd" firstAttribute="centerX" secondItem="23H-rG-9zb" secondAttribute="centerX" id="nr1-XR-y99"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IFl-Do-vXr" firstAttribute="width" secondItem="nBd-sa-20S" secondAttribute="width" id="0t1-y5-0ja"/>
                             <constraint firstItem="IFl-Do-vXr" firstAttribute="centerX" secondItem="nBd-sa-20S" secondAttribute="centerX" id="Dfq-no-ZiK"/>
                             <constraint firstAttribute="height" constant="48" id="H2M-mZ-dEb"/>
+                            <constraint firstItem="23H-rG-9zb" firstAttribute="leading" secondItem="nBd-sa-20S" secondAttribute="leading" id="P3W-Dk-KYa"/>
+                            <constraint firstItem="IFl-Do-vXr" firstAttribute="centerY" secondItem="nBd-sa-20S" secondAttribute="centerY" id="QgA-7N-h3j"/>
                             <constraint firstAttribute="width" constant="64" id="SRh-rc-no8"/>
+                            <constraint firstAttribute="bottom" secondItem="23H-rG-9zb" secondAttribute="bottom" id="VmK-1b-ph3"/>
                             <constraint firstItem="S5j-NB-jU8" firstAttribute="centerX" secondItem="nBd-sa-20S" secondAttribute="centerX" id="ccm-gn-wor"/>
+                            <constraint firstAttribute="trailing" secondItem="23H-rG-9zb" secondAttribute="trailing" id="lhk-O1-zwR"/>
+                            <constraint firstItem="23H-rG-9zb" firstAttribute="top" secondItem="nBd-sa-20S" secondAttribute="top" id="rzW-7p-CiK"/>
                             <constraint firstItem="S5j-NB-jU8" firstAttribute="centerY" secondItem="nBd-sa-20S" secondAttribute="centerY" id="sbE-lw-fyz"/>
-                            <constraint firstAttribute="bottom" secondItem="IFl-Do-vXr" secondAttribute="bottom" constant="8" id="xck-CR-du1"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -95,6 +119,7 @@
                     <constraint firstItem="Lwh-3u-yDG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="0Vm-u5-BCk"/>
                     <constraint firstItem="zyZ-JU-A6y" firstAttribute="bottom" secondItem="Q6b-yI-qOu" secondAttribute="bottom" id="74q-7e-9Re"/>
                     <constraint firstAttribute="trailing" secondItem="nBd-sa-20S" secondAttribute="trailing" constant="8" id="BjV-es-Adn"/>
+                    <constraint firstAttribute="bottom" secondItem="Yw3-fK-Wr7" secondAttribute="bottom" constant="1" id="GFf-gL-fj6"/>
                     <constraint firstItem="BWi-L4-mUu" firstAttribute="leading" secondItem="zyZ-JU-A6y" secondAttribute="trailing" constant="4" id="KHY-AE-QzA"/>
                     <constraint firstItem="Lwh-3u-yDG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Kfm-08-NUC"/>
                     <constraint firstItem="zyZ-JU-A6y" firstAttribute="leading" secondItem="zJ2-S0-SW7" secondAttribute="trailing" constant="4" id="KjO-JG-r6D"/>
@@ -107,15 +132,21 @@
                     <constraint firstItem="BWi-L4-mUu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="haK-Rk-P2i"/>
                     <constraint firstItem="lGh-e7-mCA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="jAW-UY-wlg"/>
                     <constraint firstItem="Q6b-yI-qOu" firstAttribute="baseline" secondItem="Lwh-3u-yDG" secondAttribute="baseline" id="jdt-0g-q6N"/>
+                    <constraint firstItem="Yw3-fK-Wr7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="kT1-tb-WN2"/>
+                    <constraint firstItem="Yw3-fK-Wr7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="lvP-1M-01Y"/>
+                    <constraint firstAttribute="trailing" secondItem="Yw3-fK-Wr7" secondAttribute="trailing" id="ngP-dl-Lsg"/>
                     <constraint firstItem="nBd-sa-20S" firstAttribute="leading" secondItem="lGh-e7-mCA" secondAttribute="trailing" constant="8" id="rM9-ia-dNH"/>
                     <constraint firstItem="BWi-L4-mUu" firstAttribute="bottom" secondItem="Q6b-yI-qOu" secondAttribute="bottom" id="zhv-XT-V9C"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="bgView" destination="Yw3-fK-Wr7" id="bRv-3j-fdf"/>
                 <outlet property="codeView" destination="lGh-e7-mCA" id="A4a-Ss-otN"/>
                 <outlet property="dateLabel" destination="zyZ-JU-A6y" id="LpV-EW-jWu"/>
                 <outlet property="nameLabel" destination="Lwh-3u-yDG" id="RCH-K2-qGC"/>
                 <outlet property="priceLabel" destination="IFl-Do-vXr" id="6V8-hD-h1c"/>
+                <outlet property="queryView" destination="23H-rG-9zb" id="sRs-rf-nTx"/>
+                <outlet property="statusView" destination="nBd-sa-20S" id="GVa-me-f4c"/>
                 <outlet property="termLabel" destination="Q6b-yI-qOu" id="esd-5L-JHf"/>
                 <outlet property="timeLabel" destination="BWi-L4-mUu" id="lW0-2K-1TP"/>
                 <outlet property="unLuckyLabel" destination="S5j-NB-jU8" id="L9C-p8-2Uc"/>
