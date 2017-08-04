@@ -45,6 +45,8 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     
     var interval_delayQueay :TimeInterval = 0.8     //延迟执行查询彩票列表的时间
     var interval_btnScale   :TimeInterval = 0.2
+    fileprivate let sectionHeight: CGFloat = 42
+    fileprivate var sectionHeaderDic = Dictionary<Int,UIView>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +98,9 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
                         UserConfig.updateLotteryList(self.lotteryList)
                         self.waitingLotteries = UserConfig.getWaitingLotteries()
                         self.publishLotteries = UserConfig.getPublishLotteries()
+                        
+                        //ZC_DEBUG
+                        self.waitingLotteries = self.publishLotteries
                     }
                     
                     //没有新彩票
@@ -174,6 +179,10 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         })
     }
     
+    func checkPublishLotteries() {
+        
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
         
     }
@@ -194,28 +203,58 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return sectionHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var headerView: SectionHeaderView!
+        if sectionHeaderDic[section] != nil {
+            headerView = sectionHeaderDic[section] as! SectionHeaderView
+        } else {
+            headerView = Bundle.main.loadNibNamed("SectionHeaderView", owner: nil, options: nil)!.first as! SectionHeaderView
+            headerView.setFrame(Constants.screenWidth, height: sectionHeight, marginTop: 0)
+            headerView.backgroundColor = Constants.subColor
+        }
+        
+        if section == 0 {
+            headerView.setTitle("已开奖")
+            headerView.setFuncButton(title: "标记为已读", image: "btn_checkAll")
+            headerView.addAction(self, action: #selector(checkPublishLotteries), forControlEvents: .touchUpInside)
+        }
+        else {
+            headerView.setTitle("未开奖")
+        }
+        
+        return headerView
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let section = indexPath.section
+        let cell = tableView.dequeueReusableCell(withIdentifier: LotteryInOpenCellId, for: indexPath) as! LotteryInOpenCell
         
-        if section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LotteryInOpenCellId, for: indexPath) as! LotteryInOpenCell
-            
+        if section == 0 {   //1. 已开奖的彩票cell
             let lottery = publishLotteries[row]
             
+            //1.1 显示号码
+            cell.setupViewWith(lottery: lottery)
+            //1.2 获取开奖记录完毕，刷新cell中奖信息
             if !publishList.isEmpty && publishList.count == publishLotteries.count {
                 let publish = publishList[row]
                 
                 cell.updateViewWith(publish: publish)
             }
-            else {
-                cell.setupViewWith(lottery: lottery)
-            }
             
             return cell
         }
-        
-        
+        else if section == 1 {  //等待开奖的cell
+            let lottery = waitingLotteries[row]
+            
+            cell.setupViewWith(lottery: lottery, status: 1)
+            
+            return cell
+        }
         
         return UITableViewCell()
     }

@@ -23,7 +23,8 @@ class LotteryInOpenCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var unLuckyLabel: UILabel!
     @IBOutlet weak var queryView: UIView!
-    
+    @IBOutlet weak var countView: UIView!
+    @IBOutlet weak var countLabel: UILabel!
     
     var lottery: LotteryInfo!
     
@@ -34,9 +35,10 @@ class LotteryInOpenCell: UITableViewCell {
          
         statusView.backgroundColor = Constants.cellColor
         statusView.addCorner(radius: 4, borderWidth: 1, backColor: UIColor(hex: 0xfff5d0), borderColor: UIColor(hex: 0xfffdfe))
+        queryView.isHidden = false
         priceLabel.isHidden = true
         unLuckyLabel.isHidden = true
-        queryView.isHidden = false
+        countView.isHidden = true
     }
     
     override func layoutSubviews() {
@@ -46,7 +48,8 @@ class LotteryInOpenCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setupViewWith(lottery: LotteryInfo) {
+    //status = 0: 已经开奖了的    1：待开奖
+    func setupViewWith(lottery: LotteryInfo, status: Int = 0) {
         self.lottery = lottery
         
         nameLabel.text = lottery.lt_type.name
@@ -54,10 +57,26 @@ class LotteryInOpenCell: UITableViewCell {
         dateLabel.text = lottery.publishDate.toString("yyyy/MM/dd")
         timeLabel.text = lottery.lt_type.time
         codeView.setupCodeView(lottery.lt_type.type, (lottery.codes.first)!)
+        
+        if status == 1 {
+            queryView.isHidden = true
+            countView.isHidden = false
+            
+            var early = Date()
+            var late = lottery.publishDate
+            //ZC_TEMP
+            if early.isLaterThan(late){
+                early = lottery.publishDate
+                late = Date()
+            }
+            
+            let countDown = Util.getCountdownTime(earlyDate: early, lateDate: late)
+            countLabel.text = countDown
+        }
     }
     
     func updateViewWith(publish: LotteryPublish) {
-        let results = lottery.lt_type.getLuckyResult(code: lottery.codes.first!, publish: publish)
+        let _ = lottery.lt_type.getLuckyResult(code: lottery.codes.first!, publish: publish)
         
         queryView.isHidden = true
         

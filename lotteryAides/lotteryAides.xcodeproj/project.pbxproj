@@ -33,8 +33,6 @@
 		956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A821F2C3A1500E65DF0 /* RootViewController.swift */; };
 		956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */; };
 		956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */; };
-		956E0A8F1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */; };
-		956E0A901F2C645F00E65DF0 /* LotteryWaitOpenCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */; };
 		956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */; };
 		956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */; };
 		956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */; };
@@ -52,6 +50,8 @@
 		956E0AB01F2E049800E65DF0 /* GetUserStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AAF1F2E049800E65DF0 /* GetUserStatusResponse.swift */; };
 		956E0AB21F2E060200E65DF0 /* GetAdverticeUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */; };
 		956E0AB41F2E061400E65DF0 /* GetAdverticeUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */; };
+		95849B2F1F34BC7800A621B1 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95849B2D1F34BC7800A621B1 /* SectionHeaderView.swift */; };
+		95849B301F34BC7800A621B1 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95849B2E1F34BC7800A621B1 /* SectionHeaderView.xib */; };
 		958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDA1F2E187D002330AA /* UserConfig.swift */; };
 		958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDC1F2ED695002330AA /* GetLotteryListRequest.swift */; };
 		958A5EDF1F2ED6B5002330AA /* GetLotteryListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDE1F2ED6B5002330AA /* GetLotteryListResponse.swift */; };
@@ -124,8 +124,6 @@
 		956E0A821F2C3A1500E65DF0 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = main/RootViewController.swift; sourceTree = "<group>"; };
 		956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInOpenCell.swift; path = lottery/LotteryInOpenCell.swift; sourceTree = "<group>"; };
 		956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LotteryInOpenCell.xib; path = lottery/LotteryInOpenCell.xib; sourceTree = "<group>"; };
-		956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryWaitOpenCell.swift; path = lottery/LotteryWaitOpenCell.swift; sourceTree = "<group>"; };
-		956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LotteryWaitOpenCell.xib; path = lottery/LotteryWaitOpenCell.xib; sourceTree = "<group>"; };
 		956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryNumberView.swift; path = lottery/LotteryNumberView.swift; sourceTree = "<group>"; };
 		956E0A931F2C6A5B00E65DF0 /* ExtUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtUIView.swift; sourceTree = "<group>"; };
 		956E0A971F2CDC1200E65DF0 /* RegistRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistRequest.swift; sourceTree = "<group>"; };
@@ -143,6 +141,8 @@
 		956E0AAF1F2E049800E65DF0 /* GetUserStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserStatusResponse.swift; sourceTree = "<group>"; };
 		956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlRequest.swift; sourceTree = "<group>"; };
 		956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlResponse.swift; sourceTree = "<group>"; };
+		95849B2D1F34BC7800A621B1 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = lottery/SectionHeaderView.swift; sourceTree = "<group>"; };
+		95849B2E1F34BC7800A621B1 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SectionHeaderView.xib; path = lottery/SectionHeaderView.xib; sourceTree = "<group>"; };
 		958A5EDA1F2E187D002330AA /* UserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
 		958A5EDC1F2ED695002330AA /* GetLotteryListRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GetLotteryListRequest.swift; path = server/GetLotteryListRequest.swift; sourceTree = "<group>"; };
 		958A5EDE1F2ED6B5002330AA /* GetLotteryListResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetLotteryListResponse.swift; sourceTree = "<group>"; };
@@ -278,8 +278,6 @@
 			children = (
 				956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */,
 				956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */,
-				956E0A8D1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift */,
-				956E0A8E1F2C645F00E65DF0 /* LotteryWaitOpenCell.xib */,
 				956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */,
 				9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */,
 			);
@@ -417,6 +415,8 @@
 				95DD69821F278F1A0032A4C2 /* RequestBase.swift */,
 				95DD69831F278F1A0032A4C2 /* ServerBase.swift */,
 				95DD69841F278F1A0032A4C2 /* ServerResponseBase.swift */,
+				95849B2D1F34BC7800A621B1 /* SectionHeaderView.swift */,
+				95849B2E1F34BC7800A621B1 /* SectionHeaderView.xib */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -517,7 +517,7 @@
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
 				956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */,
 				95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */,
-				956E0A901F2C645F00E65DF0 /* LotteryWaitOpenCell.xib in Resources */,
+				95849B301F34BC7800A621B1 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +531,7 @@
 				9500F2101F32B43B00FDB435 /* LotteryType.swift in Sources */,
 				958A5EDF1F2ED6B5002330AA /* GetLotteryListResponse.swift in Sources */,
 				95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */,
+				95849B2F1F34BC7800A621B1 /* SectionHeaderView.swift in Sources */,
 				956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */,
 				958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */,
 				956E0AAC1F2DE15F00E65DF0 /* UpdateLotteryRequest.swift in Sources */,
@@ -549,7 +550,6 @@
 				956E0AA21F2CE80800E65DF0 /* DateUtil.swift in Sources */,
 				956E0AA41F2D5EE200E65DF0 /* LotteryCode.swift in Sources */,
 				958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */,
-				956E0A8F1F2C645F00E65DF0 /* LotteryWaitOpenCell.swift in Sources */,
 				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
 				956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */,

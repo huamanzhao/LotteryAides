@@ -48,16 +48,17 @@ class LotteryCodeView: UIView {
     }
     
     func setupCodeView(_ type: Int, _ code: LotteryCode) {
-        for view in numberViewList {
-            view.removeFromSuperview()
-        }
-        
-        self.code = code
-        self.type = LotteryType(type: type)
-        
         if code.numbers.count != 7 {
             return
         }
+        
+        for view in numberViewList {
+            view.removeFromSuperview()
+        }
+        numberViewList.removeAll()
+        
+        self.code = code
+        self.type = LotteryType(type: type)
         
         switch type {
         case 1:
@@ -81,6 +82,7 @@ class LotteryCodeView: UIView {
         for view in numberViewList {
             view.removeFromSuperview()
         }
+        numberViewList.removeAll()
         
         luckyIndexes = type.getLuckyResult(code: code, publish: publish)
         
