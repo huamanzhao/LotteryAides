@@ -20,12 +20,16 @@ class LotteryCodeView: UIView {
         super.init(frame: frame)
         numberViewList = [LotteryNumberView]()
         luckyIndexes = [Int]()
+        
+        self.backgroundColor = Constants.cellColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         numberViewList = [LotteryNumberView]()
         luckyIndexes = [Int]()
+        
+        self.backgroundColor = Constants.cellColor
     }
     
     override func layoutSubviews() {
@@ -38,7 +42,7 @@ class LotteryCodeView: UIView {
         
         let originY = (self.frame.height - Length_Number) / 2
         for index in (0 ... 6) {
-            let originX = CGFloat(index) * (Length_Number + width)
+            let originX = CGFloat(index) * (Length_Number + margin)
             numberViewList[index].frame = CGRect(x: originX, y: originY, width: Length_Number, height: Length_Number)
         }
     }

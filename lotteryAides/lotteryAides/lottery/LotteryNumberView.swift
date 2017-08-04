@@ -8,7 +8,7 @@
 
 import UIKit
 
-let Length_Number = CGFloat(36)
+let Length_Number = CGFloat(32)
 
 //圆圈数字视图
 class LotteryNumberView: UIView {
@@ -39,6 +39,7 @@ class LotteryNumberView: UIView {
         
         numLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: defalutFrame.size))
         numLabel.font = UIFont.systemFont(ofSize: 14)
+        numLabel.textAlignment = .center
         circleView.addSubview(numLabel)
     }
     
