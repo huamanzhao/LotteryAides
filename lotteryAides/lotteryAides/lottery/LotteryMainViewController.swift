@@ -45,7 +45,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     
     var interval_delayQueay :TimeInterval = 0.8     //延迟执行查询彩票列表的时间
     var interval_btnScale   :TimeInterval = 0.2
-    fileprivate let sectionHeight: CGFloat = 42
+    fileprivate let sectionHeight: CGFloat = 36
     fileprivate var sectionHeaderDic = Dictionary<Int,UIView>()
     
     override func viewDidLoad() {
