@@ -10,12 +10,12 @@ import Foundation
 import Alamofire
 
 class GetPublishRequest: RequestBase {
-    var name : String = ""
+    var type : Int = 0
     var term : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "name" : name,
+            "name" : "\(type)",
             "term" : term
         ]
         

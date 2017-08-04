@@ -31,7 +31,7 @@ class ChangePasswordRequest: RequestBase {
                 if isOK {
                     res.parseResponse(data.result)
                     callback!(true, res)
-                }else {
+                } else {
                     callback!(false, response)
                 }
             }

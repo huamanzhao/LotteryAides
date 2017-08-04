@@ -36,6 +36,7 @@ class LotteryInOpenCell: UITableViewCell {
         statusView.addCorner(radius: 4, borderWidth: 1, backColor: UIColor(hex: 0xfff5d0), borderColor: UIColor(hex: 0xfffdfe))
         priceLabel.isHidden = true
         unLuckyLabel.isHidden = true
+        queryView.isHidden = false
     }
     
     override func layoutSubviews() {
@@ -57,7 +58,10 @@ class LotteryInOpenCell: UITableViewCell {
     
     func updateViewWith(publish: LotteryPublish) {
         let results = lottery.lt_type.getLuckyResult(code: lottery.codes.first!, publish: publish)
-        if results.count == 0 {
+        
+        queryView.isHidden = true
+        
+        if lottery.lt_type.level == -1 {
             priceLabel.isHidden = true
             unLuckyLabel.isHidden = false
         }

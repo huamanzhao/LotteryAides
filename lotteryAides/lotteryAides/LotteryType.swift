@@ -11,7 +11,10 @@ import Foundation
 class LotteryType : NSObject {
     private var _type = 0
     private var _name = ""
+    private var _results = [Int]()
     
+    var level = -1
+    var prize = 0
     var time: String = ""
     var type : Int!    //1：大乐透 2：七星彩： 3：双色球 4：七乐彩
     {
@@ -35,16 +38,14 @@ class LotteryType : NSObject {
     }
     var results : [Int] {
         get {
-            return self.results
+            return _results
         }
         set {
-            self.results = newValue
+            _results = newValue
             setLuchyProperties()
         }
         
     }
-    var level = 0
-    var prize = 0
     
     
     

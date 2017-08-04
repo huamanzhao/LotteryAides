@@ -248,7 +248,7 @@ class RegistLoginViewController: UIViewController {
     
     func tempTest1() {
         let request = GetPublishRequest()
-        request.name = "1"
+        request.type = 1
         request.term = "17072927"
         request.doRequest { (isOK, response) in
             print("tempTest1 isOK:" + "\(isOK)")

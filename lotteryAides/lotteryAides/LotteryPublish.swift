@@ -10,14 +10,14 @@ import Foundation
 import SwiftyJSON
 
 class LotteryPublish: AnyObject {
-    var name = ""
+    var type = 0
     var term = ""
     var code : LotteryCode!
     
     func parseJson(_ js: SwiftyJSON.JSON) {
         if let data = js.dictionary {
             if let nameJS = data["name"] {
-                name = nameJS.stringValue
+                type = nameJS.intValue
             }
             
             if let termJS = data["term"] {

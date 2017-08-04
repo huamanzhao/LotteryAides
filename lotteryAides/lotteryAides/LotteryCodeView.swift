@@ -48,6 +48,10 @@ class LotteryCodeView: UIView {
     }
     
     func setupCodeView(_ type: Int, _ code: LotteryCode) {
+        for view in numberViewList {
+            view.removeFromSuperview()
+        }
+        
         self.code = code
         self.type = LotteryType(type: type)
         

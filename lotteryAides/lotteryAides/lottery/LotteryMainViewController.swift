@@ -24,7 +24,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     let bigButtonWidth = Constants.screenWidth * 0.4
     let bigButtonBottomGap = Constants.screenHeight * 0.4
     let smallButtonWidth = Constants.screenWidth * 0.15
-    let smallButtonBottomGap = CGFloat(12)
+    let smallButtonBottomGap = CGFloat(16)
     
     let FindingLotteries = "查询记录"
     let NoFreshLotteriesDesc = "没有需要通知的彩票，请录入新彩票吧~"
@@ -41,6 +41,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     var lotteryList = [LotteryInfo]()
     var waitingLotteries = [LotteryInfo]()
     var publishLotteries = [LotteryInfo]()
+    var publishList = [LotteryPublish]()
     
     var interval_delayQueay :TimeInterval = 0.8     //延迟执行查询彩票列表的时间
     var interval_btnScale   :TimeInterval = 0.2
@@ -111,6 +112,11 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
                     if self.tableView.isHidden == true {
                         self.showLotteryListTable()
                     }
+                    
+                    if !self.publishLotteries.isEmpty {
+                        self.getLotteryPublish()
+                    }
+                    
                     self.tableView.reloadData()
                 }
                 else {
@@ -118,6 +124,23 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
                 }
             }
             
+        }
+    }
+    
+    func getLotteryPublish() {
+        for lottery in publishLotteries {
+            let request = GetPublishRequest()
+            request.type = lottery.lt_type.type
+            request.term = lottery.term
+            request.doRequest { (isOK, response) in
+                if isOK && response.code == "0" {
+                    self.publishList.append(response.publishInfo)
+                    
+                    if self.publishList.count == self.publishLotteries.count {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
         }
     }
     
@@ -179,7 +202,16 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
             let cell = tableView.dequeueReusableCell(withIdentifier: LotteryInOpenCellId, for: indexPath) as! LotteryInOpenCell
             
             let lottery = publishLotteries[row]
-            cell.setupViewWith(lottery: lottery)
+            
+            if !publishList.isEmpty && publishList.count == publishLotteries.count {
+                let publish = publishList[row]
+                
+                cell.updateViewWith(publish: publish)
+            }
+            else {
+                cell.setupViewWith(lottery: lottery)
+            }
+            
             return cell
         }
         
