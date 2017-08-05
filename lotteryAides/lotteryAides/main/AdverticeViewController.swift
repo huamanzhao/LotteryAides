@@ -18,16 +18,21 @@ class AdverticeViewController: UIViewController {
     var password = ""
     var needLogin = false
     var userType = BASIC_TYPE
+    var countDown = 3
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         webView.scalesPageToFit = true
         getUserStatus()
+        setupCloseButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        countDown = 3
         
         config = UserConfig.getInstance()
         userType = config.getUserType()
@@ -47,11 +52,29 @@ class AdverticeViewController: UIViewController {
                 openLoginVC()
             }
         }
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startCountDown), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupCloseButton() {
+        closeButton.addCorner(radius: 15, borderWidth: 2.0, backColor: UIColor(white: 0.2, alpha: 0.5), borderColor: Constants.mainColor)
+    }
+    
+    func startCountDown() {
+        countDown -= 1
+        
+        if countDown == 0 {
+            timer.invalidate()
+            
+            openNextViewController()
+        }
+        
+        closeButton.setTitle("跳过 \(countDown)", for: .normal)
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {

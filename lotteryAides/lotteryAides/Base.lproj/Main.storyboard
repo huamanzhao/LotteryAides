@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,8 +83,16 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWU-Vz-gim">
-                                <rect key="frame" x="155" y="583" width="64" height="64"/>
-                                <state key="normal" image="icon_close"/>
+                                <rect key="frame" x="291" y="36" width="68" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="GGA-Ic-NLY"/>
+                                    <constraint firstAttribute="height" constant="30" id="cM0-Xs-8Ql"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="跳过 3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="closeButtonPressed:" destination="90N-CJ-cRH" eventType="touchUpInside" id="kft-Iw-qdK"/>
                                 </connections>
@@ -92,11 +101,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hky-bw-hnE" firstAttribute="width" secondItem="PYm-gG-HGc" secondAttribute="width" id="0uh-gW-MIn"/>
+                            <constraint firstItem="EWU-Vz-gim" firstAttribute="trailing" secondItem="PYm-gG-HGc" secondAttribute="trailingMargin" id="1Qp-ya-jW8"/>
                             <constraint firstItem="2NZ-84-p5x" firstAttribute="top" secondItem="hky-bw-hnE" secondAttribute="bottom" id="1qa-aj-pEy"/>
                             <constraint firstItem="hky-bw-hnE" firstAttribute="top" secondItem="ZsN-13-gHj" secondAttribute="bottom" id="76p-96-vxG"/>
+                            <constraint firstItem="EWU-Vz-gim" firstAttribute="top" secondItem="ZsN-13-gHj" secondAttribute="bottom" constant="16" id="8dz-pS-yg0"/>
                             <constraint firstItem="hky-bw-hnE" firstAttribute="centerX" secondItem="PYm-gG-HGc" secondAttribute="centerX" id="GL0-hi-lq4"/>
-                            <constraint firstItem="EWU-Vz-gim" firstAttribute="centerX" secondItem="PYm-gG-HGc" secondAttribute="centerX" id="HQy-AC-dlN"/>
-                            <constraint firstItem="2NZ-84-p5x" firstAttribute="top" secondItem="EWU-Vz-gim" secondAttribute="bottom" constant="20" id="sfh-Ec-lDz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -107,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdf-fb-aya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="977" y="140"/>
+            <point key="canvasLocation" x="976.79999999999995" y="139.880059970015"/>
         </scene>
         <!--Regist Login View Controller-->
         <scene sceneID="laA-OM-mRl">
@@ -162,7 +171,7 @@
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLT-Ai-hXZ">
-                                        <rect key="frame" x="62" y="16" width="211" height="20"/>
+                                        <rect key="frame" x="62" y="15" width="211" height="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
@@ -304,7 +313,6 @@
     </scenes>
     <resources>
         <image name="bg_login" width="320" height="568"/>
-        <image name="icon_close" width="64" height="64"/>
         <image name="icon_password" width="22" height="22"/>
         <image name="icon_phone" width="22" height="22"/>
         <image name="icon_visible" width="20" height="14"/>
