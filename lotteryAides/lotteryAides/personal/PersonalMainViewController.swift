@@ -12,8 +12,10 @@ class PersonalMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.title = "个人中心"
+        setCustomBackButton()
+        setNaviRightImage(UIImage(named: "btn_config")!)
     }
 
     override func didReceiveMemoryWarning() {

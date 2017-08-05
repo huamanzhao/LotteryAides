@@ -96,6 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func updateLotteryList(_ list: [LotteryInfo]) {
         lotteryList = list
+        waitingLotteries.removeAll()
+        publishLotteries.removeAll()
         
         let currTime = Date.localDate()
         for lottery in list {

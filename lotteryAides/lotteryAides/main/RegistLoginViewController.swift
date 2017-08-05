@@ -226,37 +226,7 @@ class RegistLoginViewController: UIViewController {
         let naviVC = lotteryStory.instantiateViewController(withIdentifier: "lottery")
         self.present(naviVC, animated: true, completion: nil)
     }
-    
-    //ZC_DEBUG
-    func tempTest() {
-        let code1 = LotteryCode("1,6,17,18,22,26,27")
-        let code2 = LotteryCode("3,5,6,10,12,20,22")
-        
-        let request = AddLotteryRequest()
-        request.name = "4"
-        request.term = "17084"
-        request.publishDate = "2017/07/19"
-        request.cost = 20
-        request.multiple = 10
-        request.codes = [code1, code2]
-        request.doRequest { (isOK, response) in
-            print("tempTest isOK:" + "\(isOK)")
-            print("code:" + response.code)
-        }
-        
-    }
-    
-    func tempTest1() {
-        let request = GetPublishRequest()
-        request.type = 1
-        request.term = "17072927"
-        request.doRequest { (isOK, response) in
-            print("tempTest1 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
-    }    
-    
+
 }
 
 extension RegistLoginViewController: UITextFieldDelegate {

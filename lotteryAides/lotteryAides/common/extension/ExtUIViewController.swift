@@ -22,7 +22,7 @@ extension UIViewController: UIGestureRecognizerDelegate {
     
     func setCustomBackButton() {
         let backButton = UIBarButtonItem(image: UIImage(named: "btn_back"), style: .plain, target: self, action: #selector(UIViewController.popBack(_:)))
-        backButton.tintColor = UIColor.white
+        backButton.tintColor = UIColor.black
         self.navigationItem.leftBarButtonItem = backButton
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
@@ -45,7 +45,7 @@ extension UIViewController: UIGestureRecognizerDelegate {
             //        button.setTitleColor(TXSettings.subColor, forState: .Normal)
             button.setTitleColor(Constants.subColor, for: .highlighted)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 16) //UIFont.defaultFontOfSize(16, fitScreen: true)
-            button.addTarget(self, action:#selector(UIViewController.rightTextClicked(_:)), for: UIControlEvents.touchUpInside)
+            button.addTarget(self, action:#selector(UIViewController.naviRightBtnClicked(_:)), for: UIControlEvents.touchUpInside)
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         } else {
             button = self.navigationItem.rightBarButtonItem?.customView as! UIButton
@@ -59,10 +59,10 @@ extension UIViewController: UIGestureRecognizerDelegate {
     /** 初始化导航栏右侧的按钮 */
     func setNaviRightImage(_ rightImage: UIImage) {
         initNavigationBar()
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 20))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         button.setImage(rightImage, for: UIControlState())
         button.tintColor = UIColor.clear
-        button.addTarget(self, action:#selector(UIViewController.rightTextClicked(_:)), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action:#selector(UIViewController.naviRightBtnClicked(_:)), for: UIControlEvents.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     
@@ -99,7 +99,7 @@ extension UIViewController: UIGestureRecognizerDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func rightTextClicked(_ sender: AnyObject) {
+    @IBAction func naviRightBtnClicked(_ sender: AnyObject) {
         
     }
     

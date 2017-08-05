@@ -37,6 +37,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     
     var lotteryResponsed = false
     var publishResponsed = false
+    var updateCount = 0
     
     var lotteryList = [LotteryInfo]()
     var waitingLotteries = [LotteryInfo]()
@@ -55,6 +56,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg_navi_bar"), for: .default)
+        setNaviRightImage(UIImage(named: "btn_personal")!)
         
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -86,6 +88,14 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    override func naviRightBtnClicked(_ sender: AnyObject) {
+        let personal = UIStoryboard(name: "personal", bundle: nil)
+        let personalVC = personal.instantiateViewController(withIdentifier: "personalMain")
+        self.navigationController!.pushViewController(personalVC, animated: true)
+    }
+    
+    
+    //获取彩票列表
     func getLotteryList() {
         GetLotteryListRequest().doRequest { (isOK, response) in
             DispatchQueue.main.async{
@@ -93,15 +103,10 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
                 
                 if isOK && response.code == "0" {
                     self.lotteryList = response.lotteryList
-                    if !self.lotteryList.isEmpty {
-                        //缓存
-                        UserConfig.updateLotteryList(self.lotteryList)
-                        self.waitingLotteries = UserConfig.getWaitingLotteries()
-                        self.publishLotteries = UserConfig.getPublishLotteries()
-                        
-                        //ZC_DEBUG
-                        self.waitingLotteries = self.publishLotteries
-                    }
+                    //更新缓存
+                    UserConfig.updateLotteryList(self.lotteryList)
+                    self.waitingLotteries = UserConfig.getWaitingLotteries()
+                    self.publishLotteries = UserConfig.getPublishLotteries()
                     
                     //没有新彩票
                     if self.waitingLotteries.isEmpty && self.publishLotteries.isEmpty {
@@ -132,6 +137,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     
+    //获取开奖信息（所有已开奖彩票的开奖信息）
     func getLotteryPublish() {
         for lottery in publishLotteries {
             let request = GetPublishRequest()
@@ -146,6 +152,40 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
                     }
                 }
             }
+        }
+    }
+    
+    
+    //更新上传彩票信息
+    func updateLotteries() {
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = "正在上传"
+        
+        updateCount = 0
+        for lotery in publishLotteries {
+            let request = UpdateLotteryRequest()
+            request.id = lotery.id
+            request.isRead = true
+            request.isLucky = lotery.lt_type.level == -1 ? false : true
+            request.level = lotery.lt_type.level
+            request.prize = lotery.lt_type.prize
+            request.doRequest({ (isOK, response) in
+                if isOK && response.code == "0" {
+                    self.updateCount += 1
+                    if self.updateCount == self.publishLotteries.count {
+                        DispatchQueue.main.async {
+                            self.hud.hide(animated: true)
+                            self.getLotteryList()
+                        }
+                    }
+                }
+                else {
+                    DispatchQueue.main.async {
+                        self.hud.hide(animated: true)
+                        self.view.makeToast("更新失败")
+                    }
+                }
+            })
         }
     }
     
@@ -179,12 +219,21 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         })
     }
     
+    //点击 标记已读 按钮后，打开弹框，提示更新彩票信息
     func checkPublishLotteries() {
+        let alertView = UIAlertController(title: "确认标记为已读吗？", message: "\r\n标记为已读后，可到“个人中心“查看所有彩票记录", preferredStyle: UIAlertControllerStyle.alert)
+        alertView.addAction(UIAlertAction(title: "确认", style: .default, handler: { (action) -> Void in
+            self.updateLotteries()
+        }))
+        alertView.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
         
+        self.present(alertView, animated: true, completion: nil)
     }
     
+    
+    //点击添加按钮
     @IBAction func addButtonPressed(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "showAddLottery", sender: self)
     }
     
     /*

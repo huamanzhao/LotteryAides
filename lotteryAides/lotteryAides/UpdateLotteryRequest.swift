@@ -20,8 +20,8 @@ class UpdateLotteryRequest: RequestBase {
         let request = [
             "phone" : UserConfig.getInstance().getPhone(),
             "id" : id,
-            "isRead" : isRead ? "1" : "2",
-            "isLucky" : isLucky ? "1" : "2",
+            "isRead" : isRead ? "1" : "0",
+            "isLucky" : isLucky ? "1" : "0",
             "level" : "\(level)",
             "prize" : "\(prize)"
         ]

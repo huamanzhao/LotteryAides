@@ -58,7 +58,7 @@ class LotteryNumberView: UIView {
             subjectColor = UIColor.darkText
         }
         
-        circleView.addCorner(radius: radius, borderWidth: 2, backColor: UIColor.white, borderColor: subjectColor)
+        circleView.addCorner(radius: radius, borderWidth: 1.5, backColor: UIColor.white, borderColor: subjectColor)
         numLabel.textColor = subjectColor
         numLabel.text = number
     }

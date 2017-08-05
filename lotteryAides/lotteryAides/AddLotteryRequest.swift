@@ -19,7 +19,7 @@ class AddLotteryRequest: RequestBase {
     
     func getRequest() -> [String : String]{
         let request = [
-            "phone" : "15076128501",    //ZC_DEBUG
+            "phone" : UserConfig.getInstance().getPhone(),
             "name" : name,
             "term" : term,
             "publishDate" : publishDate,
