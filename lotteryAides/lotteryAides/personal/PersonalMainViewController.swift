@@ -22,7 +22,6 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
         setCustomBackButton()
         setNaviRightImage(UIImage(named: "btn_config")!)
         
-        
         //初始化顶部标签栏
         baseController = setBaseViewController(36)
         baseController.magicView.dataSource = self

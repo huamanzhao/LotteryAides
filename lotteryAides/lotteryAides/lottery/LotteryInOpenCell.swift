@@ -54,7 +54,7 @@ class LotteryInOpenCell: UITableViewCell {
         
         nameLabel.text = lottery.lt_type.name
         termLabel.text = lottery.term + "期"
-        dateLabel.text = lottery.publishDate.toString("yyyy/MM/dd")
+        dateLabel.text = lottery.publishDate.toString(LOTTERY_PUBLISH_DATE)
         timeLabel.text = lottery.lt_type.time
         codeView.setupCodeView(lottery.lt_type.type, (lottery.codes.first)!)
         

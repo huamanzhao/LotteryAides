@@ -19,6 +19,8 @@ class LotteryInfo: NSObject {
     var addDate: Date!
     var isRead = false
     var isLucky = false
+    var level = -1
+    var prize = 0
     var codes: [LotteryCode]!
     
     override init() {
@@ -50,7 +52,7 @@ class LotteryInfo: NSObject {
                 if let date = publishJS.stringValue.toDate(format: FORMAT_DATE_TIME) {
                     publishDate = date
                 }
-                else if let date = publishJS.stringValue.toDate(format: "yyyy/MM/dd") {
+                else if let date = publishJS.stringValue.toDate(format: LOTTERY_PUBLISH_DATE) {
                     publishDate = date
                 }
             }
@@ -68,6 +70,12 @@ class LotteryInfo: NSObject {
             }
             if let isLuckyJS = data!["isLucky"] {
                 isLucky = isLuckyJS.boolValue
+            }
+            if let levelJS = data!["level"] {
+                level = levelJS.intValue
+            }
+            if let prizeJS = data!["prize"] {
+                prize = prizeJS.intValue
             }
             if let codesJS = data!["codes"] {
                 let array = codesJS.arrayValue

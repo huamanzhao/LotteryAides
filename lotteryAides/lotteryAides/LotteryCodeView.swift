@@ -41,7 +41,8 @@ class LotteryCodeView: UIView {
         }
         
         let originY = (self.frame.height - Length_Number) / 2
-        for index in (0 ... 6) {
+        let count = numberViewList.count
+        for index in (0 ..< count) {
             let originX = CGFloat(index) * (Length_Number + margin)
             numberViewList[index].frame = CGRect(x: originX, y: originY, width: Length_Number, height: Length_Number)
         }

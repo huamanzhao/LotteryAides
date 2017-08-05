@@ -16,10 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var config: UserConfig!
-    var lotteryList: [LotteryInfo]!
-    var waitingLotteries: [LotteryInfo]!
-    var publishLotteries: [LotteryInfo]!
-    var publishList: [LotteryPublish]!
+    var lotteryList: [LotteryInfo]!       //所有彩票
+    var waitingLotteries: [LotteryInfo]!  //待开奖彩票
+    var publishLotteries: [LotteryInfo]!  //已开奖彩票
+    var luckyLotteries: [LotteryInfo]!    //中奖彩票
+    var publishList: [LotteryPublish]!    //开奖结果
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.sharedManager().enable = true
@@ -40,9 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.makeKeyAndVisible()
         }
         
+        //初始化
         lotteryList = [LotteryInfo]()
         waitingLotteries = [LotteryInfo]()
         publishLotteries = [LotteryInfo]()
+        luckyLotteries = [LotteryInfo]()
         publishList = [LotteryPublish]()
         
         return true
@@ -96,6 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return config
     }
     
+    //更新各类彩票列表
     func updateLotteryList(_ list: [LotteryInfo]) {
         lotteryList = list
         waitingLotteries.removeAll()
@@ -109,6 +113,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else {
                 if !lottery.isRead {
                     publishLotteries.append(lottery)
+                }
+                if lottery.isLucky {
+                    luckyLotteries.append(lottery)
                 }
             }
         }

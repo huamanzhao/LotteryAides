@@ -18,6 +18,7 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     var lotteryList = [LotteryInfo]()
     var waitingLotteries = [LotteryInfo]()
     var publishLotteries = [LotteryInfo]()
+    var luckyLotteries = [LotteryInfo]()
     var publishList = [LotteryPublish]()
     
     override func viewDidLoad() {
@@ -42,12 +43,13 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
         lotteryList = UserConfig.getLotteryList()
         waitingLotteries = UserConfig.getWaitingLotteries()
         publishLotteries = UserConfig.getPublishLotteries()
+        luckyLotteries = UserConfig.getLuckyLotteries()
         publishList = UserConfig.getPublishList()
         
         if type == 0 && waitingLotteries.isEmpty {  //待开奖
             self.view.sendSubview(toBack: tableView)
         }
-        else if type == 1 && publishLotteries.isEmpty { //已中奖
+        else if type == 1 && luckyLotteries.isEmpty { //已中奖
             self.view.sendSubview(toBack: tableView)
         }
         else if type == 2 && lotteryList.isEmpty {  //全部
@@ -65,7 +67,7 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
             return waitingLotteries.count
         }
         else if type == 1 { //已中奖
-            return publishLotteries.count
+            return luckyLotteries.count
         }
         else {  //全部
             return lotteryList.count
@@ -82,7 +84,7 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
             cell.setupViewWith(lottery: lottery, status: 1)
         }
         else if type == 1 { //已中奖
-            lottery = publishLotteries[row]
+            lottery = luckyLotteries[row]
             cell.setupViewWith(lottery: lottery)
             
             for publish in publishList {

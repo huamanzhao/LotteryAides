@@ -148,6 +148,11 @@ class UserConfig: AnyObject {
         return app.publishLotteries
     }
     
+    static func getLuckyLotteries() -> [LotteryInfo] {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        return app.luckyLotteries
+    }
+    
     static func getPublishList() -> [LotteryPublish] {
         let app = UIApplication.shared.delegate as! AppDelegate
         return app.publishList
