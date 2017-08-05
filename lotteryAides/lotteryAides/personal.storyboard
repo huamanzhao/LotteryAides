@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGl-Sr-ZDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="-395"/>
+            <point key="canvasLocation" x="329" y="-463"/>
         </scene>
         <!--Lottery List View Controller-->
         <scene sceneID="8Re-VK-8yF">
@@ -38,6 +38,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="6oo-J3-RQf">
+                                <rect key="frame" x="-0.5" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="木有记录。。。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ww-cV-bvL">
+                                <rect key="frame" x="126.5" y="248" width="121.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_empty" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-bq-WsD">
+                                <rect key="frame" x="123.5" y="269" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="AVA-Mf-Bs9"/>
+                                    <constraint firstAttribute="height" constant="128" id="LQZ-RG-84u"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TTv-rm-GtY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -49,19 +66,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xbu-bq-WsD" firstAttribute="centerY" secondItem="hSB-az-gKb" secondAttribute="centerY" id="0oO-Uh-3Av"/>
+                            <constraint firstItem="6oo-J3-RQf" firstAttribute="top" secondItem="mqI-hC-9TL" secondAttribute="bottom" id="3qB-03-Xm5"/>
+                            <constraint firstItem="6oo-J3-RQf" firstAttribute="width" secondItem="hSB-az-gKb" secondAttribute="width" id="7Cr-p2-Gem"/>
                             <constraint firstItem="TTv-rm-GtY" firstAttribute="centerX" secondItem="hSB-az-gKb" secondAttribute="centerX" id="9zF-dC-yzd"/>
+                            <constraint firstItem="Xbu-bq-WsD" firstAttribute="top" secondItem="9ww-cV-bvL" secondAttribute="bottom" id="ATO-Xx-eKd"/>
                             <constraint firstItem="TTv-rm-GtY" firstAttribute="top" secondItem="mqI-hC-9TL" secondAttribute="bottom" id="D2E-Ph-a4t"/>
                             <constraint firstItem="TTv-rm-GtY" firstAttribute="width" secondItem="hSB-az-gKb" secondAttribute="width" id="GcJ-29-gfl"/>
+                            <constraint firstItem="6oo-J3-RQf" firstAttribute="centerX" secondItem="hSB-az-gKb" secondAttribute="centerX" id="PXX-On-Dph"/>
                             <constraint firstItem="Jby-v3-OoC" firstAttribute="top" secondItem="TTv-rm-GtY" secondAttribute="bottom" id="ZOB-Kx-lda"/>
+                            <constraint firstItem="9ww-cV-bvL" firstAttribute="centerX" secondItem="hSB-az-gKb" secondAttribute="centerX" id="qlg-up-Wq1"/>
+                            <constraint firstItem="Jby-v3-OoC" firstAttribute="top" secondItem="6oo-J3-RQf" secondAttribute="bottom" id="svp-tW-PII"/>
+                            <constraint firstItem="Xbu-bq-WsD" firstAttribute="centerX" secondItem="hSB-az-gKb" secondAttribute="centerX" id="wZP-Uo-MLl"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emptyImage" destination="Xbu-bq-WsD" id="Ljm-ag-ed9"/>
+                        <outlet property="emptyLabel" destination="9ww-cV-bvL" id="VYs-Jh-Gr4"/>
                         <outlet property="tableView" destination="TTv-rm-GtY" id="T22-8F-jue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSN-EP-lAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1062" y="-395"/>
+            <point key="canvasLocation" x="329" y="-1137"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bg_empty" width="64" height="64"/>
+        <image name="bg_gray" width="320" height="538"/>
+    </resources>
 </document>

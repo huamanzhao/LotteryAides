@@ -10,6 +10,8 @@ import UIKit
 
 class LotteryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     var type: UInt = 0    //0-待开奖 1-已中奖  2-全部
     
@@ -21,11 +23,14 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = 89
+        emptyImage.tintColor = Constants.subColor
+        emptyLabel.textColor = Constants.subColor
         
         tableView.register(UINib(nibName: LotteryInOpenCellName, bundle: nil), forCellReuseIdentifier: LotteryInOpenCellId)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
+        
+        tableView.rowHeight = 89
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +44,20 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
         publishLotteries = UserConfig.getPublishLotteries()
         publishList = UserConfig.getPublishList()
         
-        tableView.reloadData()
+        if type == 0 && waitingLotteries.isEmpty {  //待开奖
+            self.view.sendSubview(toBack: tableView)
+        }
+        else if type == 1 && publishLotteries.isEmpty { //已中奖
+            self.view.sendSubview(toBack: tableView)
+        }
+        else if type == 2 && lotteryList.isEmpty {  //全部
+            self.view.sendSubview(toBack: tableView)
+        }
+        else {
+            self.view.bringSubview(toFront: tableView)
+            
+            tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

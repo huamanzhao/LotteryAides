@@ -13,6 +13,7 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
     var baseController: VTMagicController!
     var titles = [String]()
     var currentPage: UInt = 0
+    var hud: MBProgressHUD!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,18 +49,19 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
     
     //获取彩票列表
     func getLotteryList() {
+        hud = MBProgressHUD.showAdded(to: self.navigationController!.view, animated: true)
         GetLotteryListRequest().doRequest { (isOK, response) in
-            DispatchQueue.main.async{
+            if isOK && response.code == "0" {
+                let lotteryList = response.lotteryList
+                //更新缓存
+                UserConfig.updateLotteryList(lotteryList!)
                 
-                if isOK && response.code == "0" {
-                    let lotteryList = response.lotteryList
-                    //更新缓存
-                    UserConfig.updateLotteryList(lotteryList!)
-                    
-                    //获取开奖结果
-                    self.getLotteryPublish()
-                }
-                else {
+                //获取开奖结果
+                self.getLotteryPublish()
+            }
+            else {
+                DispatchQueue.main.async{
+                    self.hud.hide(animated: true)
                     self.view.makeToast("请求服务端数据失败")
                 }
             }
@@ -75,6 +77,9 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
             request.type = lottery.lt_type.type
             request.term = lottery.term
             request.doRequest { (isOK, response) in
+                DispatchQueue.main.async{
+                    self.hud.hide(animated: true)
+                }
                 if isOK && response.code == "0" {
                     UserConfig.appendPublish(response.publishInfo)
                 }
