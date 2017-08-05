@@ -92,6 +92,7 @@
 		95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */; };
 		95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69BA1F28420D0032A4C2 /* Util.swift */; };
 		95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */; };
+		95FB82461F36402E00A68D56 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB82451F36402E00A68D56 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -206,6 +207,7 @@
 		95DD69B41F2840200032A4C2 /* ExtUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtUIViewController.swift; path = common/extension/ExtUIViewController.swift; sourceTree = "<group>"; };
 		95DD69BA1F28420D0032A4C2 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Util.swift; path = common/utils/Util.swift; sourceTree = "<group>"; };
 		95DD69BC1F2843510032A4C2 /* ExtDispatchQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtDispatchQueue.swift; path = common/utils/ExtDispatchQueue.swift; sourceTree = "<group>"; };
+		95FB82451F36402E00A68D56 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */,
 				956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */,
 				956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */,
+				95FB82451F36402E00A68D56 /* AboutUsViewController.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
 				956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */,
+				95FB82461F36402E00A68D56 /* AboutUsViewController.swift in Sources */,
 				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
 				956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */,

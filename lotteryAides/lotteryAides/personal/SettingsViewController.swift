@@ -56,6 +56,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    func showAboutUsViewController() {
+        
+    }
+    
     func showParentViewController() {
         self.navigationController!.dismiss(animated: true, completion: nil)
     }
@@ -92,12 +96,30 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             return cell!
         }
         
+        else if row == 1 {
+            var cell = tableView.dequeueReusableCell(withIdentifier: "aboutus")
+            if cell == nil {
+                cell = UITableViewCell(style: .default, reuseIdentifier: "aboutus")
+            }
+            
+            cell!.accessoryType = .disclosureIndicator
+            cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
+            cell?.textLabel?.text = "关于我们"
+            
+            return cell!
+        }
+        
         
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let row = indexPath.row
+        if row == 1 {
+            self.performSegue(withIdentifier: "showAbout", sender: self)
+        }
     }
 
 }

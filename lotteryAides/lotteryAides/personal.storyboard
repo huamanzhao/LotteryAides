@@ -5,6 +5,8 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -83,11 +85,72 @@
                     <connections>
                         <outlet property="logoutButton" destination="fkh-U7-HAR" id="219-EF-iG8"/>
                         <outlet property="tableView" destination="Mql-31-VWM" id="ttA-jA-d80"/>
+                        <segue destination="3n9-Pn-kA7" kind="show" identifier="showAbout" id="c0l-ao-61V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JqT-ea-8GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1087" y="-463"/>
+        </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="6vQ-Mc-fir">
+            <objects>
+                <viewController id="3n9-Pn-kA7" customClass="AboutUsViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cni-Ha-OpS"/>
+                        <viewControllerLayoutGuide type="bottom" id="h8r-3E-mxo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQk-Ve-Kao">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="XNK-Wt-zUL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_logo_white" translatesAutoresizingMaskIntoConstraints="NO" id="Ai7-r5-2bN">
+                                <rect key="frame" x="131" y="144" width="112.5" height="112.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Ai7-r5-2bN" secondAttribute="height" id="2qv-5Z-BKf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpW-12-njb">
+                                <rect key="frame" x="145" y="387.5" width="85.5" height="25.5"/>
+                                <string key="text" base64-UTF8="YES">
+5b2p56WoCOWKqeaJiw
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVE-Mo-zrg">
+                                <rect key="frame" x="179.5" y="421" width="15.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XNK-Wt-zUL" firstAttribute="centerX" secondItem="aQk-Ve-Kao" secondAttribute="centerX" id="53g-c8-TSh"/>
+                            <constraint firstItem="XNK-Wt-zUL" firstAttribute="width" secondItem="aQk-Ve-Kao" secondAttribute="width" id="8bm-2v-M5N"/>
+                            <constraint firstItem="zpW-12-njb" firstAttribute="centerY" secondItem="aQk-Ve-Kao" secondAttribute="centerY" multiplier="1.2" id="GQ3-Ug-fhG"/>
+                            <constraint firstItem="Ai7-r5-2bN" firstAttribute="centerX" secondItem="aQk-Ve-Kao" secondAttribute="centerX" id="Sty-wx-nFW"/>
+                            <constraint firstItem="Ai7-r5-2bN" firstAttribute="width" secondItem="XNK-Wt-zUL" secondAttribute="width" multiplier="0.3" id="XNv-cF-nUA"/>
+                            <constraint firstItem="Ai7-r5-2bN" firstAttribute="centerY" secondItem="aQk-Ve-Kao" secondAttribute="centerY" multiplier="0.6" id="bj8-Ub-Hzp"/>
+                            <constraint firstItem="zpW-12-njb" firstAttribute="centerX" secondItem="aQk-Ve-Kao" secondAttribute="centerX" id="c4h-rW-z8j"/>
+                            <constraint firstItem="lVE-Mo-zrg" firstAttribute="centerX" secondItem="aQk-Ve-Kao" secondAttribute="centerX" id="lAK-yJ-rnW"/>
+                            <constraint firstItem="h8r-3E-mxo" firstAttribute="top" secondItem="XNK-Wt-zUL" secondAttribute="bottom" id="o0s-cY-3Hy"/>
+                            <constraint firstItem="lVE-Mo-zrg" firstAttribute="top" secondItem="zpW-12-njb" secondAttribute="bottom" constant="8" id="yb5-Vw-858"/>
+                            <constraint firstItem="XNK-Wt-zUL" firstAttribute="top" secondItem="aQk-Ve-Kao" secondAttribute="top" id="zkt-Qm-VEg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="lVE-Mo-zrg" id="D3b-Xy-yoc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7N-al-iys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1853.5999999999999" y="-464.6176911544228"/>
         </scene>
         <!--Lottery List View Controller-->
         <scene sceneID="8Re-VK-8yF">
@@ -157,5 +220,7 @@
     <resources>
         <image name="bg_empty" width="64" height="64"/>
         <image name="bg_gray" width="320" height="538"/>
+        <image name="bg_login" width="320" height="568"/>
+        <image name="image_logo_white" width="99" height="97"/>
     </resources>
 </document>
