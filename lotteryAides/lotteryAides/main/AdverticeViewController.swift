@@ -71,6 +71,9 @@ class AdverticeViewController: UIViewController {
         var urlStr = defaultUrl
         if config.getStatus() == "0" {
             urlStr = config.getADUrl()
+            if urlStr.isEmpty {
+                urlStr = defaultUrl
+            }
         }
         
         if userType == BASIC_TYPE {

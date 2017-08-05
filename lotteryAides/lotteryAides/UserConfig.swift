@@ -11,11 +11,12 @@ import Foundation
 
 class UserConfig: AnyObject {
     private var phone = ""
+    private var password = ""
+    private var adUrl = ""
     private var promptStatus = "0"  //协约状态，0：正常，1：异常
     private var userType = BASIC_TYPE
-    private var adUrl = ""
     private var needGuide = true
-    private var password = ""
+    private var notifyOn = true
     
     private var userDefault : UserDefaults!
     private let default_phone  = "default_phone"
@@ -24,6 +25,7 @@ class UserConfig: AnyObject {
     private let default_type   = "default_type"
     private let default_adUrl  = "default_adUrl"
     private let default_guide  = "default_guide"
+    private let default_nofity  = "default_nofity"
     
     init() {
         userDefault = UserDefaults.standard
@@ -48,9 +50,6 @@ class UserConfig: AnyObject {
     }
     
     func getUserType() -> String {
-        if userType.isEmpty {
-            userType = BASIC_TYPE
-        }
         return userType
     }
     
@@ -60,6 +59,10 @@ class UserConfig: AnyObject {
     
     func getNeedGuide() -> Bool {
         return needGuide
+    }
+    
+    func getNotifyOn() -> Bool {
+        return notifyOn
     }
     
     func setPhone(_ phone: String) {
@@ -86,6 +89,10 @@ class UserConfig: AnyObject {
         self.userType = type
     }
     
+    func setNotifyOn(_ on: Bool) {
+        self.notifyOn = on
+    }
+    
     func saveUserInfo() {
         userDefault.setValue(phone, forKey: default_phone)
         userDefault.setValue(password, forKey: default_password)
@@ -93,6 +100,7 @@ class UserConfig: AnyObject {
         userDefault.setValue(userType, forKey: default_type)
         userDefault.setValue(adUrl, forKey: default_adUrl)
         userDefault.setValue("\(needGuide)", forKey: default_guide)
+        userDefault.setValue("\(notifyOn)", forKey: default_nofity)
         
         userDefault.synchronize()
     }
@@ -100,11 +108,31 @@ class UserConfig: AnyObject {
     func getLocalUserInfo() {
         phone = readLocalData(default_phone)
         password = readLocalData(default_password)
-        promptStatus = readLocalData(default_status)
-        userType = readLocalData(default_type)
+        
+        let localStatus = readLocalData(default_status)
+        if !localStatus.isEmpty {
+            promptStatus = localStatus
+        }
+        
+        let localType = readLocalData(default_type)
+        if !localType.isEmpty {
+            userType = localType
+        }
+        
+        
         adUrl = readLocalData(default_adUrl)
-        let needStr = readLocalData(default_guide)
-        needGuide = needStr == "true" ? true : false
+        
+        let localGuide = readLocalData(default_guide)
+        if !localGuide.isEmpty {
+            needGuide = localGuide == "true" ? true : false
+        }
+        
+        
+        let localNotify = readLocalData(default_nofity)
+        if !localNotify.isEmpty {
+            notifyOn = localNotify == "true" ? true : false
+        }
+        
     }
     
     
