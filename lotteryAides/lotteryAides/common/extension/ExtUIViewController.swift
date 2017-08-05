@@ -104,6 +104,31 @@ extension UIViewController: UIGestureRecognizerDelegate {
     }
     
     //实现navigation leftBar自定义，跟左划动作同时存在
+    
+    
+    /** 添加标题菜单 */
+    func setBaseViewController(_ navigationHeight: CGFloat, againsStatusBar: Bool = false) -> VTMagicController {
+        let baseController = VTMagicController()
+        //        baseController.view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
+        baseController.magicView.navigationInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        baseController.magicView.navigationColor = Constants.cellColor
+        baseController.magicView.sliderColor = Constants.subColor
+        baseController.magicView.separatorColor = Constants.textColor
+        baseController.magicView.switchStyle = .default
+        baseController.magicView.layoutStyle = .center
+        baseController.magicView.navigationHeight = navigationHeight
+        baseController.magicView.isAgainstStatusBar = againsStatusBar
+        
+        baseController.magicView.itemSpacing = view.frame.width * 0.12
+        //        baseController.magicView.sliderWidth = view.frame.width * 0.12
+        
+        //如果显示状态栏，则底部减去状态栏的高度
+        if !againsStatusBar {
+            baseController.view.frame = CGRect(x: 0, y: 20 + 44, width: view.frame.width, height: view.frame.height - 44 - 20)
+        }
+        
+        return baseController
+    }
 }
 
 extension UIViewController {

@@ -4,3 +4,4 @@
 
 #import "JPUSHService.h"
 #import "ToastUIView.h"
+#import "VTMagic.h"

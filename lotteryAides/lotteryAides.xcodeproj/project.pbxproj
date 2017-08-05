@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
-		9500F2101F32B43B00FDB435 /* LotteryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20F1F32B43B00FDB435 /* LotteryType.swift */; };
+		9530E6F11F359D3600CAAE5F /* LotteryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20F1F32B43B00FDB435 /* LotteryType.swift */; };
+		9530E7051F359F6800CAAE5F /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6F41F359F6800CAAE5F /* UIColor+Magic.m */; };
+		9530E7061F359F6800CAAE5F /* UIScrollView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6F61F359F6800CAAE5F /* UIScrollView+Magic.m */; };
+		9530E7071F359F6800CAAE5F /* UIViewController+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6F81F359F6800CAAE5F /* UIViewController+Magic.m */; };
+		9530E7081F359F6800CAAE5F /* VTContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6FB1F359F6800CAAE5F /* VTContentView.m */; };
+		9530E7091F359F6800CAAE5F /* VTMagicController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6FF1F359F6800CAAE5F /* VTMagicController.m */; };
+		9530E70A1F359F6800CAAE5F /* VTMagicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E7021F359F6800CAAE5F /* VTMagicView.m */; };
+		9530E70B1F359F6800CAAE5F /* VTMenuBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E7041F359F6800CAAE5F /* VTMenuBar.m */; };
 		9539D6481F27322700D0F8C4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; };
 		9539D6491F27322700D0F8C4 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92431F27276D00E71892 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9539D64A1F27322700D0F8C4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CF92451F27276D00E71892 /* SwiftyJSON.framework */; };
@@ -24,7 +31,6 @@
 		956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */; };
 		956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */; };
 		956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */; };
-		956E0A7C1F2C39C100E65DF0 /* LotteryListMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */; };
 		956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */; };
 		956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */; };
 		956E0A7F1F2C39C100E65DF0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */; };
@@ -108,6 +114,24 @@
 /* Begin PBXFileReference section */
 		9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryCodeView.swift; sourceTree = "<group>"; };
 		9500F20F1F32B43B00FDB435 /* LotteryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryType.swift; sourceTree = "<group>"; };
+		9530E6F31F359F6800CAAE5F /* UIColor+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Magic.h"; path = "lib/VTMagic/UIColor+Magic.h"; sourceTree = "<group>"; };
+		9530E6F41F359F6800CAAE5F /* UIColor+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Magic.m"; path = "lib/VTMagic/UIColor+Magic.m"; sourceTree = "<group>"; };
+		9530E6F51F359F6800CAAE5F /* UIScrollView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+Magic.h"; path = "lib/VTMagic/UIScrollView+Magic.h"; sourceTree = "<group>"; };
+		9530E6F61F359F6800CAAE5F /* UIScrollView+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+Magic.m"; path = "lib/VTMagic/UIScrollView+Magic.m"; sourceTree = "<group>"; };
+		9530E6F71F359F6800CAAE5F /* UIViewController+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Magic.h"; path = "lib/VTMagic/UIViewController+Magic.h"; sourceTree = "<group>"; };
+		9530E6F81F359F6800CAAE5F /* UIViewController+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Magic.m"; path = "lib/VTMagic/UIViewController+Magic.m"; sourceTree = "<group>"; };
+		9530E6F91F359F6800CAAE5F /* VTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTCommon.h; path = lib/VTMagic/VTCommon.h; sourceTree = "<group>"; };
+		9530E6FA1F359F6800CAAE5F /* VTContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTContentView.h; path = lib/VTMagic/VTContentView.h; sourceTree = "<group>"; };
+		9530E6FB1F359F6800CAAE5F /* VTContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTContentView.m; path = lib/VTMagic/VTContentView.m; sourceTree = "<group>"; };
+		9530E6FC1F359F6800CAAE5F /* VTEnumType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTEnumType.h; path = lib/VTMagic/VTEnumType.h; sourceTree = "<group>"; };
+		9530E6FD1F359F6800CAAE5F /* VTMagic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMagic.h; path = lib/VTMagic/VTMagic.h; sourceTree = "<group>"; };
+		9530E6FE1F359F6800CAAE5F /* VTMagicController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMagicController.h; path = lib/VTMagic/VTMagicController.h; sourceTree = "<group>"; };
+		9530E6FF1F359F6800CAAE5F /* VTMagicController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMagicController.m; path = lib/VTMagic/VTMagicController.m; sourceTree = "<group>"; };
+		9530E7001F359F6800CAAE5F /* VTMagicProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMagicProtocol.h; path = lib/VTMagic/VTMagicProtocol.h; sourceTree = "<group>"; };
+		9530E7011F359F6800CAAE5F /* VTMagicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMagicView.h; path = lib/VTMagic/VTMagicView.h; sourceTree = "<group>"; };
+		9530E7021F359F6800CAAE5F /* VTMagicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMagicView.m; path = lib/VTMagic/VTMagicView.m; sourceTree = "<group>"; };
+		9530E7031F359F6800CAAE5F /* VTMenuBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTMenuBar.h; path = lib/VTMagic/VTMenuBar.h; sourceTree = "<group>"; };
+		9530E7041F359F6800CAAE5F /* VTMenuBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VTMenuBar.m; path = lib/VTMagic/VTMenuBar.m; sourceTree = "<group>"; };
 		9549B77A1F2AE34000B4BE83 /* lottery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lottery.storyboard; sourceTree = "<group>"; };
 		9549B77C1F2AE34D00B4BE83 /* personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = personal.storyboard; sourceTree = "<group>"; };
 		956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInfo.swift; path = lottery/LotteryInfo.swift; sourceTree = "<group>"; };
@@ -115,7 +139,6 @@
 		956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryDetailViewController.swift; path = lottery/LotteryDetailViewController.swift; sourceTree = "<group>"; };
 		956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryMainViewController.swift; path = lottery/LotteryMainViewController.swift; sourceTree = "<group>"; };
 		956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryScanViewController.swift; path = lottery/LotteryScanViewController.swift; sourceTree = "<group>"; };
-		956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryListMainViewController.swift; path = personal/LotteryListMainViewController.swift; sourceTree = "<group>"; };
 		956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryListViewController.swift; path = personal/LotteryListViewController.swift; sourceTree = "<group>"; };
 		956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalMainViewController.swift; path = personal/PersonalMainViewController.swift; sourceTree = "<group>"; };
 		956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = personal/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +240,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9530E6F21F359F4A00CAAE5F /* VTMagic */ = {
+			isa = PBXGroup;
+			children = (
+				9530E6F31F359F6800CAAE5F /* UIColor+Magic.h */,
+				9530E6F41F359F6800CAAE5F /* UIColor+Magic.m */,
+				9530E6F51F359F6800CAAE5F /* UIScrollView+Magic.h */,
+				9530E6F61F359F6800CAAE5F /* UIScrollView+Magic.m */,
+				9530E6F71F359F6800CAAE5F /* UIViewController+Magic.h */,
+				9530E6F81F359F6800CAAE5F /* UIViewController+Magic.m */,
+				9530E6F91F359F6800CAAE5F /* VTCommon.h */,
+				9530E6FA1F359F6800CAAE5F /* VTContentView.h */,
+				9530E6FB1F359F6800CAAE5F /* VTContentView.m */,
+				9530E6FC1F359F6800CAAE5F /* VTEnumType.h */,
+				9530E6FD1F359F6800CAAE5F /* VTMagic.h */,
+				9530E6FE1F359F6800CAAE5F /* VTMagicController.h */,
+				9530E6FF1F359F6800CAAE5F /* VTMagicController.m */,
+				9530E7001F359F6800CAAE5F /* VTMagicProtocol.h */,
+				9530E7011F359F6800CAAE5F /* VTMagicView.h */,
+				9530E7021F359F6800CAAE5F /* VTMagicView.m */,
+				9530E7031F359F6800CAAE5F /* VTMenuBar.h */,
+				9530E7041F359F6800CAAE5F /* VTMenuBar.m */,
+			);
+			name = VTMagic;
+			sourceTree = "<group>";
+		};
 		9539D6511F2733B500D0F8C4 /* system */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,9 +313,8 @@
 		956E0A6D1F2C38F600E65DF0 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				956E0A781F2C39C100E65DF0 /* LotteryListMainViewController.swift */,
-				956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */,
 				956E0A7A1F2C39C100E65DF0 /* PersonalMainViewController.swift */,
+				956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */,
 				956E0A7B1F2C39C100E65DF0 /* SettingsViewController.swift */,
 			);
 			name = controller;
@@ -376,6 +423,7 @@
 		95DD696F1F27881A0032A4C2 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				9530E6F21F359F4A00CAAE5F /* VTMagic */,
 				95DD697B1F278C710032A4C2 /* ToastUIView */,
 				95DD69791F278C560032A4C2 /* JPush */,
 			);
@@ -528,20 +576,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9500F2101F32B43B00FDB435 /* LotteryType.swift in Sources */,
+				9530E6F11F359D3600CAAE5F /* LotteryType.swift in Sources */,
 				958A5EDF1F2ED6B5002330AA /* GetLotteryListResponse.swift in Sources */,
 				95DD69B71F2840200032A4C2 /* ExtUIViewController.swift in Sources */,
+				9530E7061F359F6800CAAE5F /* UIScrollView+Magic.m in Sources */,
 				95849B2F1F34BC7800A621B1 /* SectionHeaderView.swift in Sources */,
 				956E0A981F2CDC1200E65DF0 /* RegistRequest.swift in Sources */,
 				958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */,
+				9530E7051F359F6800CAAE5F /* UIColor+Magic.m in Sources */,
 				956E0AAC1F2DE15F00E65DF0 /* UpdateLotteryRequest.swift in Sources */,
 				956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */,
 				956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */,
-				956E0A7C1F2C39C100E65DF0 /* LotteryListMainViewController.swift in Sources */,
 				956E0AA81F2D7B8D00E65DF0 /* LotteryPublish.swift in Sources */,
 				95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */,
 				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
 				956E0AA01F2CE70900E65DF0 /* AddLotteryRequest.swift in Sources */,
+				9530E70B1F359F6800CAAE5F /* VTMenuBar.m in Sources */,
 				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
 				956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */,
 				956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */,
@@ -549,6 +599,7 @@
 				956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */,
 				956E0AA21F2CE80800E65DF0 /* DateUtil.swift in Sources */,
 				956E0AA41F2D5EE200E65DF0 /* LotteryCode.swift in Sources */,
+				9530E7081F359F6800CAAE5F /* VTContentView.m in Sources */,
 				958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */,
 				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
@@ -560,16 +611,19 @@
 				95DD69B11F2839790032A4C2 /* Constants.swift in Sources */,
 				956E0A9E1F2CE69300E65DF0 /* ChangePasswordRequest.swift in Sources */,
 				956E0AA61F2D7B1D00E65DF0 /* GetPublishResponse.swift in Sources */,
+				9530E70A1F359F6800CAAE5F /* VTMagicView.m in Sources */,
 				956E0A941F2C6A5B00E65DF0 /* ExtUIView.swift in Sources */,
 				95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */,
 				956E0AAE1F2E048100E65DF0 /* GetUserStatusRequest.swift in Sources */,
 				956E0AAA1F2DE0A700E65DF0 /* GetPublishRequest.swift in Sources */,
 				95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */,
+				9530E7091F359F6800CAAE5F /* VTMagicController.m in Sources */,
 				956E0AB01F2E049800E65DF0 /* GetUserStatusResponse.swift in Sources */,
 				956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */,
 				956E0AB21F2E060200E65DF0 /* GetAdverticeUrlRequest.swift in Sources */,
 				95CF92261F271F2C00E71892 /* AppDelegate.swift in Sources */,
 				956E0A9C1F2CE63B00E65DF0 /* LogoutRequest.swift in Sources */,
+				9530E7071F359F6800CAAE5F /* UIViewController+Magic.m in Sources */,
 				9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */,
 				956E0A9A1F2CE5FB00E65DF0 /* LoginRequest.swift in Sources */,
 				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
@@ -720,7 +774,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "lotteryAides/lotteryAides-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lotteryAides/lib/ $(PROJECT_DIR)/lotteryAides/lib/JPush";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lotteryAides/lib/ $(PROJECT_DIR)/lotteryAides/lib/JPush $(PROJECT_DIR)/lotteryAides/lib/VTMagic";
 			};
 			name = Debug;
 		};
@@ -748,7 +802,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "lotteryAides/lotteryAides-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lotteryAides/lib/ $(PROJECT_DIR)/lotteryAides/lib/JPush";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/lotteryAides/lib/ $(PROJECT_DIR)/lotteryAides/lib/JPush $(PROJECT_DIR)/lotteryAides/lib/VTMagic";
 			};
 			name = Release;
 		};

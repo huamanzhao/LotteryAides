@@ -9,6 +9,7 @@
 import UIKit
 
 class LotteryListViewController: UIViewController {
+    var type: UInt = 0    //0-待开奖 1-已中奖  2-全部
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,5 +32,16 @@ class LotteryListViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    override func viewWillAppear(_ animated: Bool) {
+        if type == 0 {
+            self.view.backgroundColor = UIColor.red
+        }
+        else if type == 1 {
+            self.view.backgroundColor = UIColor.yellow
+        }
+        else {
+            self.view.backgroundColor = UIColor.green
+        }
+    }
 
 }

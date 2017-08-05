@@ -24,7 +24,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGl-Sr-ZDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-911" y="-70"/>
+            <point key="canvasLocation" x="329" y="-395"/>
+        </scene>
+        <!--Lottery List View Controller-->
+        <scene sceneID="8Re-VK-8yF">
+            <objects>
+                <viewController storyboardIdentifier="lotteryList" id="Ra9-Ou-fLU" customClass="LotteryListViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mqI-hC-9TL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jby-v3-OoC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hSB-az-gKb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSN-EP-lAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="-395"/>
         </scene>
     </scenes>
 </document>
