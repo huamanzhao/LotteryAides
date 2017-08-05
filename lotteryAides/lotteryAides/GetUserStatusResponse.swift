@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class GetUserStatusResponse : ServerResponseBase {
-    var status = 0
+    var status = ""
     
     override func parseResponse(_ result: Alamofire.Result<Any>) {
         super.parseResponse(result)
@@ -21,7 +21,7 @@ class GetUserStatusResponse : ServerResponseBase {
         
         if let data = json.dictionary {
             if let statusJS = data["status"] {
-                status = statusJS.intValue
+                status = statusJS.stringValue
             }
         }
     }

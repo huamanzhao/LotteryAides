@@ -48,13 +48,15 @@ class LotteryInOpenCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    //status = 0: 已经开奖了的    1：待开奖
+    //status = 0: 已经开奖了的    1：待开奖  2: 全部的
     func setupViewWith(lottery: LotteryInfo, status: Int = 0) {
         self.lottery = lottery
         
+        statusView.isHidden = false
+        
         nameLabel.text = lottery.lt_type.name
         termLabel.text = lottery.term + "期"
-        dateLabel.text = lottery.publishDate.toString(LOTTERY_PUBLISH_DATE)
+        dateLabel.text = lottery.publishDate.toString(LOTTERY_DATE)
         timeLabel.text = lottery.lt_type.time
         codeView.setupCodeView(lottery.lt_type.type, (lottery.codes.first)!)
         
@@ -72,6 +74,10 @@ class LotteryInOpenCell: UITableViewCell {
             
             let countDown = Util.getCountdownTime(earlyDate: early, lateDate: late)
             countLabel.text = countDown
+        }
+        
+        else if status == 2 {
+            statusView.isHidden = true
         }
     }
     

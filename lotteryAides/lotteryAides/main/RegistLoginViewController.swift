@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 enum FuncType : String {
     case login = "login"
@@ -30,17 +31,12 @@ class RegistLoginViewController: UIViewController {
     @IBOutlet weak var passwordBgView: UIView!
     
     var funcType : FuncType = FuncType.login
+    var hud: MBProgressHUD!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
 
         setupSubView()
-        
-        //ZC_DEBUG
-        phoneTF.text = "15076128501"
-        passwordTF.text = "222222"
     }
     
     func setupSubView() {
@@ -48,7 +44,10 @@ class RegistLoginViewController: UIViewController {
         setupViewLayer(phoneBgView)
         setupViewLayer(passwordBgView)
         setupViewLayer(funcBtn)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     func setupViewLayer(_ view: UIView) {
@@ -75,6 +74,7 @@ class RegistLoginViewController: UIViewController {
     
     //底部功能按钮点击后
     @IBAction func functionButtonPressed(_ sender: Any) {
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         switch funcType {
         case FuncType.login:
             userLogin()
@@ -146,6 +146,8 @@ class RegistLoginViewController: UIViewController {
         request.phone = phoneTF.text!
         request.password    = passwordTF.text!
         request.doRequest { (isOK, response) in
+            self.hideHud()
+            
             if isOK && response.code == "0" {
                 let config = UserConfig.getInstance()
                 config.setPhone(self.phoneTF.text!)
@@ -173,11 +175,13 @@ class RegistLoginViewController: UIViewController {
         request.password = passwordTF.text!
         request.doRequest { (isOK, response) in
             if isOK && response.code == "0" {
-                //TODO: 自动登录
-                
                 self.view.makeToast("注册成功")
+                
+                Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(self.userLogin), userInfo: nil, repeats: false)
             }
             else {
+                self.hideHud()
+                
                 self.view.makeToast("注册失败")
             }
         }
@@ -193,7 +197,16 @@ class RegistLoginViewController: UIViewController {
         request.phone = phoneTF.text!
         request.newPswd = passwordTF.text!
         request.doRequest { (isOK, response) in
-            self.view.makeToast("重置成功：" + "\(isOK)")
+            if isOK && response.code == "0" {
+                self.view.makeToast("重置密码成功")
+                
+                Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(self.userLogin), userInfo: nil, repeats: false)
+            }
+            else {
+                self.hideHud()
+                
+                self.view.makeToast("重置密码失败")
+            }
         }
     }
     
@@ -226,7 +239,13 @@ class RegistLoginViewController: UIViewController {
         let naviVC = lotteryStory.instantiateViewController(withIdentifier: "lottery")
         self.present(naviVC, animated: true, completion: nil)
     }
-
+    
+    func hideHud() {
+        DispatchQueue.main.async {
+            self.hud.hide(animated: true)
+        }
+    }
+    
 }
 
 extension RegistLoginViewController: UITextFieldDelegate {

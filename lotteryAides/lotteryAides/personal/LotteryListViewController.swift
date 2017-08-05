@@ -96,19 +96,7 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else {  //全部
             lottery = lotteryList[row]
-            if waitingLotteries.contains(lottery) {
-                cell.setupViewWith(lottery: lottery, status: 1)
-            }
-            else if publishLotteries.contains(lottery) {
-                cell.setupViewWith(lottery: lottery)
-                
-                for publish in publishList {
-                    if publish.term == lottery.term && publish.type == lottery.lt_type.type {
-                        cell.updateViewWith(publish: publish)
-                        break
-                    }
-                }
-            }
+            cell.setupViewWith(lottery: lottery, status: 2)
         }
         
         return cell

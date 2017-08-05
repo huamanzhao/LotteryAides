@@ -49,11 +49,11 @@ class LotteryInfo: NSObject {
                 term = termJS.stringValue
             }
             if let publishJS = data!["publishDate"] {
-                if let date = publishJS.stringValue.toDate(format: FORMAT_DATE_TIME) {
-                    publishDate = date
+                if let date = publishJS.stringValue.toDate(format: LOTTERY_DATE) {
+                    publishDate = date.toLocalDate()
                 }
-                else if let date = publishJS.stringValue.toDate(format: LOTTERY_PUBLISH_DATE) {
-                    publishDate = date
+                else if let date = publishJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE) {
+                    publishDate = date.toLocalDate()
                 }
             }
             if let mutipleJS = data!["mutiple"] {
@@ -63,13 +63,13 @@ class LotteryInfo: NSObject {
                 cost = costJS.intValue
             }
             if let addDateJS = data!["addDate"] {
-                addDate = addDateJS.stringValue.toDate(format: FORMAT_DATE_TIME)
+                addDate = addDateJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE)!.toLocalDate()
             }
             if let isReadJS = data!["isRead"] {
-                isRead = isReadJS.boolValue
+                isRead = isReadJS.intValue == 1 ? true : false
             }
             if let isLuckyJS = data!["isLucky"] {
-                isLucky = isLuckyJS.boolValue
+                isLucky = isLuckyJS.intValue == 1 ? true : false
             }
             if let levelJS = data!["level"] {
                 level = levelJS.intValue

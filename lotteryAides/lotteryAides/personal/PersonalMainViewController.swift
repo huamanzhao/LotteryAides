@@ -46,10 +46,18 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
         // Dispose of any resources that can be recreated.
     }
     
+    override func naviRightBtnClicked(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+    }
+    
     //获取彩票列表
     func getLotteryList() {
         hud = MBProgressHUD.showAdded(to: self.navigationController!.view, animated: true)
         GetLotteryListRequest().doRequest { (isOK, response) in
+            DispatchQueue.main.async{
+                self.hud.hide(animated: true)
+            }
+            
             if isOK && response.code == "0" {
                 let lotteryList = response.lotteryList
                 //更新缓存
@@ -59,12 +67,8 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
                 self.getLotteryPublish()
             }
             else {
-                DispatchQueue.main.async{
-                    self.hud.hide(animated: true)
-                    self.view.makeToast("请求服务端数据失败")
-                }
+                self.view.makeToast("请求服务端数据失败")
             }
-            
         }
     }
     
@@ -76,9 +80,6 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
             request.type = lottery.lt_type.type
             request.term = lottery.term
             request.doRequest { (isOK, response) in
-                DispatchQueue.main.async{
-                    self.hud.hide(animated: true)
-                }
                 if isOK && response.code == "0" {
                     UserConfig.appendPublish(response.publishInfo)
                 }

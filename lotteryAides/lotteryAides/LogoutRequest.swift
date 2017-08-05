@@ -10,11 +10,10 @@ import Foundation
 import Alamofire
 
 class LogoutRequest: RequestBase {
-    var phone : String = ""
     
     func getRequest() -> [String : String]{
         let request = [
-            "phone" : phone
+            "phone" : UserConfig.getInstance().getPhone()
         ]
         
         return request

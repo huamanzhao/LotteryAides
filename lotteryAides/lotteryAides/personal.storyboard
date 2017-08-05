@@ -21,10 +21,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="I8j-fS-wH6" kind="show" identifier="showSettings" id="cEt-Wo-9hD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IGl-Sr-ZDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="329" y="-463"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="ouP-Zt-Dwb">
+            <objects>
+                <viewController storyboardIdentifier="settings" id="I8j-fS-wH6" customClass="SettingsViewController" customModule="lotteryAides" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wr6-BV-DFQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uq0-bU-z03"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="peb-bN-atY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="add-Ga-Pmt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-31-VWM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="AnL-wy-UON"/>
+                                </constraints>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-U7-HAR">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="aOX-Ho-lnn"/>
+                                </constraints>
+                                <state key="normal" title="退出登录"/>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="I8j-fS-wH6" eventType="touchUpInside" id="M5Y-dV-JSx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="add-Ga-Pmt" firstAttribute="width" secondItem="peb-bN-atY" secondAttribute="width" id="8f9-vo-J1o"/>
+                            <constraint firstItem="add-Ga-Pmt" firstAttribute="centerX" secondItem="peb-bN-atY" secondAttribute="centerX" id="CDl-DP-ZAM"/>
+                            <constraint firstItem="Mql-31-VWM" firstAttribute="top" secondItem="Wr6-BV-DFQ" secondAttribute="bottom" id="Ej0-D1-aLn"/>
+                            <constraint firstItem="Uq0-bU-z03" firstAttribute="top" secondItem="fkh-U7-HAR" secondAttribute="bottom" id="HUF-th-HIB"/>
+                            <constraint firstItem="Mql-31-VWM" firstAttribute="centerX" secondItem="peb-bN-atY" secondAttribute="centerX" id="Mgx-tZ-5cl"/>
+                            <constraint firstItem="add-Ga-Pmt" firstAttribute="top" secondItem="Wr6-BV-DFQ" secondAttribute="bottom" id="Ukg-43-mzO"/>
+                            <constraint firstItem="Mql-31-VWM" firstAttribute="width" secondItem="peb-bN-atY" secondAttribute="width" id="Uvd-aj-trb"/>
+                            <constraint firstItem="Uq0-bU-z03" firstAttribute="top" secondItem="add-Ga-Pmt" secondAttribute="bottom" id="gRb-Tk-uYk"/>
+                            <constraint firstItem="fkh-U7-HAR" firstAttribute="centerX" secondItem="peb-bN-atY" secondAttribute="centerX" id="hBj-xK-1dq"/>
+                            <constraint firstItem="fkh-U7-HAR" firstAttribute="width" secondItem="peb-bN-atY" secondAttribute="width" id="liV-0w-qKr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="fkh-U7-HAR" id="219-EF-iG8"/>
+                        <outlet property="tableView" destination="Mql-31-VWM" id="ttA-jA-d80"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqT-ea-8GF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1087" y="-463"/>
         </scene>
         <!--Lottery List View Controller-->
         <scene sceneID="8Re-VK-8yF">

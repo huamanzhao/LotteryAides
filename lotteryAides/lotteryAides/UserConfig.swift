@@ -11,7 +11,7 @@ import Foundation
 
 class UserConfig: AnyObject {
     private var phone = ""
-    private var promptStatus = "0"
+    private var promptStatus = "0"  //协约状态，0：正常，1：异常
     private var userType = BASIC_TYPE
     private var adUrl = ""
     private var needGuide = true
@@ -48,6 +48,9 @@ class UserConfig: AnyObject {
     }
     
     func getUserType() -> String {
+        if userType.isEmpty {
+            userType = BASIC_TYPE
+        }
         return userType
     }
     
@@ -77,6 +80,10 @@ class UserConfig: AnyObject {
     
     func setNeedGuide(_ need: Bool) {
         self.needGuide = need
+    }
+    
+    func setUserType(_ type: String) {
+        self.userType = type
     }
     
     func saveUserInfo() {
@@ -109,7 +116,6 @@ class UserConfig: AnyObject {
         
         phone = ""
         password = ""
-        promptStatus = "0"
         
         userDefault.synchronize()
     }

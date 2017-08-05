@@ -8,7 +8,6 @@
 
 import UIKit
 import Photos
-import MBProgressHUD
 
 @objc
 public protocol ResultForViewControllerDelegate {

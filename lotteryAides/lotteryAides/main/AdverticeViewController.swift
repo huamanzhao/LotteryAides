@@ -17,31 +17,36 @@ class AdverticeViewController: UIViewController {
     var phone = ""
     var password = ""
     var needLogin = false
+    var userType = BASIC_TYPE
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.default, animated: false)
 
         webView.scalesPageToFit = true
-        
-        config = UserConfig.getInstance()
-        phone = config.getPhone()
-        password = config.getPassword()
-        if !phone.isEmpty && !password.isEmpty {
-            autoLogin()
-        }
-        
-        getServerAdverticeUrl()
+        getUserStatus()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        config = UserConfig.getInstance()
+        userType = config.getUserType()
+        
         let urlStr = getAdverticeUrl()
         webView.loadRequest(URLRequest(url: URL(string: urlStr)!))
         
-        
+        if userType == BASIC_TYPE {
+            phone = config.getPhone()
+            password = config.getPassword()
+            if !phone.isEmpty && !password.isEmpty {
+                autoLogin()
+            }
+            else {
+                //TODO 上线后，正常情况怎么处理，而且得考虑服务端已经停了，不能再进行登录操作了
+                
+                openLoginVC()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,15 +63,24 @@ class AdverticeViewController: UIViewController {
             openLotteryVC()
         }
         else {
-            self.performSegue(withIdentifier: "showLogin", sender: self)
+            openLoginVC()
         }
     }
 
     func getAdverticeUrl() -> String {
-        var urlStr = config.getADUrl()
-        if urlStr.isEmpty {
-            urlStr = defaultUrl
+        var urlStr = defaultUrl
+        if config.getStatus() == "0" {
+            urlStr = config.getADUrl()
         }
+        
+        if userType == BASIC_TYPE {
+            getServerAdverticeUrl()
+        }
+        else {
+            //TODO  获取BOOM上URL
+            urlStr = config.getADUrl()
+        }
+        
         
         return urlStr
     }
@@ -77,6 +91,10 @@ class AdverticeViewController: UIViewController {
             if isOK && response.code == "0" {
                 self.config.setADUrl(response.adUrl)
                 self.config.saveUserInfo()
+                
+                if self.config.getStatus() == "0" {
+                    self.webView.loadRequest(URLRequest(url: URL(string: response.adUrl)!))
+                }
             }
         }
     }
@@ -98,88 +116,23 @@ class AdverticeViewController: UIViewController {
         self.present(naviVC, animated: true, completion: nil)
     }
     
-    func tempTest4() {
-        let request = GetUserStatusRequest()
-        request.doRequest { (isOK, response) in
-            if isOK && response.code == "0" {
-                self.view.makeToast("获取用户状态OK")
-            }
-            else {
-                self.view.makeToast("获取用户状态Failed")
-            }
-            print("tempTest4 isOK:" + "\(isOK)")
-            print("code:" + response.code)
-            print("message:" + response.message)
-        }
+    func openLoginVC() {
+        self.performSegue(withIdentifier: "showLogin", sender: self)
     }
     
-    
-    func getLuckyResult(ltNumbers: [Int], pbNumbers: [Int]) -> [Int]  {
-        let max_len = 7
-        
-        if ltNumbers.count != max_len || pbNumbers.count != max_len {
-            return [Int]()
-        }
-        
-        var results = [Int]()   //保存最终结果
-        var tempResults = [Int]()   //保存中间结果
-        
-        for (index, number) in ltNumbers.enumerated() {
-            //1. 当前位置两个数组的数字不同
-            if number != pbNumbers[index] {
-                if tempResults.isEmpty {    //1.1 temp为空
-                    continue
-                }
-                
-                //1.2 temp不为空
-                if results.isEmpty {    //1.2.1 result为空
-                    results = tempResults
-                    tempResults = [Int]()   //置为空
-                    continue
-                }
-                
-                if results.count < tempResults.count {  //1.2.2 result不为空
-                    results = tempResults
-                    tempResults = [Int]()   //置为空
-                    continue
-                }
-                
-                tempResults = [Int]()   //置为空
-                continue
+    func getUserStatus() {
+        let request = GetUserStatusRequest()
+        request.doRequest { (isOK, response) in
+            var status = ""
+            if isOK && response.code == "0" {
+                status = response.status
+            }
+            else {
+                status = "0"
             }
             
-            //2. 此位置两数字相同
-            //-- 如果前一个位置或者后一个位置数字相同，则此数位置入temp列
-            if index == 0 { //2.1 第一个
-                if ltNumbers[index+1] == pbNumbers[index+1] {
-                    tempResults.append(index)
-                }
-            }
-            else if index == max_len - 1 {  //2.2 最后一个
-                if ltNumbers[index-1] == pbNumbers[index-1] {
-                    tempResults.append(index)
-                }
-                
-                if results.isEmpty {    //2.2.1 result为空
-                    results = tempResults
-                    tempResults = [Int]()   //置为空
-                    continue
-                }
-                
-                if results.count < tempResults.count {  //2.2.2 result不为空
-                    results = tempResults
-                    tempResults = [Int]()   //置为空
-                    continue
-                }
-            }
-            else {  //2.3 中间的
-                if (ltNumbers[index-1] == pbNumbers[index-1]) || (ltNumbers[index+1] == pbNumbers[index+1]) {
-                    tempResults.append(index)
-                }
-            }
-            
+            self.config.setPromptStatus(status)
+            self.config.saveUserInfo()
         }
-        
-        return results
     }
 }
