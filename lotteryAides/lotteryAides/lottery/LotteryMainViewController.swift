@@ -26,7 +26,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     let smallButtonWidth = Constants.screenWidth * 0.15
     let smallButtonBottomGap = CGFloat(16)
     
-    let FindingLotteries = "查询记录"
+    let FindingLotteries = "查询记录..."
     let NoFreshLotteriesDesc = "没有需要通知的彩票，请录入新彩票吧~"
     let QueryLotteriesError = "查询个人彩票信息失败"
     let FoundValidLotteries = "已经查询到您的彩票记录"
@@ -58,8 +58,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg_navi_bar"), for: .default)
         setNaviRightImage(UIImage(named: "btn_personal")!)
         
-        tableView.estimatedRowHeight = 60
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 89
         
         tableView.register(UINib(nibName: LotteryInOpenCellName, bundle: nil), forCellReuseIdentifier: LotteryInOpenCellId)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
@@ -79,7 +78,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         //获取服务端彩票列表
         //先显示hud，然后延迟执行服务端请求
         hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.label.text = FindingLotteries
+        hud.label.text = "查询记录..."
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getLotteryList), userInfo: nil, repeats: false)
     }
 
@@ -146,6 +145,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
             request.doRequest { (isOK, response) in
                 if isOK && response.code == "0" {
                     self.publishList.append(response.publishInfo)
+                    UserConfig.appendPublish(response.publishInfo)
                     
                     if self.publishList.count == self.publishLotteries.count {
                         self.tableView.reloadData()
@@ -306,6 +306,10 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

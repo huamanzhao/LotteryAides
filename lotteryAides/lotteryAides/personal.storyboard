@@ -37,8 +37,27 @@
                     <view key="view" contentMode="scaleToFill" id="hSB-az-gKb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="TTv-rm-GtY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ra9-Ou-fLU" id="s9J-9c-oau"/>
+                                    <outlet property="delegate" destination="Ra9-Ou-fLU" id="0pW-8X-C3O"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TTv-rm-GtY" firstAttribute="centerX" secondItem="hSB-az-gKb" secondAttribute="centerX" id="9zF-dC-yzd"/>
+                            <constraint firstItem="TTv-rm-GtY" firstAttribute="top" secondItem="mqI-hC-9TL" secondAttribute="bottom" id="D2E-Ph-a4t"/>
+                            <constraint firstItem="TTv-rm-GtY" firstAttribute="width" secondItem="hSB-az-gKb" secondAttribute="width" id="GcJ-29-gfl"/>
+                            <constraint firstItem="Jby-v3-OoC" firstAttribute="top" secondItem="TTv-rm-GtY" secondAttribute="bottom" id="ZOB-Kx-lda"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="TTv-rm-GtY" id="T22-8F-jue"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aSN-EP-lAB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

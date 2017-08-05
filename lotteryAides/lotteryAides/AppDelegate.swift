@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var lotteryList: [LotteryInfo]!
     var waitingLotteries: [LotteryInfo]!
     var publishLotteries: [LotteryInfo]!
+    var publishList: [LotteryPublish]!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.sharedManager().enable = true
@@ -42,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         lotteryList = [LotteryInfo]()
         waitingLotteries = [LotteryInfo]()
         publishLotteries = [LotteryInfo]()
+        publishList = [LotteryPublish]()
         
         return true
     }
@@ -110,6 +112,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+    }
+    
+    func appendPublish(_ publish: LotteryPublish) {
+        for item in publishList {
+            if item.type == publish.type && item.term == publish.term {
+                return
+            }
+        }
+        
+        publishList.append(publish)
     }
 }
 

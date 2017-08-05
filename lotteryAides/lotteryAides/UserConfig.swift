@@ -128,6 +128,11 @@ class UserConfig: AnyObject {
         app.updateLotteryList(list)
     }
     
+    static func appendPublish(_ publish: LotteryPublish) {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        app.appendPublish(publish)
+    }
+    
     static func getLotteryList() -> [LotteryInfo] {
         let app = UIApplication.shared.delegate as! AppDelegate
         return app.lotteryList
@@ -141,5 +146,10 @@ class UserConfig: AnyObject {
     static func getPublishLotteries() -> [LotteryInfo] {
         let app = UIApplication.shared.delegate as! AppDelegate
         return app.publishLotteries
+    }
+    
+    static func getPublishList() -> [LotteryPublish] {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        return app.publishList
     }
 }
