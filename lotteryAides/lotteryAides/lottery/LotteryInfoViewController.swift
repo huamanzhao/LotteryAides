@@ -112,7 +112,7 @@ class LotteryInfoViewController: UIViewController {
             return
         }
         
-        titleLabel.text = lottery.lt_type.name
+        titleLabel.text = "<" + lottery.lt_type.name + ">"
         multipleText.text = "\(lottery.mutiple)"
         costText.text = "\(lottery.cost)"
         termText.text = lottery.term
