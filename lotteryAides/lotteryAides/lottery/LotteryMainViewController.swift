@@ -22,7 +22,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var addLabelWidth: NSLayoutConstraint!
     
     let bigButtonWidth = Constants.screenWidth * 0.4
-    let bigButtonBottomGap = Constants.screenHeight * 0.4
+    let bigButtonBottomGap = Constants.screenHeight * 0.35
     let smallButtonWidth = Constants.screenWidth * 0.15
     let smallButtonBottomGap = CGFloat(16)
     
@@ -196,7 +196,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     //隐藏tableView，显示空白面板
     func hideLotteryListTable() {
         //按钮、界面变化
-        UIView.animate(withDuration: 0.3, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.buttonWidthCS.constant = self.bigButtonWidth
             self.buttonBottomGapCS.constant = self.bigButtonBottomGap
             self.tableView.alpha = 0

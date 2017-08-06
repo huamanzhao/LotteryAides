@@ -15,6 +15,7 @@ class LotteryCodeView: UIView {
     var code: LotteryCode!
     var type : LotteryType!    //1：大乐透 2：七星彩： 3：双色球 4：七乐彩
     var luckyIndexes : [Int]!
+    var white = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,21 +49,23 @@ class LotteryCodeView: UIView {
         }
     }
     
-    func setupCodeView(lottery: LotteryInfo, status: Int) {
+    func setupCodeView(lottery: LotteryInfo, status: Int, white: Bool = false) {
         let code = lottery.codes.first
         if code == nil {
             return
         }
         
+        self.white = white
         setupCodeView(code!, type: lottery.lt_type.type, status: status)
     }
     
-    func setupCodeView(publish: LotteryPublish) {
+    func setupCodeView(publish: LotteryPublish, white: Bool = false) {
         let code = publish.code
         if code == nil {
             return
         }
         
+        self.white = white
         setupCodeView(code!, type: publish.type, status: 2)
     }
     
@@ -197,11 +200,8 @@ class LotteryCodeView: UIView {
     
     private func setupBaseNumberView(_ number: String, _ status: Int, region: Int) {
         let numView = LotteryNumberView(frame: CGRect(x: 0, y: 0, width: Length_Number, height: Length_Number))
-        numView.setupView(number: number, region: region, status: status)
+        numView.setupView(number: number, region: region, status: status, white)
         numberViewList.append(numView)
         self.addSubview(numView)
     }
-    
-    
-    
 }

@@ -62,6 +62,9 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
                 let lotteryList = response.lotteryList
                 //更新缓存
                 UserConfig.updateLotteryList(lotteryList!)
+                
+                //查询最新开奖记录
+                self.getLotteryPublish()
             }
             else {
                 self.view.makeToast("请求服务端数据失败")
@@ -111,11 +114,22 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
             lotteryListVC = storyboard.instantiateViewController(withIdentifier: lotteryIdentifier) as? LotteryListViewController
         }
         lotteryListVC!.type = pageIndex
+        lotteryListVC!.delegate = self
         
         return lotteryListVC
     }
     
     func magicView(_ magicView: VTMagicView!, viewDidAppeare viewController: UIViewController!, atPage pageIndex: UInt) {
         currentPage = pageIndex
+    }
+}
+
+extension PersonalMainViewController : LotteryListDelegate {
+    func openLotteryInfoVC(_ lottery: LotteryInfo) {
+        let lotterySB = UIStoryboard(name: "lottery", bundle: nil)
+        let lotteryInfoVC = lotterySB.instantiateViewController(withIdentifier: "lotteryInfo") as! LotteryInfoViewController
+        lotteryInfoVC.lottery = lottery
+        lotteryInfoVC.funcType = .display
+        self.navigationController!.pushViewController(lotteryInfoVC, animated: true)
     }
 }

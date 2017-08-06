@@ -30,10 +30,10 @@
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="LUV-iF-1mh">
-                                <rect key="frame" x="160" y="610" width="55" height="37"/>
+                                <rect key="frame" x="160" y="614" width="55" height="37"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paq-h2-kED">
-                                <rect key="frame" x="156" y="562" width="62" height="30"/>
+                                <rect key="frame" x="156" y="576" width="62" height="30"/>
                                 <state key="normal" title="即刻启程">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,8 +44,8 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LUV-iF-1mh" firstAttribute="top" secondItem="Paq-h2-kED" secondAttribute="bottom" constant="18" id="4cK-G1-Bml"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LUV-iF-1mh" secondAttribute="bottom" constant="20" id="60D-jE-Vw2"/>
+                            <constraint firstItem="LUV-iF-1mh" firstAttribute="top" secondItem="Paq-h2-kED" secondAttribute="bottom" constant="8" id="4cK-G1-Bml"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LUV-iF-1mh" secondAttribute="bottom" constant="16" id="60D-jE-Vw2"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9Ad-6J-9AH"/>
                             <constraint firstItem="LUV-iF-1mh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IeE-21-Slu"/>
                             <constraint firstItem="Paq-h2-kED" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAg-q1-zAV"/>
@@ -319,6 +319,6 @@
         <image name="image_logo_white" width="99" height="97"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Cn-wo-zX7"/>
+        <segue reference="NNM-vV-Qie"/>
     </inferredMetricsTieBreakers>
 </document>

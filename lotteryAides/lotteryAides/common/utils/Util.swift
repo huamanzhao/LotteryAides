@@ -63,8 +63,8 @@ class Util: NSObject {
         return UIDevice.current.systemVersion.toFloat()
     }
 
-    //获取倒计时
-    static func getCountdownTime(earlyDate: Date, lateDate: Date) -> String {
+    //获取剪短倒计时
+    static func getSimpleCountdownTime(earlyDate: Date, lateDate: Date) -> String {
         let days = Date.daysBetween(date1: earlyDate, date2: lateDate)
         let hours = Date.hoursBetween(date1: earlyDate, date2: lateDate) % 24
         let minutes = Date.minutesBetween(date1: earlyDate, date2: lateDate) % 60
@@ -80,4 +80,22 @@ class Util: NSObject {
         
         return "\(minutes)分\(seconds)秒"
     }
+    
+    static func getCountdownTime(earlyDate: Date, lateDate: Date) -> String {
+        var display = ""
+        
+        let days = Date.daysBetween(date1: earlyDate, date2: lateDate)
+        let hours = Date.hoursBetween(date1: earlyDate, date2: lateDate) % 24
+        let minutes = Date.minutesBetween(date1: earlyDate, date2: lateDate) % 60
+        let seconds = Date.secondsBetween(date1: earlyDate, date2: lateDate) % 60
+        
+        if days > 0 {
+            display = "\(days)天"
+        }
+        
+        display = display + "\(hours)时\(minutes)分\(seconds)秒"
+        
+        return display
+    }
+
 }

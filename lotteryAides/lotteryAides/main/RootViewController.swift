@@ -57,7 +57,7 @@ class RootViewController: UIViewController {
     }
 
     func getUserUpdateType() -> String {
-        return SENIOR_TYPE
+        return BASIC_TYPE
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {

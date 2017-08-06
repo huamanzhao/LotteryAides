@@ -89,7 +89,7 @@ class LotteryInOpenCell: UITableViewCell {
                 late = Date()
             }
             
-            let countDown = Util.getCountdownTime(earlyDate: early, lateDate: late)
+            let countDown = Util.getSimpleCountdownTime(earlyDate: early, lateDate: late)
             countLabel.text = countDown
         }
     }

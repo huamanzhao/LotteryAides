@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol LotteryListDelegate {
+    func openLotteryInfoVC(_ lottery: LotteryInfo)
+}
+
 class LotteryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyImage: UIImageView!
@@ -20,6 +24,8 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     var publishLotteries = [LotteryInfo]()
     var luckyLotteries = [LotteryInfo]()
     var publishList = [LotteryPublish]()
+    
+    var delegate: LotteryListDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,9 +103,22 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let lotteryInfoVC = UIStoryboard(name: "lottery", bundle: nil).instantiateViewController(withIdentifier: "lotteryInfo") as! LotteryInfoViewController
         
-        self.navigationController!.pushViewController(lotteryInfoVC, animated: true)
+        var lottery : LotteryInfo!
+        let row = indexPath.row
+        
+        if type == 0 {  //待开奖
+            lottery = waitingLotteries[row]
+        }
+        else if type == 1 { //已中奖
+            lottery = luckyLotteries[row]
+        }
+        else {  //全部
+            lottery = lotteryList[row]
+        }
+        
+        if let delegate = self.delegate {
+            delegate.openLotteryInfoVC(lottery)
+        }
     }
-
 }
