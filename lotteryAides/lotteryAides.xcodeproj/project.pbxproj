@@ -10,6 +10,7 @@
 		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
 		951AF1A81F36A223002C6C09 /* LotteryTypeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */; };
 		951AF1AA1F36A230002C6C09 /* LotteryTypeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */; };
+		951AF1B01F37B417002C6C09 /* LotteryAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */; };
 		952DE4AE1F368FD7009646AB /* LotteryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952DE4AD1F368FD7009646AB /* LotteryInputView.swift */; };
 		952DE4B01F368FF4009646AB /* LotteryInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952DE4AF1F368FF4009646AB /* LotteryInputView.xib */; };
 		9530E6F11F359D3600CAAE5F /* LotteryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20F1F32B43B00FDB435 /* LotteryType.swift */; };
@@ -120,6 +121,7 @@
 		9500F20F1F32B43B00FDB435 /* LotteryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryType.swift; sourceTree = "<group>"; };
 		951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryTypeSelectView.swift; path = lottery/LotteryTypeSelectView.swift; sourceTree = "<group>"; };
 		951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryTypeSelectView.xib; sourceTree = "<group>"; };
+		951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryAddingViewController.swift; path = lottery/LotteryAddingViewController.swift; sourceTree = "<group>"; };
 		952DE4AD1F368FD7009646AB /* LotteryInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInputView.swift; path = common/LotteryInputView.swift; sourceTree = "<group>"; };
 		952DE4AF1F368FF4009646AB /* LotteryInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryInputView.xib; sourceTree = "<group>"; };
 		9530E6F31F359F6800CAAE5F /* UIColor+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Magic.h"; path = "lib/VTMagic/UIColor+Magic.h"; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */,
 				956E0A701F2C39B300E65DF0 /* LotteryInfoViewController.swift */,
+				951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */,
 				956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */,
 			);
 			name = controller;
@@ -629,6 +632,7 @@
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
 				95FB82461F36402E00A68D56 /* AboutUsViewController.swift in Sources */,
 				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
+				951AF1B01F37B417002C6C09 /* LotteryAddingViewController.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
 				956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */,
 				956E0A841F2C3A1500E65DF0 /* RegistLoginViewController.swift in Sources */,

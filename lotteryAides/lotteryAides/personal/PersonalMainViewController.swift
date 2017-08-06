@@ -129,7 +129,6 @@ extension PersonalMainViewController : LotteryListDelegate {
         let lotterySB = UIStoryboard(name: "lottery", bundle: nil)
         let lotteryInfoVC = lotterySB.instantiateViewController(withIdentifier: "lotteryInfo") as! LotteryInfoViewController
         lotteryInfoVC.lottery = lottery
-        lotteryInfoVC.funcType = .display
         self.navigationController!.pushViewController(lotteryInfoVC, animated: true)
     }
 }

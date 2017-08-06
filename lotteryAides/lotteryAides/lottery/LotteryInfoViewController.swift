@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum LotteryInfo_Type : String {
-    case adding = "Adding"
-    case display = "Display"
-}
-
 class LotteryInfoViewController: UIViewController {
     
     @IBOutlet weak var titleView: UIView!
@@ -47,16 +42,14 @@ class LotteryInfoViewController: UIViewController {
     @IBOutlet weak var prizeLabel: UILabel!
     @IBOutlet weak var unluckyLabel: UILabel!
     
-    @IBOutlet weak var addButton: UIButton!
     
     var lottery : LotteryInfo!
-    var funcType: LotteryInfo_Type!
     var timer : Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = funcType == .adding ? "添加彩票" : "彩票信息"
+        self.title = "彩票信息"
         setCustomBackButton()
         
         publishCodeView.backgroundColor = UIColor.white
@@ -83,14 +76,6 @@ class LotteryInfoViewController: UIViewController {
     }
     
     func setupViewLayout() {
-        if funcType == .adding {
-            countViewHeightCS.constant = 0
-            publishViewHeightCS.constant = 0
-            resultViewWidthCS.constant = 0
-            return
-        }
-        
-        addButton.isHidden = true
         displayCountDownOrPublishView()
         
         if lottery.lt_type.type % 2 == 0 {
@@ -108,9 +93,6 @@ class LotteryInfoViewController: UIViewController {
     }
     
     func setupViewData() {
-        if funcType == .adding {
-            return
-        }
         
         titleLabel.text = "<" + lottery.lt_type.name + ">"
         multipleText.text = "\(lottery.mutiple)"
@@ -157,13 +139,13 @@ class LotteryInfoViewController: UIViewController {
     //是否要查询开奖信息
     func checkNeedsPublish() -> Bool {
         //当前是显示类型 并且 彩票开奖时间已经早于当前时间了
-        return funcType == .display && lottery.publishDate.isEarlierThan(Date().toLocalDate())
+        return lottery.publishDate.isEarlierThan(Date().toLocalDate())
     }
     
     //是否要显示倒计时
     func checkNeedCountdown() -> Bool {
         //当前是显示类型 并且 彩票开奖时间晚于当前时间
-        return funcType == .display && lottery.publishDate.isEarlierThan(Date().toLocalDate())
+        return lottery.publishDate.isEarlierThan(Date().toLocalDate())
     }
 
     //查询最新开奖信息
@@ -200,6 +182,4 @@ class LotteryInfoViewController: UIViewController {
     }
     
     
-    @IBAction func addButtonPressed(_ sender: Any) {
-    }
 }

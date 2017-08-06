@@ -49,6 +49,8 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     fileprivate let sectionHeight: CGFloat = 36
     fileprivate var sectionHeaderDic = Dictionary<Int,UIView>()
     
+    var selectLottery: LotteryInfo!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +65,11 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         tableView.register(UINib(nibName: LotteryInOpenCellName, bundle: nil), forCellReuseIdentifier: LotteryInOpenCellId)
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0.1))
+        
+        addButton.layer.shadowColor = UIColor(white: 0.2, alpha: 01).cgColor
+        addButton.layer.shadowOffset = CGSize(width: 12, height: 12)
+        addButton.layer.shadowRadius = 8.0
+        addButton.layer.shadowOpacity = 0.5
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -240,6 +247,13 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         self.performSegue(withIdentifier: "showAddLottery", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showLotteryInfo" {
+            let infoVC = segue.destination as! LotteryInfoViewController
+            infoVC.lottery = selectLottery
+        }
+    }
+    
     /*
      * tableView
      */
@@ -306,6 +320,16 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        if section == 0 {   //1. 已开奖的彩票cell
+            selectLottery = publishLotteries[row]
+        }
+        else if section == 1 {  //等待开奖的cell
+            selectLottery = waitingLotteries[row]
+        }
         
         self.performSegue(withIdentifier: "showLotteryInfo", sender: self)
     }
