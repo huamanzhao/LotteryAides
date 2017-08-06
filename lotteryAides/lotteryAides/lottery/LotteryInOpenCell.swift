@@ -48,21 +48,38 @@ class LotteryInOpenCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    //status = 0: 已经开奖了的    1：待开奖  2: 全部的
-    func setupViewWith(lottery: LotteryInfo, status: Int = 0) {
+    //status = 0:未中奖  1：已中奖  2: 不关心是否中奖  3: 未开奖
+    func setupViewWith(lottery: LotteryInfo, status: Int) {
         self.lottery = lottery
-        
-        statusView.isHidden = false
         
         nameLabel.text = lottery.lt_type.name
         termLabel.text = lottery.term + "期"
         dateLabel.text = lottery.publishDate.toString(LOTTERY_DATE)
-        timeLabel.text = lottery.lt_type.time
-        codeView.setupCodeView(lottery.lt_type.type, (lottery.codes.first)!)
+        timeLabel.text = lottery.lt_type.publishTime
+        codeView.setupCodeView(lottery: lottery, status: status)
         
-        if status == 1 {
+        if status == 0 {
+            statusView.isHidden = false
             queryView.isHidden = true
-            countView.isHidden = false
+            unLuckyLabel.isHidden = false
+            priceLabel.isHidden = true
+        }
+        else if status == 1 {statusView.isHidden = false
+            queryView.isHidden = true
+            unLuckyLabel.isHidden = true
+            priceLabel.isHidden = false
+            
+            priceLabel.text = "￥\(lottery.prize)"
+        }
+        else if status == 2 {
+            statusView.isHidden = true
+        }
+        else if status == 3 {
+            statusView.isHidden = false
+            queryView.isHidden = true
+            unLuckyLabel.isHidden = true
+            priceLabel.isHidden = true
+            countLabel.isHidden = false
             
             var early = Date()
             var late = lottery.publishDate
@@ -74,27 +91,6 @@ class LotteryInOpenCell: UITableViewCell {
             
             let countDown = Util.getCountdownTime(earlyDate: early, lateDate: late)
             countLabel.text = countDown
-        }
-        
-        else if status == 2 {
-            statusView.isHidden = true
-        }
-    }
-    
-    func updateViewWith(publish: LotteryPublish) {
-        let _ = lottery.lt_type.getLuckyResult(code: lottery.codes.first!, publish: publish)
-        
-        queryView.isHidden = true
-        
-        if lottery.lt_type.level == -1 {
-            priceLabel.isHidden = true
-            unLuckyLabel.isHidden = false
-        }
-        else {
-            priceLabel.isHidden = true
-            unLuckyLabel.isHidden = false
-            
-            priceLabel.text = "￥" + "\(lottery.lt_type.prize)"
         }
     }
 }

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LotteryInputView" customModule="lotteryAides" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-xh-q4S">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dpe-rz-kHn">
+                            <rect key="frame" x="180.5" y="9" width="14" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbq-bZ-pbz">
+                            <rect key="frame" x="16" y="7" width="100" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="zs9-Bj-8y3"/>
+                            </constraints>
+                            <state key="normal" image="btn_left"/>
+                            <connections>
+                                <action selector="previButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="dtW-ja-kPm"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="02J-uZ-Fcj">
+                            <rect key="frame" x="259" y="7" width="100" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="CZq-qy-UmE"/>
+                            </constraints>
+                            <state key="normal" image="btn_right"/>
+                            <connections>
+                                <action selector="nextButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="9LH-Yg-w2L"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Dpe-rz-kHn" firstAttribute="centerY" secondItem="bAd-xh-q4S" secondAttribute="centerY" id="58q-Bn-yLD"/>
+                        <constraint firstItem="02J-uZ-Fcj" firstAttribute="centerY" secondItem="bAd-xh-q4S" secondAttribute="centerY" id="NNQ-Bo-wfM"/>
+                        <constraint firstAttribute="trailing" secondItem="02J-uZ-Fcj" secondAttribute="trailing" constant="16" id="Psl-oo-5dd"/>
+                        <constraint firstItem="jbq-bZ-pbz" firstAttribute="centerY" secondItem="bAd-xh-q4S" secondAttribute="centerY" id="dJd-dZ-Ny8"/>
+                        <constraint firstItem="Dpe-rz-kHn" firstAttribute="centerX" secondItem="bAd-xh-q4S" secondAttribute="centerX" id="mKo-Vi-fZI"/>
+                        <constraint firstAttribute="height" constant="36" id="mSz-CR-Bz1"/>
+                        <constraint firstItem="jbq-bZ-pbz" firstAttribute="leading" secondItem="bAd-xh-q4S" secondAttribute="leading" constant="16" id="zF5-Ir-pmK"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBF-cW-1c9">
+                    <rect key="frame" x="167" y="625" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LBF-cW-1c9" secondAttribute="height" multiplier="1:1" id="CGH-sG-9ir"/>
+                        <constraint firstAttribute="width" constant="40" id="SPp-Z0-BtB"/>
+                    </constraints>
+                    <state key="normal" image="btn_ok"/>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Hk-XGF">
+                    <rect key="frame" x="0.0" y="36" width="375" height="587"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="bAd-xh-q4S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A4G-OP-lMw"/>
+                <constraint firstItem="LBF-cW-1c9" firstAttribute="top" secondItem="fP0-Hk-XGF" secondAttribute="bottom" constant="2" id="EUT-ns-nwK"/>
+                <constraint firstAttribute="bottom" secondItem="LBF-cW-1c9" secondAttribute="bottom" constant="2" id="KcI-n5-Bg9"/>
+                <constraint firstAttribute="trailing" secondItem="bAd-xh-q4S" secondAttribute="trailing" id="MC4-L8-8CX"/>
+                <constraint firstAttribute="trailing" secondItem="fP0-Hk-XGF" secondAttribute="trailing" id="Nst-Br-Yji"/>
+                <constraint firstItem="LBF-cW-1c9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZQz-Yf-kzj"/>
+                <constraint firstItem="fP0-Hk-XGF" firstAttribute="top" secondItem="bAd-xh-q4S" secondAttribute="bottom" id="cDM-5j-8ZU"/>
+                <constraint firstItem="bAd-xh-q4S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cKc-hE-UQF"/>
+                <constraint firstItem="fP0-Hk-XGF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pTb-qY-Nal"/>
+            </constraints>
+            <connections>
+                <outlet property="nextButton" destination="02J-uZ-Fcj" id="vI9-iR-Zwx"/>
+                <outlet property="okButton" destination="LBF-cW-1c9" id="Nvs-0D-pHZ"/>
+                <outlet property="prevButton" destination="jbq-bZ-pbz" id="xEs-R0-aNH"/>
+                <outlet property="scrollView" destination="fP0-Hk-XGF" id="5rv-fj-qAb"/>
+                <outlet property="titleLabel" destination="Dpe-rz-kHn" id="biR-8Q-nup"/>
+            </connections>
+            <point key="canvasLocation" x="120.5" y="345.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_left" width="16" height="16"/>
+        <image name="btn_ok" width="24" height="24"/>
+        <image name="btn_right" width="16" height="16"/>
+    </resources>
+</document>

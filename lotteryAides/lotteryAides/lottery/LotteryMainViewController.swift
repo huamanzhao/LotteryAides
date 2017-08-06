@@ -93,7 +93,6 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         self.navigationController!.pushViewController(personalVC, animated: true)
     }
     
-    
     //获取彩票列表
     func getLotteryList() {
         GetLotteryListRequest().doRequest { (isOK, response) in
@@ -144,8 +143,13 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
             request.term = lottery.term
             request.doRequest { (isOK, response) in
                 if isOK && response.code == "0" {
-                    self.publishList.append(response.publishInfo)
-                    UserConfig.appendPublish(response.publishInfo)
+                    let publish = response.publishInfo
+                    self.publishList.append(publish)
+                    UserConfig.appendPublish(publish)
+                    
+                    if lottery.lt_type.type == publish.type && lottery.term == publish.term {
+                        lottery.getLuckyResult(publish: publish)
+                    }
                     
                     if self.publishList.count == self.publishLotteries.count {
                         self.tableView.reloadData()
@@ -166,9 +170,9 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
             let request = UpdateLotteryRequest()
             request.id = lotery.id
             request.isRead = true
-            request.isLucky = lotery.lt_type.level == -1 ? false : true
-            request.level = lotery.lt_type.level
-            request.prize = lotery.lt_type.prize
+            request.isLucky = lotery.level == -1 ? false : true
+            request.level = lotery.level
+            request.prize = lotery.prize
             request.doRequest({ (isOK, response) in
                 if isOK && response.code == "0" {
                     self.updateCount += 1
@@ -285,22 +289,14 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         
         if section == 0 {   //1. 已开奖的彩票cell
             let lottery = publishLotteries[row]
-            
-            //1.1 显示号码
-            cell.setupViewWith(lottery: lottery)
-            //1.2 获取开奖记录完毕，刷新cell中奖信息
-            if !publishList.isEmpty && publishList.count == publishLotteries.count {
-                let publish = publishList[row]
-                
-                cell.updateViewWith(publish: publish)
-            }
+            let status = lottery.isLucky ? 1 : 0
+            cell.setupViewWith(lottery: lottery, status: status)
             
             return cell
         }
         else if section == 1 {  //等待开奖的cell
             let lottery = waitingLotteries[row]
-            
-            cell.setupViewWith(lottery: lottery, status: 1)
+            cell.setupViewWith(lottery: lottery, status: 3)
             
             return cell
         }
@@ -309,7 +305,9 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        self.performSegue(withIdentifier: "showLotteryInfo", sender: self)
     }
 }
 

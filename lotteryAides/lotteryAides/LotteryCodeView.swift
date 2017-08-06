@@ -48,7 +48,25 @@ class LotteryCodeView: UIView {
         }
     }
     
-    func setupCodeView(_ type: Int, _ code: LotteryCode) {
+    func setupCodeView(lottery: LotteryInfo, status: Int) {
+        let code = lottery.codes.first
+        if code == nil {
+            return
+        }
+        
+        setupCodeView(code!, type: lottery.lt_type.type, status: status)
+    }
+    
+    func setupCodeView(publish: LotteryPublish) {
+        let code = publish.code
+        if code == nil {
+            return
+        }
+        
+        setupCodeView(code!, type: publish.type, status: 2)
+    }
+    
+    private func setupCodeView(_ code: LotteryCode, type: Int, status: Int) {
         if code.numbers.count != 7 {
             return
         }
@@ -63,118 +81,127 @@ class LotteryCodeView: UIView {
         
         switch type {
         case 1:
-            setupType1View(code: code)
+            setupType1View(code, status)
             
         case 2:
-            setupType2View(code: code)
+            setupType2View(code, status)
             
         case 3:
-            setupType3View(code: code)
+            setupType3View(code, status)
             
         case 4:
-            setupType4View(code: code)
+            setupType4View(code, status)
             
         default:
             break
         }
     }
     
-    func updateCodeView(_ publish: LotteryPublish) {
-        for view in numberViewList {
-            view.removeFromSuperview()
+    
+//    func updateCodeView(_ publish: LotteryPublish) {
+//        for view in numberViewList {
+//            view.removeFromSuperview()
+//        }
+//        numberViewList.removeAll()
+//        
+//        luckyIndexes = type.getLuckyResult(code: code, publish: publish)
+//        
+//        switch type.type {
+//        case 1:
+//            updateType1View()
+//            
+//        case 2:
+//            updateType2View()
+//            
+//        case 3:
+//            updateType3View()
+//            
+//        case 4:
+//            updateType4View()
+//            
+//        default:
+//            break
+//        }
+//    }
+    
+    //大乐透
+    private func setupType1View(_ code: LotteryCode, _ status: Int) {
+        for index in (0 ... 4) {
+            setupBaseNumberView(code.numbers[index], status, region: 1)
         }
-        numberViewList.removeAll()
-        
-        luckyIndexes = type.getLuckyResult(code: code, publish: publish)
-        
-        switch type.type {
-        case 1:
-            updateType1View()
-            
-        case 2:
-            updateType2View()
-            
-        case 3:
-            updateType3View()
-            
-        case 4:
-            updateType4View()
-            
-        default:
-            break
+        for index in (5 ... 6) {
+            setupBaseNumberView(code.numbers[index], status, region: 2)
         }
     }
+//    private func updateType1View() {
+//        for index in (0 ... 4) {
+//            let region = luckyIndexes.contains(index) ? 1 : 3
+//            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
+//        }
+//        for index in (5 ... 6) {
+//            let region = luckyIndexes.contains(index) ? 2 : 3
+//            setupBaseNumberView(code.numbers[index], CGFloat(6 * Length_Number), region)
+//        }
+//    }
     
-    private func setupBaseNumberView(_ number: String, _ originX: CGFloat, _ region: Int) {
-        let point = CGPoint(x: originX, y: 0)
-        let numView = LotteryNumberView(frame: CGRect(origin: point, size: numberSize))
-        numView.setupView(number: number, region: region)
+    //七星彩
+    private func setupType2View(_ code: LotteryCode, _ status: Int) {
+        for index in (0 ... 6) {
+            setupBaseNumberView(code.numbers[index], status, region: 1)
+        }
+    }
+//    private func updateType2View()  {
+//        for index in (0 ... 6) {
+//            let region = luckyIndexes.contains(index) ? 1 : 3
+//            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
+//        }
+//    }
+    
+    //双色球
+    private func setupType3View(_ code: LotteryCode, _ status: Int) {
+        for index in (0 ... 5) {
+            setupBaseNumberView(code.numbers[index], status, region: 1)
+        }
+        
+        setupBaseNumberView(code.numbers[6], status, region: 2)
+    }
+//    private func updateType3View()  {
+//        for index in (0 ... 5) {
+//            let region = luckyIndexes.contains(index) ? 1 : 3
+//            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
+//        }
+//        
+//        let region = luckyIndexes.contains(6) ? 1 : 3
+//        setupBaseNumberView(code.numbers[6], CGFloat(6 * Length_Number), region)
+//    }
+    
+    //七乐彩
+    private func setupType4View(_ code: LotteryCode, _ status: Int) {
+        for index in (0 ... 6) {
+            setupBaseNumberView(code.numbers[index], status, region: 1)
+        }
+    }
+//    private func updateType4View()  {
+//        for index in (0 ... 6) {
+//            let region = luckyIndexes.contains(index) ? 1 : 3
+//            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
+//        }
+    //    }
+    
+    /*
+     *
+     //region: 1-前区红球  2-后区篮球
+     //status: 0-未中奖 1-中奖  2-不关心是否中奖，只显示圆圈+数字（红、蓝）
+     func setupView(number: String, region: Int, status: Int)
+     */
+    
+    private func setupBaseNumberView(_ number: String, _ status: Int, region: Int) {
+        let numView = LotteryNumberView(frame: CGRect(x: 0, y: 0, width: Length_Number, height: Length_Number))
+        numView.setupView(number: number, region: region, status: status)
         numberViewList.append(numView)
         self.addSubview(numView)
     }
     
-    //大乐透
-    private func setupType1View(code: LotteryCode) {
-        for index in (0 ... 4) {
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, 1)
-        }
-        for index in (5 ... 6) {
-            setupBaseNumberView(code.numbers[index], CGFloat(6 * Length_Number), 2)
-        }
-    }
-    private func updateType1View() {
-        for index in (0 ... 4) {
-            let region = luckyIndexes.contains(index) ? 1 : 3
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
-        }
-        for index in (5 ... 6) {
-            let region = luckyIndexes.contains(index) ? 2 : 3
-            setupBaseNumberView(code.numbers[index], CGFloat(6 * Length_Number), region)
-        }
-    }
     
-    //七星彩
-    private func setupType2View(code: LotteryCode) {
-        for index in (0 ... 6) {
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, 1)
-        }
-    }
-    private func updateType2View()  {
-        for index in (0 ... 6) {
-            let region = luckyIndexes.contains(index) ? 1 : 3
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
-        }
-    }
-    
-    //双色球
-    private func setupType3View(code: LotteryCode) {
-        for index in (0 ... 5) {
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, 1)
-        }
-        
-        setupBaseNumberView(code.numbers[6], CGFloat(6 * Length_Number), 2)
-    }
-    private func updateType3View()  {
-        for index in (0 ... 5) {
-            let region = luckyIndexes.contains(index) ? 1 : 3
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
-        }
-        
-        let region = luckyIndexes.contains(6) ? 1 : 3
-        setupBaseNumberView(code.numbers[6], CGFloat(6 * Length_Number), region)
-    }
-    
-    //七乐彩
-    private func setupType4View(code: LotteryCode) {
-        for index in (0 ... 6) {
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, 1)
-        }
-    }
-    private func updateType4View()  {
-        for index in (0 ... 6) {
-            let region = luckyIndexes.contains(index) ? 1 : 3
-            setupBaseNumberView(code.numbers[index], CGFloat(index) * Length_Number, region)
-        }
-    }
     
 }

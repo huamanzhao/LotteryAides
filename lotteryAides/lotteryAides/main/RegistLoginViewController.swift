@@ -159,7 +159,7 @@ class RegistLoginViewController: UIViewController {
                 self.openLotteryVC()
             }
             else {
-                self.view.makeToast("登陆失败")
+                self.view.makeToast(response.message)
             }
         }
     }

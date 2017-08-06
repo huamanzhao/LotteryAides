@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
+		951AF1A81F36A223002C6C09 /* LotteryTypeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */; };
+		951AF1AA1F36A230002C6C09 /* LotteryTypeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */; };
+		952DE4AE1F368FD7009646AB /* LotteryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952DE4AD1F368FD7009646AB /* LotteryInputView.swift */; };
+		952DE4B01F368FF4009646AB /* LotteryInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952DE4AF1F368FF4009646AB /* LotteryInputView.xib */; };
 		9530E6F11F359D3600CAAE5F /* LotteryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20F1F32B43B00FDB435 /* LotteryType.swift */; };
 		9530E7051F359F6800CAAE5F /* UIColor+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6F41F359F6800CAAE5F /* UIColor+Magic.m */; };
 		9530E7061F359F6800CAAE5F /* UIScrollView+Magic.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530E6F61F359F6800CAAE5F /* UIScrollView+Magic.m */; };
@@ -27,8 +31,7 @@
 		9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77A1F2AE34000B4BE83 /* lottery.storyboard */; };
 		9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9549B77C1F2AE34D00B4BE83 /* personal.storyboard */; };
 		956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */; };
-		956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */; };
-		956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */; };
+		956E0A741F2C39B300E65DF0 /* LotteryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A701F2C39B300E65DF0 /* LotteryInfoViewController.swift */; };
 		956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */; };
 		956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */; };
 		956E0A7D1F2C39C100E65DF0 /* LotteryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */; };
@@ -115,6 +118,10 @@
 /* Begin PBXFileReference section */
 		9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryCodeView.swift; sourceTree = "<group>"; };
 		9500F20F1F32B43B00FDB435 /* LotteryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryType.swift; sourceTree = "<group>"; };
+		951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryTypeSelectView.swift; path = lottery/LotteryTypeSelectView.swift; sourceTree = "<group>"; };
+		951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryTypeSelectView.xib; sourceTree = "<group>"; };
+		952DE4AD1F368FD7009646AB /* LotteryInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInputView.swift; path = common/LotteryInputView.swift; sourceTree = "<group>"; };
+		952DE4AF1F368FF4009646AB /* LotteryInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryInputView.xib; sourceTree = "<group>"; };
 		9530E6F31F359F6800CAAE5F /* UIColor+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Magic.h"; path = "lib/VTMagic/UIColor+Magic.h"; sourceTree = "<group>"; };
 		9530E6F41F359F6800CAAE5F /* UIColor+Magic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Magic.m"; path = "lib/VTMagic/UIColor+Magic.m"; sourceTree = "<group>"; };
 		9530E6F51F359F6800CAAE5F /* UIScrollView+Magic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+Magic.h"; path = "lib/VTMagic/UIScrollView+Magic.h"; sourceTree = "<group>"; };
@@ -136,8 +143,7 @@
 		9549B77A1F2AE34000B4BE83 /* lottery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lottery.storyboard; sourceTree = "<group>"; };
 		9549B77C1F2AE34D00B4BE83 /* personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = personal.storyboard; sourceTree = "<group>"; };
 		956E0A6E1F2C393D00E65DF0 /* LotteryInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInfo.swift; path = lottery/LotteryInfo.swift; sourceTree = "<group>"; };
-		956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryAddViewController.swift; path = lottery/LotteryAddViewController.swift; sourceTree = "<group>"; };
-		956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryDetailViewController.swift; path = lottery/LotteryDetailViewController.swift; sourceTree = "<group>"; };
+		956E0A701F2C39B300E65DF0 /* LotteryInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInfoViewController.swift; path = lottery/LotteryInfoViewController.swift; sourceTree = "<group>"; };
 		956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryMainViewController.swift; path = lottery/LotteryMainViewController.swift; sourceTree = "<group>"; };
 		956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryScanViewController.swift; path = lottery/LotteryScanViewController.swift; sourceTree = "<group>"; };
 		956E0A791F2C39C100E65DF0 /* LotteryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryListViewController.swift; path = personal/LotteryListViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +248,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952DE4B11F369F2F009646AB /* lotteryAdd */ = {
+			isa = PBXGroup;
+			children = (
+				952DE4AD1F368FD7009646AB /* LotteryInputView.swift */,
+				952DE4AF1F368FF4009646AB /* LotteryInputView.xib */,
+				951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */,
+				951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */,
+			);
+			name = lotteryAdd;
+			sourceTree = "<group>";
+		};
 		9530E6F21F359F4A00CAAE5F /* VTMagic */ = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				956E0A721F2C39B300E65DF0 /* LotteryMainViewController.swift */,
-				956E0A701F2C39B300E65DF0 /* LotteryAddViewController.swift */,
-				956E0A711F2C39B300E65DF0 /* LotteryDetailViewController.swift */,
+				956E0A701F2C39B300E65DF0 /* LotteryInfoViewController.swift */,
 				956E0A731F2C39B300E65DF0 /* LotteryScanViewController.swift */,
 			);
 			name = controller;
@@ -326,6 +342,7 @@
 		956E0A8C1F2C3D0100E65DF0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				952DE4B11F369F2F009646AB /* lotteryAdd */,
 				956E0A861F2C3CDD00E65DF0 /* LotteryInOpenCell.swift */,
 				956E0A871F2C3CDD00E65DF0 /* LotteryInOpenCell.xib */,
 				956E0A911F2C661E00E65DF0 /* LotteryNumberView.swift */,
@@ -565,6 +582,8 @@
 				9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */,
 				9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */,
 				95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */,
+				951AF1AA1F36A230002C6C09 /* LotteryTypeSelectView.xib in Resources */,
+				952DE4B01F368FF4009646AB /* LotteryInputView.xib in Resources */,
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
 				956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */,
 				95CF922B1F271F2C00E71892 /* Main.storyboard in Resources */,
@@ -588,6 +607,7 @@
 				958A5EDD1F2ED695002330AA /* GetLotteryListRequest.swift in Sources */,
 				9530E7051F359F6800CAAE5F /* UIColor+Magic.m in Sources */,
 				956E0AAC1F2DE15F00E65DF0 /* UpdateLotteryRequest.swift in Sources */,
+				952DE4AE1F368FD7009646AB /* LotteryInputView.swift in Sources */,
 				956E0A771F2C39B300E65DF0 /* LotteryScanViewController.swift in Sources */,
 				956E0A6F1F2C393D00E65DF0 /* LotteryInfo.swift in Sources */,
 				956E0AA81F2D7B8D00E65DF0 /* LotteryPublish.swift in Sources */,
@@ -600,13 +620,13 @@
 				956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */,
 				956E0AB41F2E061400E65DF0 /* GetAdverticeUrlResponse.swift in Sources */,
 				956E0A881F2C3CDD00E65DF0 /* LotteryInOpenCell.swift in Sources */,
+				951AF1A81F36A223002C6C09 /* LotteryTypeSelectView.swift in Sources */,
 				956E0AA21F2CE80800E65DF0 /* DateUtil.swift in Sources */,
 				956E0AA41F2D5EE200E65DF0 /* LotteryCode.swift in Sources */,
 				9530E7081F359F6800CAAE5F /* VTContentView.m in Sources */,
 				958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */,
-				956E0A741F2C39B300E65DF0 /* LotteryAddViewController.swift in Sources */,
+				956E0A741F2C39B300E65DF0 /* LotteryInfoViewController.swift in Sources */,
 				956E0A7E1F2C39C100E65DF0 /* PersonalMainViewController.swift in Sources */,
-				956E0A751F2C39B300E65DF0 /* LotteryDetailViewController.swift in Sources */,
 				95FB82461F36402E00A68D56 /* AboutUsViewController.swift in Sources */,
 				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,

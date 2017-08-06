@@ -35,6 +35,7 @@ class LotteryNumberView: UIView {
         radius = defalutFrame.size.width / 2
         
         circleView = UIView.init(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: defalutFrame.size))
+        circleView.backgroundColor = Constants.cellColor
         self.addSubview(circleView)
         
         numLabel = UILabel(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: defalutFrame.size))
@@ -43,23 +44,27 @@ class LotteryNumberView: UIView {
         circleView.addSubview(numLabel)
     }
     
-    //region: 1-前区红球  2-后区篮球  3-未中奖灰色
-    func setupView(number: String, region: Int, bgColor: UIColor = Constants.cellColor) {
-        circleView.backgroundColor = bgColor
+    //region: 1-前区红球  2-后区篮球
+    //status: 0-未中奖 1-中奖  2-不关心是否中奖，只显示圆圈+数字（红、蓝）
+    func setupView(number: String, region: Int, status: Int) {
+        numLabel.text = number
         
-        let subjectColor : UIColor!
-        if region == 1 {
-            subjectColor = UIColor.red
-        }
-        else if region == 2 {
-            subjectColor = UIColor.blue
+        let regionColor = region == 1 ? UIColor.red : UIColor.blue
+        let white = UIColor.white
+        
+        var textColor : UIColor!
+        var backColor: UIColor!
+        
+        if status == 1 {
+            textColor = white
+            backColor = regionColor
         }
         else {
-            subjectColor = UIColor.darkText
+            textColor = regionColor
+            backColor = white
         }
         
-        circleView.addCorner(radius: radius, borderWidth: 1.5, backColor: UIColor.white, borderColor: subjectColor)
-        numLabel.textColor = subjectColor
-        numLabel.text = number
+        circleView.addCorner(radius: radius, borderWidth: 1.5, backColor: backColor, borderColor: regionColor)
+        numLabel.textColor = textColor
     }
 }

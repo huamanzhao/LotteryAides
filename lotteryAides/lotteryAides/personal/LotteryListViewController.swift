@@ -81,18 +81,11 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
         var lottery: LotteryInfo!
         if type == 0 {  //待开奖
             lottery = waitingLotteries[row]
-            cell.setupViewWith(lottery: lottery, status: 1)
+            cell.setupViewWith(lottery: lottery, status: 3)
         }
         else if type == 1 { //已中奖
             lottery = luckyLotteries[row]
-            cell.setupViewWith(lottery: lottery)
-            
-            for publish in publishList {
-                if publish.term == lottery.term && publish.type == lottery.lt_type.type {
-                    cell.updateViewWith(publish: publish)
-                    break
-                }
-            }
+            cell.setupViewWith(lottery: lottery, status: 1)
         }
         else {  //全部
             lottery = lotteryList[row]
@@ -103,7 +96,10 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
+        let lotteryInfoVC = UIStoryboard(name: "lottery", bundle: nil).instantiateViewController(withIdentifier: "lotteryInfo") as! LotteryInfoViewController
+        
+        self.navigationController!.pushViewController(lotteryInfoVC, animated: true)
     }
 
 }

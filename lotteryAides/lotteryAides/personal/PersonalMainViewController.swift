@@ -62,9 +62,6 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
                 let lotteryList = response.lotteryList
                 //更新缓存
                 UserConfig.updateLotteryList(lotteryList!)
-                
-                //获取开奖结果
-                self.getLotteryPublish()
             }
             else {
                 self.view.makeToast("请求服务端数据失败")

@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 class GetPublishResponse : ServerResponseBase {
-    var publishInfo : LotteryPublish!
+    var publishInfo = LotteryPublish()
     
     override func parseResponse(_ result : Alamofire.Result<Any>) {
         super.parseResponse(result)
@@ -19,7 +19,6 @@ class GetPublishResponse : ServerResponseBase {
             return
         }
         
-        publishInfo = LotteryPublish()
         publishInfo.parseJson(json)
     }
 }
