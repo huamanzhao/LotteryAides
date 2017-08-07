@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
 		951AF1A81F36A223002C6C09 /* LotteryTypeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */; };
-		951AF1AA1F36A230002C6C09 /* LotteryTypeSelectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */; };
 		951AF1B01F37B417002C6C09 /* LotteryAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */; };
 		952DE4AE1F368FD7009646AB /* LotteryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952DE4AD1F368FD7009646AB /* LotteryInputView.swift */; };
 		952DE4B01F368FF4009646AB /* LotteryInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952DE4AF1F368FF4009646AB /* LotteryInputView.xib */; };
@@ -120,7 +119,6 @@
 		9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryCodeView.swift; sourceTree = "<group>"; };
 		9500F20F1F32B43B00FDB435 /* LotteryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryType.swift; sourceTree = "<group>"; };
 		951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryTypeSelectView.swift; path = lottery/LotteryTypeSelectView.swift; sourceTree = "<group>"; };
-		951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryTypeSelectView.xib; sourceTree = "<group>"; };
 		951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryAddingViewController.swift; path = lottery/LotteryAddingViewController.swift; sourceTree = "<group>"; };
 		952DE4AD1F368FD7009646AB /* LotteryInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInputView.swift; path = common/LotteryInputView.swift; sourceTree = "<group>"; };
 		952DE4AF1F368FF4009646AB /* LotteryInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LotteryInputView.xib; sourceTree = "<group>"; };
@@ -256,7 +254,6 @@
 				952DE4AD1F368FD7009646AB /* LotteryInputView.swift */,
 				952DE4AF1F368FF4009646AB /* LotteryInputView.xib */,
 				951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */,
-				951AF1A91F36A230002C6C09 /* LotteryTypeSelectView.xib */,
 			);
 			name = lotteryAdd;
 			sourceTree = "<group>";
@@ -585,7 +582,6 @@
 				9549B77B1F2AE34000B4BE83 /* lottery.storyboard in Resources */,
 				9549B77D1F2AE34D00B4BE83 /* personal.storyboard in Resources */,
 				95CF92301F271F2C00E71892 /* LaunchScreen.storyboard in Resources */,
-				951AF1AA1F36A230002C6C09 /* LotteryTypeSelectView.xib in Resources */,
 				952DE4B01F368FF4009646AB /* LotteryInputView.xib in Resources */,
 				95CF922D1F271F2C00E71892 /* Assets.xcassets in Resources */,
 				956E0A891F2C3CDD00E65DF0 /* LotteryInOpenCell.xib in Resources */,

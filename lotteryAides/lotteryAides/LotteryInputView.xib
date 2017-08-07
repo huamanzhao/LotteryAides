@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -45,7 +44,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Dpe-rz-kHn" firstAttribute="centerY" secondItem="bAd-xh-q4S" secondAttribute="centerY" id="58q-Bn-yLD"/>
                         <constraint firstItem="02J-uZ-Fcj" firstAttribute="centerY" secondItem="bAd-xh-q4S" secondAttribute="centerY" id="NNQ-Bo-wfM"/>
@@ -56,33 +55,33 @@
                         <constraint firstItem="jbq-bZ-pbz" firstAttribute="leading" secondItem="bAd-xh-q4S" secondAttribute="leading" constant="16" id="zF5-Ir-pmK"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LBF-cW-1c9">
-                    <rect key="frame" x="167" y="625" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="LBF-cW-1c9" secondAttribute="height" multiplier="1:1" id="CGH-sG-9ir"/>
-                        <constraint firstAttribute="width" constant="40" id="SPp-Z0-BtB"/>
-                    </constraints>
-                    <state key="normal" image="btn_ok"/>
-                </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Hk-XGF">
-                    <rect key="frame" x="0.0" y="36" width="375" height="587"/>
+                    <rect key="frame" x="0.0" y="36" width="375" height="595"/>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Is-B8U">
+                    <rect key="frame" x="151.5" y="637" width="72" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="72" id="1bC-vw-rN1"/>
+                        <constraint firstAttribute="height" constant="22" id="FX0-TV-m3N"/>
+                    </constraints>
+                    <state key="normal" image="btn_confirm"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="bAd-xh-q4S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A4G-OP-lMw"/>
-                <constraint firstItem="LBF-cW-1c9" firstAttribute="top" secondItem="fP0-Hk-XGF" secondAttribute="bottom" constant="2" id="EUT-ns-nwK"/>
-                <constraint firstAttribute="bottom" secondItem="LBF-cW-1c9" secondAttribute="bottom" constant="2" id="KcI-n5-Bg9"/>
+                <constraint firstItem="2Tg-Is-B8U" firstAttribute="top" secondItem="fP0-Hk-XGF" secondAttribute="bottom" constant="6" id="EKg-eA-n8T"/>
                 <constraint firstAttribute="trailing" secondItem="bAd-xh-q4S" secondAttribute="trailing" id="MC4-L8-8CX"/>
                 <constraint firstAttribute="trailing" secondItem="fP0-Hk-XGF" secondAttribute="trailing" id="Nst-Br-Yji"/>
-                <constraint firstItem="LBF-cW-1c9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZQz-Yf-kzj"/>
+                <constraint firstItem="2Tg-Is-B8U" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="agW-v6-V7N"/>
                 <constraint firstItem="fP0-Hk-XGF" firstAttribute="top" secondItem="bAd-xh-q4S" secondAttribute="bottom" id="cDM-5j-8ZU"/>
                 <constraint firstItem="bAd-xh-q4S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cKc-hE-UQF"/>
                 <constraint firstItem="fP0-Hk-XGF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pTb-qY-Nal"/>
+                <constraint firstAttribute="bottom" secondItem="2Tg-Is-B8U" secondAttribute="bottom" constant="8" id="tru-ec-KEe"/>
             </constraints>
             <connections>
                 <outlet property="nextButton" destination="02J-uZ-Fcj" id="vI9-iR-Zwx"/>
-                <outlet property="okButton" destination="LBF-cW-1c9" id="Nvs-0D-pHZ"/>
+                <outlet property="okButton" destination="2Tg-Is-B8U" id="wga-ey-fci"/>
                 <outlet property="prevButton" destination="jbq-bZ-pbz" id="xEs-R0-aNH"/>
                 <outlet property="scrollView" destination="fP0-Hk-XGF" id="5rv-fj-qAb"/>
                 <outlet property="titleLabel" destination="Dpe-rz-kHn" id="biR-8Q-nup"/>
@@ -91,8 +90,8 @@
         </view>
     </objects>
     <resources>
+        <image name="btn_confirm" width="16" height="16"/>
         <image name="btn_left" width="16" height="16"/>
-        <image name="btn_ok" width="24" height="24"/>
         <image name="btn_right" width="16" height="16"/>
     </resources>
 </document>

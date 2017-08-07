@@ -29,22 +29,15 @@ class LotteryAddingViewController: UIViewController {
     @IBOutlet weak var countTimeLabel: UILabel!
     @IBOutlet weak var countViewHeightCS: NSLayoutConstraint!
     
-    @IBOutlet weak var publishView: UIView!
-    @IBOutlet weak var publishCodeView: LotteryCodeView!
-    @IBOutlet weak var publishViewHeightCS: NSLayoutConstraint!
-    
     @IBOutlet weak var lotteryView: UIView!
     @IBOutlet weak var redBallLabel: UILabel!
     @IBOutlet weak var blueBallLabel: UILabel!
     @IBOutlet weak var lotteryCodeView: LotteryCodeView!
     
-    @IBOutlet weak var resultView: UIView!
-    @IBOutlet weak var resultViewWidthCS: NSLayoutConstraint!
-    @IBOutlet weak var levelLabel: UILabel!
-    @IBOutlet weak var prizeLabel: UILabel!
-    @IBOutlet weak var unluckyLabel: UILabel!
-    
     @IBOutlet weak var addButton: UIButton!
+    
+    var configView: LotteryInputView!
+    
     var lottery: LotteryInfo!
 
     override func viewDidLoad() {
@@ -55,6 +48,7 @@ class LotteryAddingViewController: UIViewController {
         setupViewLayout()
         
         lottery = LotteryInfo()
+        addButton.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,15 +56,23 @@ class LotteryAddingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if configView != nil {
+            configView.removeFromSuperview()
+        }
+        
+        configView = Bundle.main.loadNibNamed("LotteryInputView", owner: nil, options: nil)?.first as! LotteryInputView
+        configView.frame = CGRect(x: 0, y: Constants.screenHeight * 0.6, width: Constants.screenWidth, height: Constants.screenHeight * 0.4)
+        configView.setupContentView()
+        self.view.addSubview(configView)
+    }
 
     func setupViewLayout() {
-        resultViewWidthCS.constant = 0
         countViewHeightCS.constant = 0
-        publishViewHeightCS.constant = 0
         
         countTimeView.isHidden = true
-        publishView.isHidden = true
-        resultView.isHidden  = true
         
         addButton.backgroundColor = UIColor.clear
         addButton.addCorner(radius: 4.0, borderWidth: 1.5, backColor: Constants.subColor, borderColor: UIColor(hex: 0xfff5d0))
