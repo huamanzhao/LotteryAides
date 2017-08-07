@@ -65,11 +65,27 @@ class LotteryAddingViewController: UIViewController {
         
         configView = Bundle.main.loadNibNamed("LotteryInputView", owner: nil, options: nil)?.first as! LotteryInputView
         configView.frame = CGRect(x: 0, y: Constants.screenHeight * 0.6, width: Constants.screenWidth, height: Constants.screenHeight * 0.4)
+        configView.delegate = self
         configView.setupContentView()
         self.view.addSubview(configView)
     }
 
     func setupViewLayout() {
+        setViewBorder(titleView)
+        setViewBorder(multipleView)
+        setViewBorder(costView)
+        setViewBorder(termView)
+        setViewBorder(openDateView)
+        setViewBorderWide(countTimeView)
+        setViewBorderWide(lotteryView)
+        
+        lotteryCodeView.backgroundColor = UIColor.white
+        titleLabel.textColor = Constants.subColor
+        multipleText.textColor = Constants.subColor
+        costText.textColor = Constants.subColor
+        termText.textColor = Constants.subColor
+        openDateText.textColor = Constants.subColor
+        
         countViewHeightCS.constant = 0
         
         countTimeView.isHidden = true
@@ -78,7 +94,43 @@ class LotteryAddingViewController: UIViewController {
         addButton.addCorner(radius: 4.0, borderWidth: 1.5, backColor: Constants.subColor, borderColor: UIColor(hex: 0xfff5d0))
     }
     
+    func setViewBorder(_ view: UIView) {
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = Constants.textColor.cgColor
+    }
+    
+    func setViewBorderWide(_ view: UIView) {
+        view.layer.borderWidth = 1.0
+        view.layer.borderColor = Constants.textColor.cgColor
+    }
+    
+    func setupViewData() {
+        titleLabel.text = "<" + lottery.lt_type.name + ">"
+        multipleText.text = "\(lottery.mutiple)"
+        costText.text = "\(lottery.cost)"
+        if !lottery.term.isEmpty {
+            termText.text = lottery.term
+        }
+        if lottery.publishDate.isLaterThan(Date().toLocalDate()) {
+            openDateText.text = lottery.publishDate.toString(LOTTERY_DATE) + " " + lottery.lt_type.publishTime
+        }
+        if !lottery.codes.isEmpty {
+            lotteryCodeView.setupCodeView(lottery: self.lottery, status: 2, white: true)
+        }
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
+        
+    }
+}
+
+extension LotteryAddingViewController : LotteryInputDelegate {
+    func updateLotteryInfo(_ lottery: LotteryInfo) {
+        self.lottery = lottery
+        setupViewData()
+    }
+    
+    func lotterySettingFinished() {
         
     }
 }

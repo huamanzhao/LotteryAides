@@ -145,7 +145,7 @@ class LotteryInfoViewController: UIViewController {
     //是否要显示倒计时
     func checkNeedCountdown() -> Bool {
         //当前是显示类型 并且 彩票开奖时间晚于当前时间
-        return lottery.publishDate.isEarlierThan(Date().toLocalDate())
+        return lottery.publishDate.isLaterThan(Date().toLocalDate())
     }
 
     //查询最新开奖信息

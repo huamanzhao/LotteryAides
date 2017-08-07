@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol LotteryTypeSelectDelegate {
+    func lotteryTypeDidSelect(_ type: Int)
+}
+
 class LotteryTypeSelectView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
     let margin : CGFloat = 8
     let cellIdentifier = "typeCell"
+    var delegate: LotteryTypeSelectDelegate!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,7 +57,8 @@ class LotteryTypeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
-        print(indexPath)
+        
+        delegate.lotteryTypeDidSelect(indexPath.row + 1)
     }
 }
 

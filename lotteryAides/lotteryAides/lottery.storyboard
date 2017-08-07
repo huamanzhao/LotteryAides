@@ -142,10 +142,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTT-Er-e07">
-                                <rect key="frame" x="0.0" y="64" width="375" height="52"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;超级大乐透&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEw-cp-Ze5">
-                                        <rect key="frame" x="124.5" y="22" width="127" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;-彩票名称-&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEw-cp-Ze5">
+                                        <rect key="frame" x="126" y="21" width="124.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -153,22 +153,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="iEw-cp-Ze5" firstAttribute="centerY" secondItem="PTT-Er-e07" secondAttribute="centerY" multiplier="1.3" id="72T-J6-yA8"/>
+                                    <constraint firstItem="iEw-cp-Ze5" firstAttribute="centerY" secondItem="PTT-Er-e07" secondAttribute="centerY" multiplier="1.1" id="72T-J6-yA8"/>
                                     <constraint firstItem="iEw-cp-Ze5" firstAttribute="centerX" secondItem="PTT-Er-e07" secondAttribute="centerX" id="l18-9s-RtQ"/>
-                                    <constraint firstAttribute="height" constant="52" id="p3Q-3C-Uoy"/>
+                                    <constraint firstAttribute="height" constant="60" id="p3Q-3C-Uoy"/>
                                 </constraints>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cSq-2U-dXf">
-                                <rect key="frame" x="0.0" y="116" width="187.5" height="24"/>
+                                <rect key="frame" x="0.0" y="124" width="187.5" height="24"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-FR-XwP">
-                                        <rect key="frame" x="94.5" y="1.5" width="17" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gTX-FR-XwP">
+                                        <rect key="frame" x="88" y="1" width="30" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="倍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b7-cW-Odb">
-                                        <rect key="frame" x="115.5" y="3.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="122" y="5" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -184,22 +184,22 @@
                                 </constraints>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cya-bJ-sNS">
-                                <rect key="frame" x="187.5" y="116" width="187.5" height="24"/>
+                                <rect key="frame" x="187.5" y="124" width="187.5" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GN-xp-RDR">
-                                        <rect key="frame" x="43" y="3.5" width="29" height="17"/>
+                                        <rect key="frame" x="36.5" y="5" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-cl-SEz">
-                                        <rect key="frame" x="76" y="1.5" width="17" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3l-cl-SEz">
+                                        <rect key="frame" x="69.5" y="1" width="30" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fF2-5o-gbe">
-                                        <rect key="frame" x="97" y="3.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="103.5" y="5" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -216,22 +216,22 @@
                                 </constraints>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ot-vN-0EY">
-                                <rect key="frame" x="0.0" y="140" width="187.5" height="32"/>
+                                <rect key="frame" x="0.0" y="148" width="187.5" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrA-sl-l9m">
-                                        <rect key="frame" x="74" y="4.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="67.5" y="6" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qn-nt-rAS">
-                                        <rect key="frame" x="92.5" y="2.5" width="21" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Qn-nt-rAS">
+                                        <rect key="frame" x="86" y="2" width="34" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4d-nH-yb8">
-                                        <rect key="frame" x="117.5" y="4.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="124" y="6" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -249,16 +249,16 @@
                                 </constraints>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jl6-wa-w0o">
-                                <rect key="frame" x="187.5" y="140" width="187" height="32"/>
+                                <rect key="frame" x="187.5" y="148" width="187" height="32"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--/--/-- --:--" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-dO-kR8">
-                                        <rect key="frame" x="30" y="2.5" width="90" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--/--/-- --:--" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tcf-dO-kR8">
+                                        <rect key="frame" x="23.5" y="2" width="103" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开奖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mM6-pX-AW6">
-                                        <rect key="frame" x="124" y="4.5" width="29" height="17"/>
+                                        <rect key="frame" x="130.5" y="6" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -273,7 +273,7 @@
                                 </constraints>
                             </view>
                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5i-R4-lmj">
-                                <rect key="frame" x="0.0" y="176" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="184" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开奖倒计时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBQ-eZ-IDq">
                                         <rect key="frame" x="12" y="12" width="61.5" height="14.5"/>
@@ -298,7 +298,7 @@
                                 </constraints>
                             </view>
                             <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ye3-An-rwP">
-                                <rect key="frame" x="0.0" y="244" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="252" width="375" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本期开奖号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzH-sC-Sgp">
                                         <rect key="frame" x="12" y="8" width="74" height="14.5"/>
@@ -325,7 +325,7 @@
                                 </constraints>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Blz-ck-wZt">
-                                <rect key="frame" x="0.0" y="318" width="375" height="101.5"/>
+                                <rect key="frame" x="0.0" y="326" width="375" height="101.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cdo-NS-p7e">
                                         <rect key="frame" x="0.0" y="0.0" width="267" height="101.5"/>
@@ -492,8 +492,8 @@
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSy-xe-dMl">
                                 <rect key="frame" x="0.0" y="64" width="375" height="52"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;超级大乐透&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-WP-nm3">
-                                        <rect key="frame" x="124.5" y="22" width="127" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;-彩票名称-&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VdI-WP-nm3">
+                                        <rect key="frame" x="126" y="19" width="124.5" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -501,22 +501,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="VdI-WP-nm3" firstAttribute="centerY" secondItem="gSy-xe-dMl" secondAttribute="centerY" multiplier="1.3" id="6j1-3h-ybG"/>
+                                    <constraint firstItem="VdI-WP-nm3" firstAttribute="centerY" secondItem="gSy-xe-dMl" secondAttribute="centerY" multiplier="1.2" id="6j1-3h-ybG"/>
                                     <constraint firstItem="VdI-WP-nm3" firstAttribute="centerX" secondItem="gSy-xe-dMl" secondAttribute="centerX" id="nz6-kk-htI"/>
                                     <constraint firstAttribute="height" constant="52" id="wzJ-fP-2HD"/>
                                 </constraints>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3aY-dd-BS3">
-                                <rect key="frame" x="0.0" y="116" width="187.5" height="32"/>
+                                <rect key="frame" x="0.0" y="116" width="187.5" height="36"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-2i-Xcc">
-                                        <rect key="frame" x="94.5" y="5.5" width="17" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-2i-Xcc">
+                                        <rect key="frame" x="88" y="7" width="30" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="倍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCR-gg-Ras">
-                                        <rect key="frame" x="115.5" y="7.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="122" y="11" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -524,7 +524,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="28a-En-UIs"/>
+                                    <constraint firstAttribute="height" constant="36" id="28a-En-UIs"/>
                                     <constraint firstItem="OOm-2i-Xcc" firstAttribute="centerY" secondItem="3aY-dd-BS3" secondAttribute="centerY" id="PP8-2c-22e"/>
                                     <constraint firstItem="jCR-gg-Ras" firstAttribute="baseline" secondItem="OOm-2i-Xcc" secondAttribute="baseline" id="YkA-85-gOD"/>
                                     <constraint firstItem="jCR-gg-Ras" firstAttribute="leading" secondItem="OOm-2i-Xcc" secondAttribute="trailing" constant="4" id="pTm-Ql-tGs"/>
@@ -532,22 +532,22 @@
                                 </constraints>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K8f-mE-Ej4">
-                                <rect key="frame" x="187.5" y="116" width="187.5" height="32"/>
+                                <rect key="frame" x="187.5" y="116" width="187" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="合计" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRI-Ja-hjC">
-                                        <rect key="frame" x="43" y="7.5" width="29" height="17"/>
+                                        <rect key="frame" x="36.5" y="11" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69y-qK-ShY">
-                                        <rect key="frame" x="76" y="5.5" width="17" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="69y-qK-ShY">
+                                        <rect key="frame" x="69.5" y="7" width="30" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HZ-Ud-8xg">
-                                        <rect key="frame" x="97" y="7.5" width="14.5" height="17"/>
+                                        <rect key="frame" x="103.5" y="11" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -564,22 +564,22 @@
                                 </constraints>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8T-RD-R3o">
-                                <rect key="frame" x="0.0" y="148" width="187.5" height="36"/>
+                                <rect key="frame" x="0.0" y="152" width="187.5" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycd-uM-JSJ">
-                                        <rect key="frame" x="74" y="6" width="14.5" height="17"/>
+                                        <rect key="frame" x="67.5" y="11" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqO-rg-0E9">
-                                        <rect key="frame" x="92.5" y="4" width="21" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QqO-rg-0E9">
+                                        <rect key="frame" x="86" y="7" width="34" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8c-2K-XKz">
-                                        <rect key="frame" x="117.5" y="6" width="14.5" height="17"/>
+                                        <rect key="frame" x="124" y="11" width="14.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -593,20 +593,20 @@
                                     <constraint firstItem="QqO-rg-0E9" firstAttribute="centerX" secondItem="Z8T-RD-R3o" secondAttribute="centerX" multiplier="1.1" id="X0I-qH-8bY"/>
                                     <constraint firstAttribute="height" constant="36" id="XIy-kw-wfU"/>
                                     <constraint firstItem="QqO-rg-0E9" firstAttribute="baseline" secondItem="ycd-uM-JSJ" secondAttribute="baseline" id="amM-Jf-8YR"/>
-                                    <constraint firstItem="QqO-rg-0E9" firstAttribute="centerY" secondItem="Z8T-RD-R3o" secondAttribute="centerY" multiplier="0.8" id="dFk-2b-b4h"/>
+                                    <constraint firstItem="QqO-rg-0E9" firstAttribute="centerY" secondItem="Z8T-RD-R3o" secondAttribute="centerY" id="dFk-2b-b4h"/>
                                 </constraints>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zm3-u4-OMg">
-                                <rect key="frame" x="187.5" y="148" width="187" height="36"/>
+                                <rect key="frame" x="187.5" y="152" width="187" height="36"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--/--/-- --:--" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8H-r3-3eE">
-                                        <rect key="frame" x="30" y="4" width="90" height="21"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="--/--/-- --:--" borderStyle="bezel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8H-r3-3eE">
+                                        <rect key="frame" x="23.5" y="7" width="103" height="22"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开奖" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fd-0P-0wJ">
-                                        <rect key="frame" x="124" y="6" width="29" height="17"/>
+                                        <rect key="frame" x="130.5" y="11" width="29" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -617,11 +617,11 @@
                                     <constraint firstItem="2fd-0P-0wJ" firstAttribute="baseline" secondItem="f8H-r3-3eE" secondAttribute="baseline" id="NC7-eZ-USh"/>
                                     <constraint firstItem="2fd-0P-0wJ" firstAttribute="leading" secondItem="f8H-r3-3eE" secondAttribute="trailing" constant="4" id="aI6-LG-TZl"/>
                                     <constraint firstItem="f8H-r3-3eE" firstAttribute="centerX" secondItem="zm3-u4-OMg" secondAttribute="centerX" multiplier="0.8" id="g91-pA-59t"/>
-                                    <constraint firstItem="f8H-r3-3eE" firstAttribute="centerY" secondItem="zm3-u4-OMg" secondAttribute="centerY" multiplier="0.8" id="uUd-pP-SKu"/>
+                                    <constraint firstItem="f8H-r3-3eE" firstAttribute="centerY" secondItem="zm3-u4-OMg" secondAttribute="centerY" id="uUd-pP-SKu"/>
                                 </constraints>
                             </view>
                             <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rb9-dy-i0u">
-                                <rect key="frame" x="0.0" y="188" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="192" width="375" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开奖倒计时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-bW-1Pz">
                                         <rect key="frame" x="12" y="12" width="61.5" height="14.5"/>
@@ -646,7 +646,7 @@
                                 </constraints>
                             </view>
                             <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1XK-Mi-fHh">
-                                <rect key="frame" x="0.0" y="256" width="375" height="101.5"/>
+                                <rect key="frame" x="0.0" y="260" width="375" height="101.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iB0-83-oQJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
