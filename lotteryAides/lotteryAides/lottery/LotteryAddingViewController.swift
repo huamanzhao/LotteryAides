@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class LotteryAddingViewController: UIViewController {
     
@@ -37,8 +38,9 @@ class LotteryAddingViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     
     var configView: LotteryInputView!
-    
     var lottery: LotteryInfo!
+    var configHeight: CGFloat = 0
+    var timer: Timer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class LotteryAddingViewController: UIViewController {
         setupViewLayout()
         
         lottery = LotteryInfo()
-        addButton.isHidden = true
+        addButton.alpha = 0
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,13 +65,31 @@ class LotteryAddingViewController: UIViewController {
             configView.removeFromSuperview()
         }
         
+        configHeight = Constants.screenHeight * 0.45
+        
         configView = Bundle.main.loadNibNamed("LotteryInputView", owner: nil, options: nil)?.first as! LotteryInputView
-        configView.frame = CGRect(x: 0, y: Constants.screenHeight * 0.6, width: Constants.screenWidth, height: Constants.screenHeight * 0.4)
+        configView.frame = CGRect(x: 0, y: Constants.screenHeight, width: Constants.screenWidth, height: configHeight) //初始化的时候，让它整个隐藏在屏幕下边
         configView.delegate = self
         configView.setupContentView()
         self.view.addSubview(configView)
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        startConfigViewAnimate(show: true)
+    }
+    
+    func startConfigViewAnimate(show: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            let transformY = show ? 0 - self.configHeight : self.configHeight
+            self.configView.transform = self.configView.transform.translatedBy(x: 0, y: transformY)
+            if !show {
+                self.addButton.alpha = 1
+            }
+        }
+    }
+    
     func setupViewLayout() {
         setViewBorder(titleView)
         setViewBorder(multipleView)
@@ -105,14 +125,14 @@ class LotteryAddingViewController: UIViewController {
     }
     
     func setupViewData() {
-        titleLabel.text = "<" + lottery.lt_type.name + ">"
-        multipleText.text = "\(lottery.mutiple)"
+        titleLabel.text = lottery.lt_type.name
+        multipleText.text = "\(lottery.multiple)"
         costText.text = "\(lottery.cost)"
         if !lottery.term.isEmpty {
             termText.text = lottery.term
         }
-        if lottery.publishDate.isLaterThan(Date().toLocalDate()) {
-            openDateText.text = lottery.publishDate.toString(LOTTERY_DATE) + " " + lottery.lt_type.publishTime
+        if lottery.publishDate.isLaterThan(Date()) {
+            openDateText.text = lottery.getPublishDateString()
         }
         if !lottery.codes.isEmpty {
             lotteryCodeView.setupCodeView(lottery: self.lottery, status: 2, white: true)
@@ -120,7 +140,22 @@ class LotteryAddingViewController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.label.text = "正在上传"
+        let request = AddLotteryRequest()
+        request.lottery = lottery
+        request.doRequest { (isOK, response) in
+            DispatchQueue.main.async {
+                hud.hide(animated: true)
+            }
+            
+            if isOK && response.code == "0" {
+                self.view.makeToast("上传成功")
+            }
+            else {
+                self.view.makeToast("上传失败：\(response.message)")
+            }
+        }
     }
 }
 
@@ -131,6 +166,21 @@ extension LotteryAddingViewController : LotteryInputDelegate {
     }
     
     func lotterySettingFinished() {
+        startConfigViewAnimate(show: false)
         
+        //启动倒计时
+        countViewHeightCS.constant = 64
+        countTimeView.isHidden = false
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(waitingPublishCountDown), userInfo: nil, repeats: true)
+    }
+    
+    func waitingPublishCountDown() {
+        let currDate = Date()
+        let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: currDate)
+        countTimeLabel.text = countdown
+        if currDate == lottery.publishDate {
+            timer.invalidate()
+        }
     }
 }

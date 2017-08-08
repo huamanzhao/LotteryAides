@@ -14,7 +14,7 @@ class LotteryInfo: NSObject {
     var lt_type : LotteryType!
     var term = ""
     var publishDate = Date()
-    var mutiple = 0
+    var multiple = 0
     var cost = 0
     var addDate: Date!
     var isRead = false
@@ -59,21 +59,16 @@ class LotteryInfo: NSObject {
                 term = termJS.stringValue
             }
             if let publishJS = data!["publishDate"] {
-                if let date = publishJS.stringValue.toDate(format: LOTTERY_DATE) {
-                    publishDate = date.toLocalDate()
-                }
-                else if let date = publishJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE) {
-                    publishDate = date.toLocalDate()
-                }
+                getPublishDate(publishJS.stringValue)
             }
-            if let mutipleJS = data!["mutiple"] {
-                mutiple = mutipleJS.intValue
+            if let mutipleJS = data!["multiple"] {
+                multiple = mutipleJS.intValue
             }
             if let costJS = data!["cost"] {
                 cost = costJS.intValue
             }
             if let addDateJS = data!["addDate"] {
-                addDate = addDateJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE)!.toLocalDate()
+                addDate = addDateJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE)!
             }
             if let isReadJS = data!["isRead"] {
                 isRead = isReadJS.intValue == 1 ? true : false
@@ -427,6 +422,43 @@ class LotteryInfo: NSObject {
             
         default:
             break
+        }
+    }
+    
+    func getPublishDateString() -> String {
+        let dateString = publishDate.toString(LOTTERY_DATE_1)
+        if !dateString.isEmpty
+        {
+            return dateString
+        }
+        
+        let dateString1 = publishDate.toString(LOTTERY_WHOLE_DATE)
+        if !dateString1.isEmpty
+        {
+            return dateString1
+        }
+        
+        let dateString2 = publishDate.toString(LOTTERY_DATE)
+        if !dateString2.isEmpty
+        {
+            return dateString2
+        }
+        
+        return ""
+    }
+    
+    func getPublishDate(_ dateStr: String) {
+        if let date = dateStr.toDate(format: LOTTERY_DATE) {
+            publishDate = date
+        }
+        else if let date = dateStr.toDate(format: LOTTERY_WHOLE_DATE) {
+            publishDate = date
+        }
+        else if let date = dateStr.toDate(format: LOTTERY_DATE_1) {
+            publishDate = date
+        }
+        else {
+            publishDate = Date()
         }
     }
 }

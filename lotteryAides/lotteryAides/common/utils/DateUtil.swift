@@ -18,6 +18,7 @@ let FORMAT_MONTH_DAY = "M-d"
 let FORMAT_YEAR = "yyyy"
 let FORMAT_WHOLE_DATE_1 = "yyyy.MM.dd"
 let LOTTERY_WHOLE_DATE = "yyyy/MM/dd HH:mm:ss"
+let LOTTERY_DATE_1 = "yyyy/MM/dd HH:mm"
 let LOTTERY_DATE = "yyyy/MM/dd"
 
 let FORMAT_MONTH_CN = "MM月"

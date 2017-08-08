@@ -33,7 +33,11 @@
                                 <rect key="frame" x="160" y="614" width="55" height="37"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Paq-h2-kED">
-                                <rect key="frame" x="156" y="576" width="62" height="30"/>
+                                <rect key="frame" x="112" y="558" width="150" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Nlp-i0-WJC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="即刻启程">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -51,6 +55,7 @@
                             <constraint firstItem="Paq-h2-kED" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OAg-q1-zAV"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Py4-lH-g6N"/>
                             <constraint firstItem="EWe-qG-0hO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V7W-Ho-U8H"/>
+                            <constraint firstItem="Paq-h2-kED" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="cNM-x6-JgD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EWe-qG-0hO" secondAttribute="bottom" id="dzr-dn-hUA"/>
                         </constraints>
                     </view>

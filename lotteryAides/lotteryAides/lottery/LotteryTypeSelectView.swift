@@ -8,15 +8,11 @@
 
 import UIKit
 
-protocol LotteryTypeSelectDelegate {
-    func lotteryTypeDidSelect(_ type: Int)
-}
-
 class LotteryTypeSelectView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView!
     let margin : CGFloat = 8
     let cellIdentifier = "typeCell"
-    var delegate: LotteryTypeSelectDelegate!
+    var delegate: LotterySelectDelegate!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,9 +52,26 @@ class LotteryTypeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: false)
+        let row = indexPath.row
+        let section = indexPath.section
+        
+        for index in 0 ... 3 {
+            let path = IndexPath(row: index, section: section)
+            let cell = collectionView.cellForItem(at: path)
+            
+            if index == row {
+                cell?.backgroundColor = Constants.subColor
+            }
+            else {
+                cell?.backgroundColor = UIColor.white
+            }
+        }
         
         delegate.lotteryTypeDidSelect(indexPath.row + 1)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
 
@@ -67,8 +80,12 @@ class LotteryTypeCell : UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        typeImage = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: frame.size))
+        let imageMargin: CGFloat = 2.0
+        let imageLength = frame.width - imageMargin * 2
+        typeImage = UIImageView(frame: CGRect(x: imageMargin, y: imageMargin, width: imageLength, height: imageLength))
         self.addSubview(typeImage)
+        
+        self.backgroundColor = UIColor.white
     }
     
     required init?(coder aDecoder: NSCoder) {

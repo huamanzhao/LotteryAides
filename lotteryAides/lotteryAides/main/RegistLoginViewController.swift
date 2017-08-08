@@ -74,7 +74,6 @@ class RegistLoginViewController: UIViewController {
     
     //底部功能按钮点击后
     @IBAction func functionButtonPressed(_ sender: Any) {
-        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         switch funcType {
         case FuncType.login:
             userLogin()
@@ -142,6 +141,8 @@ class RegistLoginViewController: UIViewController {
             return
         }
         
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         let request = LoginRequest()
         request.phone = phoneTF.text!
         request.password    = passwordTF.text!
@@ -169,7 +170,9 @@ class RegistLoginViewController: UIViewController {
         if !checkPhoneInput() || !checkPasswordInput() {
             return
         }
-
+        
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         let request = RegistRequest()
         request.phone = phoneTF.text!
         request.password = passwordTF.text!
@@ -192,6 +195,8 @@ class RegistLoginViewController: UIViewController {
         if !checkPhoneInput() || !checkPasswordInput() {
             return
         }
+        
+        hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         
         let request = ChangePasswordRequest()
         request.phone = phoneTF.text!

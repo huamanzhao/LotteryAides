@@ -78,6 +78,7 @@ class AdverticeViewController: UIViewController {
     }
     
     @IBAction func closeButtonPressed(_ sender: Any) {
+        timer.invalidate()
         openNextViewController()
     }
     

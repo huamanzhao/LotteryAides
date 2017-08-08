@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */; };
+		95145FAA1F38674F00B8519C /* LotteryMultipleSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95145FA91F38674F00B8519C /* LotteryMultipleSetView.swift */; };
+		95145FAC1F38943E00B8519C /* LotteryTermSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95145FAB1F38943E00B8519C /* LotteryTermSetView.swift */; };
+		95145FAE1F3899B600B8519C /* LotteryPublishDateSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95145FAD1F3899B600B8519C /* LotteryPublishDateSetView.swift */; };
+		95145FB01F389CEB00B8519C /* LotteryCodeSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95145FAF1F389CEB00B8519C /* LotteryCodeSetView.swift */; };
+		95145FB21F38AF1200B8519C /* LotterySetConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95145FB11F38AF1200B8519C /* LotterySetConfirmView.swift */; };
 		951AF1A81F36A223002C6C09 /* LotteryTypeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */; };
 		951AF1B01F37B417002C6C09 /* LotteryAddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */; };
 		952DE4AE1F368FD7009646AB /* LotteryInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952DE4AD1F368FD7009646AB /* LotteryInputView.swift */; };
@@ -118,6 +123,11 @@
 /* Begin PBXFileReference section */
 		9500F20D1F323BA000FDB435 /* LotteryCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryCodeView.swift; sourceTree = "<group>"; };
 		9500F20F1F32B43B00FDB435 /* LotteryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryType.swift; sourceTree = "<group>"; };
+		95145FA91F38674F00B8519C /* LotteryMultipleSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryMultipleSetView.swift; path = lottery/LotteryMultipleSetView.swift; sourceTree = "<group>"; };
+		95145FAB1F38943E00B8519C /* LotteryTermSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryTermSetView.swift; path = lottery/LotteryTermSetView.swift; sourceTree = "<group>"; };
+		95145FAD1F3899B600B8519C /* LotteryPublishDateSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryPublishDateSetView.swift; path = lottery/LotteryPublishDateSetView.swift; sourceTree = "<group>"; };
+		95145FAF1F389CEB00B8519C /* LotteryCodeSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryCodeSetView.swift; path = lottery/LotteryCodeSetView.swift; sourceTree = "<group>"; };
+		95145FB11F38AF1200B8519C /* LotterySetConfirmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotterySetConfirmView.swift; path = lottery/LotterySetConfirmView.swift; sourceTree = "<group>"; };
 		951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryTypeSelectView.swift; path = lottery/LotteryTypeSelectView.swift; sourceTree = "<group>"; };
 		951AF1AF1F37B417002C6C09 /* LotteryAddingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryAddingViewController.swift; path = lottery/LotteryAddingViewController.swift; sourceTree = "<group>"; };
 		952DE4AD1F368FD7009646AB /* LotteryInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryInputView.swift; path = common/LotteryInputView.swift; sourceTree = "<group>"; };
@@ -254,6 +264,11 @@
 				952DE4AD1F368FD7009646AB /* LotteryInputView.swift */,
 				952DE4AF1F368FF4009646AB /* LotteryInputView.xib */,
 				951AF1A71F36A223002C6C09 /* LotteryTypeSelectView.swift */,
+				95145FA91F38674F00B8519C /* LotteryMultipleSetView.swift */,
+				95145FAB1F38943E00B8519C /* LotteryTermSetView.swift */,
+				95145FAD1F3899B600B8519C /* LotteryPublishDateSetView.swift */,
+				95145FAF1F389CEB00B8519C /* LotteryCodeSetView.swift */,
+				95145FB11F38AF1200B8519C /* LotterySetConfirmView.swift */,
 			);
 			name = lotteryAdd;
 			sourceTree = "<group>";
@@ -613,8 +628,10 @@
 				95DD69BB1F28420D0032A4C2 /* Util.swift in Sources */,
 				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
 				956E0AA01F2CE70900E65DF0 /* AddLotteryRequest.swift in Sources */,
+				95145FB01F389CEB00B8519C /* LotteryCodeSetView.swift in Sources */,
 				9530E70B1F359F6800CAAE5F /* VTMenuBar.m in Sources */,
 				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
+				95145FB21F38AF1200B8519C /* LotterySetConfirmView.swift in Sources */,
 				956E0A921F2C661E00E65DF0 /* LotteryNumberView.swift in Sources */,
 				956E0A761F2C39B300E65DF0 /* LotteryMainViewController.swift in Sources */,
 				956E0AB41F2E061400E65DF0 /* GetAdverticeUrlResponse.swift in Sources */,
@@ -630,8 +647,10 @@
 				95DD69861F278F1A0032A4C2 /* ServerBase.swift in Sources */,
 				951AF1B01F37B417002C6C09 /* LotteryAddingViewController.swift in Sources */,
 				95DD697E1F278C920032A4C2 /* ToastUIView.m in Sources */,
+				95145FAE1F3899B600B8519C /* LotteryPublishDateSetView.swift in Sources */,
 				956E0A851F2C3A1500E65DF0 /* RootViewController.swift in Sources */,
 				956E0A841F2C3A1500E65DF0 /* RegistLoginViewController.swift in Sources */,
+				95145FAC1F38943E00B8519C /* LotteryTermSetView.swift in Sources */,
 				95DD69B11F2839790032A4C2 /* Constants.swift in Sources */,
 				956E0A9E1F2CE69300E65DF0 /* ChangePasswordRequest.swift in Sources */,
 				956E0AA61F2D7B1D00E65DF0 /* GetPublishResponse.swift in Sources */,
@@ -640,6 +659,7 @@
 				95DD69851F278F1A0032A4C2 /* RequestBase.swift in Sources */,
 				956E0AAE1F2E048100E65DF0 /* GetUserStatusRequest.swift in Sources */,
 				956E0AAA1F2DE0A700E65DF0 /* GetPublishRequest.swift in Sources */,
+				95145FAA1F38674F00B8519C /* LotteryMultipleSetView.swift in Sources */,
 				95DD69871F278F1A0032A4C2 /* ServerResponseBase.swift in Sources */,
 				9530E7091F359F6800CAAE5F /* VTMagicController.m in Sources */,
 				956E0AB01F2E049800E65DF0 /* GetUserStatusResponse.swift in Sources */,

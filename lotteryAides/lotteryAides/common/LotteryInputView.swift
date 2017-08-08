@@ -14,17 +14,30 @@ protocol LotteryInputDelegate {
     func lotterySettingFinished()
 }
 
+protocol LotterySelectDelegate {
+    func lotteryTypeDidSelect(_ type: Int)
+    func lotteryMutltipleDidSet(_ multiple: Int)
+    func lotteryTermDidSet(_ term: String)
+    func lotteryCodeDidSet(_ numbers: String)
+    func lotterySettingDidFinished ()
+}
+
 class LotteryInputView: UIView, UIScrollViewDelegate {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
+    var multipleView: LotteryMultipleSetView!
+    var termView: LotteryTermSetView!
+    var publishView: LotteryPublishDateSetView!
+    var codeView: LotteryCodeSetView!
+    var confirmView: LotterySetConfirmView!
     
     var verticalMargin : CGFloat = 8
     var viewList = [UIView]()
     var subLength : CGFloat!
-    var currPage : Int!
+    var currPage : Int = 0
     var delegate : LotteryInputDelegate!
     var scrollWidth: CGFloat = 0
     var scrollHeight: CGFloat = 0
@@ -42,6 +55,11 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
     @IBAction func okButtonPressed(_ sender: Any) {
         if currPage != 5 {
             scrollToNext()
+            if currPage == 3 {
+                let dateStr = publishView.getSetPublishDate()
+                lottery.getPublishDate(dateStr)
+                delegate.updateLotteryInfo(lottery)
+            }
             return
         }
         
@@ -49,12 +67,16 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
     }
     
     override func layoutSubviews() {
-        let centerY = (frame.height - 72) / 2
+        let centerY = (frame.height - 76) / 2
         let firstX = frame.width / 2
         let scrollWidth = frame.width
         
         for (index, view) in viewList.enumerated() {
             view.frame = CGRect(x: 0, y: verticalMargin, width: subLength, height: subLength)
+            if index == 3 {
+                view.frame = CGRect(x: 0, y: verticalMargin, width: subLength * 1.5, height: subLength)
+            }
+            
             view.center = CGPoint(x: firstX + scrollWidth * CGFloat(index), y: centerY)
         }
      }
@@ -70,11 +92,10 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
         
         
         scrollWidth = frame.width
-        scrollHeight = frame.height - 72
+        scrollHeight = frame.height - 76
         subLength = scrollHeight - 2 * verticalMargin
         viewList.removeAll()
         
-        var bgImageList = [UIImageView]()
         let image = UIImage(named: "bg_gray")
         for index in 0 ... 5 {
             let imageView = UIImageView(frame: CGRect(x: scrollWidth * CGFloat(index), y: 0, width: scrollWidth, height: scrollHeight))
@@ -84,13 +105,42 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
             scrollView.addSubview(imageView)
         }
         
+        //1. 类型
         let typeView = LotteryTypeSelectView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
-        self.scrollView.addSubview(typeView)
         typeView.delegate = self
+        self.scrollView.addSubview(typeView)
         viewList.append(typeView)
         
+        //2. 倍数
+        multipleView = LotteryMultipleSetView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
+        multipleView.delegate = self
+        self.scrollView.addSubview(multipleView)
+        viewList.append(multipleView)
         
-        scrollView.contentSize = CGSize(width: scrollWidth * 6, height: (frame.height - 72))
+        //3. 期次
+        termView = LotteryTermSetView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
+        termView.delegate = self
+        self.scrollView.addSubview(termView)
+        viewList.append(termView)
+        
+        //4. 开奖日期
+        publishView = LotteryPublishDateSetView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
+        self.scrollView.addSubview(publishView)
+        viewList.append(publishView)
+        
+        //5. 号码选择
+        codeView = LotteryCodeSetView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
+        codeView.delegate = self
+        self.scrollView.addSubview(codeView)
+        viewList.append(codeView)
+        
+        //6. 确认配置正确
+        confirmView = LotterySetConfirmView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
+        confirmView.delegate = self
+        self.scrollView.addSubview(confirmView)
+        viewList.append(confirmView)
+        
+        scrollView.contentSize = CGSize(width: scrollWidth * 6, height: (frame.height - 76))
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -157,41 +207,34 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
     }
 }
 
-extension LotteryInputView : LotteryTypeSelectDelegate {
+extension LotteryInputView : LotterySelectDelegate {
     func lotteryTypeDidSelect(_ type: Int) {
         let ltType = LotteryType(type: type)
         lottery.lt_type = ltType
+        termView.type = ltType.type
+        publishView.type = ltType
+        codeView.type = ltType.type
         delegate.updateLotteryInfo(lottery)
-        scrollToNext()
     }
     
     func lotteryMutltipleDidSet(_ multiple: Int) {
-        lottery.mutiple = multiple
+        lottery.multiple = multiple
         delegate.updateLotteryInfo(lottery)
-        scrollToNext()
     }
     
     func lotteryTermDidSet(_ term: String) {
         lottery.term = term
         delegate.updateLotteryInfo(lottery)
-        scrollToNext()
-    }
-    
-    func lotteryPublishDateDidSet(_ date: Date) {
-        lottery.publishDate = date
-        delegate.updateLotteryInfo(lottery)
-        scrollToNext()
     }
     
     func lotteryCodeDidSet(_ numbers: String) {
         let code = LotteryCode(numbers)
         lottery.codes.append(code)
+        lottery.cost = lottery.multiple * 2
         delegate.updateLotteryInfo(lottery)
-        scrollToNext()
     }
     
     func lotterySettingDidFinished () {
-        delegate.updateLotteryInfo(lottery)
-        scrollToNext()
+        delegate.lotterySettingFinished()
     }
 }

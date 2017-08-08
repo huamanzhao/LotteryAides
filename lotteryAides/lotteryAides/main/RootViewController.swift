@@ -45,13 +45,12 @@ class RootViewController: UIViewController {
     
     func setupStartButton() {
         startButton.backgroundColor = UIColor(white: 1, alpha: 0.37)
+        startButton.setTitleColor(Constants.subColor, for: .normal)
         
         startButton.layer.masksToBounds = true
         startButton.layer.cornerRadius = 5.0
         startButton.layer.borderColor = UIColor(white: 1, alpha: 0.6).cgColor
         startButton.layer.borderWidth = 1.5
-        
-        startButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 36, bottom: 10, right: 36)
         
         startButton.isHidden = true
     }

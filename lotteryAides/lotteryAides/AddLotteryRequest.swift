@@ -10,21 +10,16 @@ import Foundation
 import Alamofire
 
 class AddLotteryRequest: RequestBase {
-    var name : String = ""
-    var term : String = ""
-    var publishDate = ""
-    var multiple: Int = 0
-    var cost : Int = 0
-    var codes : [LotteryCode]!
+    var lottery: LotteryInfo!
     
     func getRequest() -> [String : String]{
         let request = [
             "phone" : UserConfig.getInstance().getPhone(),
-            "name" : name,
-            "term" : term,
-            "publishDate" : publishDate,
-            "multiple" : "\(multiple)",
-            "cost" : "\(cost)",
+            "name" : lottery.lt_type.name!,
+            "term" : lottery.term,
+            "publishDate" : lottery.getPublishDateString(),
+            "multiple" : "\(lottery.multiple)",
+            "cost" : "\(lottery.cost)",
             "codes" : getCodesString()
         ]
         
@@ -52,9 +47,7 @@ class AddLotteryRequest: RequestBase {
     }
     
     func getCodesString() -> String {
-        if codes == nil {
-            return ""
-        }
+        let codes = lottery.codes!
         
         var result = ""
         if codes.isEmpty {

@@ -95,10 +95,10 @@ class LotteryInfoViewController: UIViewController {
     func setupViewData() {
         
         titleLabel.text = "<" + lottery.lt_type.name + ">"
-        multipleText.text = "\(lottery.mutiple)"
+        multipleText.text = "\(lottery.multiple)"
         costText.text = "\(lottery.cost)"
         termText.text = lottery.term
-        openDateText.text = lottery.publishDate.toString(LOTTERY_DATE) + " " + lottery.lt_type.publishTime
+        openDateText.text = lottery.getPublishDateString()
 
         if checkNeedsPublish() {
             if lottery.isLucky {
@@ -139,13 +139,13 @@ class LotteryInfoViewController: UIViewController {
     //是否要查询开奖信息
     func checkNeedsPublish() -> Bool {
         //当前是显示类型 并且 彩票开奖时间已经早于当前时间了
-        return lottery.publishDate.isEarlierThan(Date().toLocalDate())
+        return lottery.publishDate.isEarlierThan(Date())
     }
     
     //是否要显示倒计时
     func checkNeedCountdown() -> Bool {
         //当前是显示类型 并且 彩票开奖时间晚于当前时间
-        return lottery.publishDate.isLaterThan(Date().toLocalDate())
+        return lottery.publishDate.isLaterThan(Date())
     }
 
     //查询最新开奖信息
@@ -169,7 +169,7 @@ class LotteryInfoViewController: UIViewController {
     
     func waitingPublishCountDown() {
         if checkNeedCountdown() {
-            let currDate = Date().toLocalDate()
+            let currDate = Date()
             let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: currDate)
             countTimeLabel.text = countdown
         }
