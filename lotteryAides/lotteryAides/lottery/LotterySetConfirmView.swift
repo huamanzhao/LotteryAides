@@ -14,11 +14,15 @@ class LotterySetConfirmView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let okButton = UIButton(frame: frame)
-        okButton.setImage(UIImage(named: "btn_ok"), for: .normal)
-        okButton.addTarget(self, action: #selector(confirmConfig), for: .touchUpInside)
+        let confirmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 128, height: 128))
+        confirmButton.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
+        confirmButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        confirmButton.layer.cornerRadius = 64
+        confirmButton.setImage(UIImage(named: "btn_confirm"), for: .normal)
+        confirmButton.tintColor = Constants.subColor
+        confirmButton.addTarget(self, action: #selector(confirmConfig), for: .touchUpInside)
         
-        self.addSubview(okButton)
+        self.addSubview(confirmButton)
     }
     
     required init?(coder aDecoder: NSCoder) {

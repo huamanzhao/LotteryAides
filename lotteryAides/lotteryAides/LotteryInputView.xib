@@ -58,13 +58,13 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fP0-Hk-XGF">
                     <rect key="frame" x="0.0" y="40" width="375" height="591"/>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Is-B8U">
+                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tg-Is-B8U">
                     <rect key="frame" x="151.5" y="637" width="72" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="72" id="1bC-vw-rN1"/>
                         <constraint firstAttribute="height" constant="22" id="FX0-TV-m3N"/>
                     </constraints>
-                    <state key="normal" image="btn_confirm"/>
+                    <state key="normal" image="btn_ok"/>
                     <connections>
                         <action selector="okButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="cUG-om-Gs2"/>
                     </connections>
@@ -93,8 +93,8 @@
         </view>
     </objects>
     <resources>
-        <image name="btn_confirm" width="16" height="16"/>
         <image name="btn_left" width="16" height="16"/>
+        <image name="btn_ok" width="16" height="16"/>
         <image name="btn_right" width="16" height="16"/>
     </resources>
 </document>

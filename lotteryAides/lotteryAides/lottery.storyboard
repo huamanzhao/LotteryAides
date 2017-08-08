@@ -717,10 +717,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTJ-fz-K6y">
-                                <rect key="frame" x="74.5" y="607" width="225" height="40"/>
+                                <rect key="frame" x="112" y="603" width="150" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Bf9-38-He2"/>
+                                    <constraint firstAttribute="height" constant="44" id="Bf9-38-He2"/>
                                 </constraints>
                                 <state key="normal" title="确认添加">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -742,7 +742,7 @@
                             <constraint firstItem="3aY-dd-BS3" firstAttribute="top" secondItem="gSy-xe-dMl" secondAttribute="bottom" id="MVa-46-tTK"/>
                             <constraint firstAttribute="trailing" secondItem="zm3-u4-OMg" secondAttribute="trailing" constant="0.5" id="MhN-Ou-ksi"/>
                             <constraint firstItem="3aY-dd-BS3" firstAttribute="centerX" secondItem="gIq-cv-aaH" secondAttribute="centerX" multiplier="0.5" id="MkX-fs-Iyk"/>
-                            <constraint firstItem="oTJ-fz-K6y" firstAttribute="width" secondItem="gIq-cv-aaH" secondAttribute="width" multiplier="0.6" id="NYC-iH-dzi"/>
+                            <constraint firstItem="oTJ-fz-K6y" firstAttribute="width" secondItem="gIq-cv-aaH" secondAttribute="width" multiplier="0.4" id="NYC-iH-dzi"/>
                             <constraint firstItem="zm3-u4-OMg" firstAttribute="width" secondItem="Z8T-RD-R3o" secondAttribute="width" id="Ncn-uF-bgJ"/>
                             <constraint firstItem="gSy-xe-dMl" firstAttribute="width" secondItem="gIq-cv-aaH" secondAttribute="width" id="UP5-JG-4iI"/>
                             <constraint firstItem="1XK-Mi-fHh" firstAttribute="width" secondItem="gIq-cv-aaH" secondAttribute="width" id="V24-iI-VmK"/>

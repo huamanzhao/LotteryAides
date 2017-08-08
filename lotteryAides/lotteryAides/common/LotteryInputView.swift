@@ -89,7 +89,7 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
         scrollView.backgroundColor = Constants.cellColor
         scrollView.delegate = self
         prevButton.isHidden = true
-        
+        okButton.tintColor = UIColor.white
         
         scrollWidth = frame.width
         scrollHeight = frame.height - 76

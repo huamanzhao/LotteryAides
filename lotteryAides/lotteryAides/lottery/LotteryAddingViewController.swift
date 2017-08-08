@@ -105,13 +105,14 @@ class LotteryAddingViewController: UIViewController {
         costText.textColor = Constants.subColor
         termText.textColor = Constants.subColor
         openDateText.textColor = Constants.subColor
+        countTimeLabel.textColor = Constants.subColor
         
         countViewHeightCS.constant = 0
         
         countTimeView.isHidden = true
         
         addButton.backgroundColor = UIColor.clear
-        addButton.addCorner(radius: 4.0, borderWidth: 1.5, backColor: Constants.subColor, borderColor: UIColor(hex: 0xfff5d0))
+        addButton.addCorner(radius: 8.0, borderWidth: 1.5, backColor: Constants.subColor, borderColor: UIColor(hex: 0xfff5d0))
     }
     
     func setViewBorder(_ view: UIView) {
@@ -177,7 +178,7 @@ extension LotteryAddingViewController : LotteryInputDelegate {
     
     func waitingPublishCountDown() {
         let currDate = Date()
-        let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: currDate)
+        let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: lottery.publishDate)
         countTimeLabel.text = countdown
         if currDate == lottery.publishDate {
             timer.invalidate()
