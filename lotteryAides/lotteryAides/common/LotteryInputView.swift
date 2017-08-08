@@ -31,7 +31,7 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
     var multipleView: LotteryMultipleSetView!
     var termView: LotteryTermSetView!
     var publishView: LotteryPublishDateSetView!
-    var codeView: LotteryCodeSetView!
+    var codeView: LotteryCodeSelectView!
     var confirmView: LotterySetConfirmView!
     
     var verticalMargin : CGFloat = 8
@@ -73,7 +73,7 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
         
         for (index, view) in viewList.enumerated() {
             view.frame = CGRect(x: 0, y: verticalMargin, width: subLength, height: subLength)
-            if index == 3 {
+            if index == 3 || index == 4 {
                 view.frame = CGRect(x: 0, y: verticalMargin, width: subLength * 1.5, height: subLength)
             }
             
@@ -129,8 +129,7 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
         viewList.append(publishView)
         
         //5. 号码选择
-        codeView = LotteryCodeSetView(frame: CGRect(x: 0, y: 0, width: subLength, height: subLength))
-        codeView.delegate = self
+        codeView = LotteryCodeSelectView(frame: CGRect(x: 0, y: 0, width: subLength * 1.5, height: subLength))
         self.scrollView.addSubview(codeView)
         viewList.append(codeView)
         
@@ -213,7 +212,8 @@ extension LotteryInputView : LotterySelectDelegate {
         lottery.lt_type = ltType
         termView.type = ltType.type
         publishView.type = ltType
-        codeView.type = ltType.type
+        codeView.ltType = ltType
+        codeView.collectionView.reloadData()
         delegate.updateLotteryInfo(lottery)
     }
     

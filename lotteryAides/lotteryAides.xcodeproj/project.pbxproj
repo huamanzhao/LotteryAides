@@ -64,6 +64,8 @@
 		956E0AB01F2E049800E65DF0 /* GetUserStatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AAF1F2E049800E65DF0 /* GetUserStatusResponse.swift */; };
 		956E0AB21F2E060200E65DF0 /* GetAdverticeUrlRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */; };
 		956E0AB41F2E061400E65DF0 /* GetAdverticeUrlResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */; };
+		957F886A1F39E14E0039529A /* LotteryCodeSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F88691F39E14E0039529A /* LotteryCodeSelectView.swift */; };
+		957F886E1F3A2D0F0039529A /* LotteryNumSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F886D1F3A2D0F0039529A /* LotteryNumSelectView.swift */; };
 		95849B2F1F34BC7800A621B1 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95849B2D1F34BC7800A621B1 /* SectionHeaderView.swift */; };
 		95849B301F34BC7800A621B1 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95849B2E1F34BC7800A621B1 /* SectionHeaderView.xib */; };
 		958A5EDB1F2E187D002330AA /* UserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958A5EDA1F2E187D002330AA /* UserConfig.swift */; };
@@ -181,6 +183,8 @@
 		956E0AAF1F2E049800E65DF0 /* GetUserStatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserStatusResponse.swift; sourceTree = "<group>"; };
 		956E0AB11F2E060200E65DF0 /* GetAdverticeUrlRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlRequest.swift; sourceTree = "<group>"; };
 		956E0AB31F2E061400E65DF0 /* GetAdverticeUrlResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAdverticeUrlResponse.swift; sourceTree = "<group>"; };
+		957F88691F39E14E0039529A /* LotteryCodeSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LotteryCodeSelectView.swift; path = lottery/LotteryCodeSelectView.swift; sourceTree = "<group>"; };
+		957F886D1F3A2D0F0039529A /* LotteryNumSelectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LotteryNumSelectView.swift; sourceTree = "<group>"; };
 		95849B2D1F34BC7800A621B1 /* SectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = lottery/SectionHeaderView.swift; sourceTree = "<group>"; };
 		95849B2E1F34BC7800A621B1 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SectionHeaderView.xib; path = lottery/SectionHeaderView.xib; sourceTree = "<group>"; };
 		958A5EDA1F2E187D002330AA /* UserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserConfig.swift; sourceTree = "<group>"; };
@@ -268,6 +272,8 @@
 				95145FAB1F38943E00B8519C /* LotteryTermSetView.swift */,
 				95145FAD1F3899B600B8519C /* LotteryPublishDateSetView.swift */,
 				95145FAF1F389CEB00B8519C /* LotteryCodeSetView.swift */,
+				957F88691F39E14E0039529A /* LotteryCodeSelectView.swift */,
+				957F886D1F3A2D0F0039529A /* LotteryNumSelectView.swift */,
 				95145FB11F38AF1200B8519C /* LotterySetConfirmView.swift */,
 			);
 			name = lotteryAdd;
@@ -629,6 +635,7 @@
 				95DD69B61F2840200032A4C2 /* ExtUIColor.swift in Sources */,
 				956E0AA01F2CE70900E65DF0 /* AddLotteryRequest.swift in Sources */,
 				95145FB01F389CEB00B8519C /* LotteryCodeSetView.swift in Sources */,
+				957F886A1F39E14E0039529A /* LotteryCodeSelectView.swift in Sources */,
 				9530E70B1F359F6800CAAE5F /* VTMenuBar.m in Sources */,
 				95DD69B51F2840200032A4C2 /* ExtString.swift in Sources */,
 				95145FB21F38AF1200B8519C /* LotterySetConfirmView.swift in Sources */,
@@ -671,6 +678,7 @@
 				9500F20E1F323BA000FDB435 /* LotteryCodeView.swift in Sources */,
 				956E0A9A1F2CE5FB00E65DF0 /* LoginRequest.swift in Sources */,
 				95DD69BD1F2843510032A4C2 /* ExtDispatchQueue.swift in Sources */,
+				957F886E1F3A2D0F0039529A /* LotteryNumSelectView.swift in Sources */,
 				956E0A831F2C3A1500E65DF0 /* AdverticeViewController.swift in Sources */,
 				956E0A7F1F2C39C100E65DF0 /* SettingsViewController.swift in Sources */,
 			);

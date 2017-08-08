@@ -69,10 +69,6 @@ class LotteryTypeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         
         delegate.lotteryTypeDidSelect(indexPath.row + 1)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
 }
 
 class LotteryTypeCell : UICollectionViewCell {

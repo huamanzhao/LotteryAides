@@ -68,4 +68,41 @@ class LotteryNumberView: UIView {
         circleView.addCorner(radius: radius, borderWidth: 1.5, backColor: backColor, borderColor: regionColor)
         numLabel.textColor = textColor
     }
+    
+    
+    /*
+     * 添加彩票界面 录入彩票号码界面所用
+     */
+    
+    func setNumber(_ number: Int) {
+        numLabel.text = "\(number)"
+    }
+    
+    //region: 1-前区红球  2-后区篮球
+    func setupDisplay(region: Int, select: Bool) {
+        for subView in self.subviews {
+            if subView is UIImageView {
+                subView.removeFromSuperview()
+            }
+        }
+        
+        let regionColor = region == 1 ? UIColor.red : UIColor.blue
+        let white = UIColor.white
+        circleView.backgroundColor = white
+        
+        var textColor : UIColor!
+        var backColor: UIColor!
+        
+        if select {
+            textColor = white
+            backColor = regionColor
+        }
+        else {
+            textColor = regionColor
+            backColor = white
+        }
+        
+        circleView.addCorner(radius: radius, borderWidth: 1.5, backColor: backColor, borderColor: regionColor)
+        numLabel.textColor = textColor
+    }
 }
