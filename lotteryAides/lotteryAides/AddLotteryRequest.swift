@@ -17,7 +17,7 @@ class AddLotteryRequest: RequestBase {
             "phone" : UserConfig.getInstance().getPhone(),
             "name" : lottery.lt_type.name!,
             "term" : lottery.term,
-            "publishDate" : lottery.getPublishDateString(),
+            "publishDate" : lottery.getPublishDateString1(),
             "multiple" : "\(lottery.multiple)",
             "cost" : "\(lottery.cost)",
             "codes" : getCodesString()

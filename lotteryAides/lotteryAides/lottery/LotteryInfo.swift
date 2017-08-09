@@ -425,6 +425,16 @@ class LotteryInfo: NSObject {
         }
     }
     
+    func getPublishDateString1() -> String {
+        let dateString = publishDate.toString(FORMAT_DATE_TIME)
+        if !dateString.isEmpty
+        {
+            return dateString
+        }
+        
+        return ""
+    }
+    
     func getPublishDateString() -> String {
         let dateString = publishDate.toString(LOTTERY_DATE_1)
         if !dateString.isEmpty

@@ -15,6 +15,7 @@ protocol LotteryListDelegate {
 class LotteryListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyImage: UIImageView!
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var emptyLabel: UILabel!
     
     var type: UInt = 0    //0-待开奖 1-已中奖  2-全部
@@ -30,6 +31,7 @@ class LotteryListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        bgImage.tintColor = UIColor(hex: 0xf2f2f2)
         emptyImage.tintColor = Constants.subColor
         emptyLabel.textColor = Constants.subColor
         

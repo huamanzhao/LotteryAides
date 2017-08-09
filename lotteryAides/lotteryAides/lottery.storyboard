@@ -116,6 +116,7 @@
                         <outlet property="addButton" destination="ZdH-EU-MNk" id="1P4-ij-kxp"/>
                         <outlet property="addLabel" destination="lt0-oL-KwO" id="ykt-tv-dFg"/>
                         <outlet property="addLabelWidth" destination="q22-Xz-6KU" id="IjK-BJ-AmD"/>
+                        <outlet property="bgImage" destination="ZhW-CW-1G3" id="PDo-G3-oYr"/>
                         <outlet property="buttonBottomGapCS" destination="UZ4-HL-lbS" id="I2p-SF-ERi"/>
                         <outlet property="buttonWidthCS" destination="wnO-k6-rKy" id="Q03-Hp-tHS"/>
                         <outlet property="descriptLabel" destination="ndi-gy-9w4" id="hy1-FC-KhU"/>

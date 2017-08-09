@@ -11,6 +11,7 @@ import MBProgressHUD
 
 class LotteryMainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var descriptView: UIView!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
@@ -56,6 +57,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.title = "彩票助手"
         
+        bgImage.tintColor = UIColor(hex: 0xf2f2f2)
         self.navigationController!.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "bg_navi_bar"), for: .default)
         setNaviRightImage(UIImage(named: "btn_personal")!)

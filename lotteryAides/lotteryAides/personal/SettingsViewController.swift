@@ -13,6 +13,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var bgImage: UIImageView!
     var notifySwitch: UISwitch!
     
     var hud: MBProgressHUD!
@@ -26,6 +27,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         setCustomBackButton()
         
+        bgImage.tintColor = UIColor(hex: 0xf2f2f2)
         logoutButton.backgroundColor = Constants.subColor
         logoutButton.setTitleColor(UIColor.white, for: .normal)
         
@@ -86,7 +88,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             cell?.textLabel?.font = UIFont.systemFont(ofSize: 14)
             cell?.textLabel?.text = "开奖提醒"
             
-            let originX = (cell?.frame.width)! - 56 - 8
+            let originX = Constants.screenWidth - 56 - 8
             notifySwitch = UISwitch(frame: CGRect(x: originX , y: 6, width: 56, height: 32))
             notifySwitch.onTintColor = Constants.subColor
             notifySwitch.isOn = config.getNotifyOn()

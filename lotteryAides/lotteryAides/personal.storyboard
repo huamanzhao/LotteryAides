@@ -45,6 +45,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_gray" translatesAutoresizingMaskIntoConstraints="NO" id="add-Ga-Pmt">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-31-VWM">
                                 <rect key="frame" x="0.0" y="20" width="375" height="88"/>
@@ -83,6 +84,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="add-Ga-Pmt" id="yAw-1b-Jge"/>
                         <outlet property="logoutButton" destination="fkh-U7-HAR" id="219-EF-iG8"/>
                         <outlet property="tableView" destination="Mql-31-VWM" id="ttA-jA-d80"/>
                         <segue destination="3n9-Pn-kA7" kind="show" identifier="showAbout" id="c0l-ao-61V"/>
@@ -207,6 +209,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImage" destination="6oo-J3-RQf" id="wMV-kv-oIJ"/>
                         <outlet property="emptyImage" destination="Xbu-bq-WsD" id="Ljm-ag-ed9"/>
                         <outlet property="emptyLabel" destination="9ww-cV-bvL" id="VYs-Jh-Gr4"/>
                         <outlet property="tableView" destination="TTv-rm-GtY" id="T22-8F-jue"/>
