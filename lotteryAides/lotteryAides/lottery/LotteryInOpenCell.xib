@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -64,22 +65,22 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBd-sa-20S">
-                        <rect key="frame" x="248" y="32.5" width="64" height="48"/>
+                        <rect key="frame" x="248" y="36.5" width="64" height="44"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFl-Do-vXr">
-                                <rect key="frame" x="0.5" y="9.5" width="64" height="29"/>
+                                <rect key="frame" x="0.5" y="7.5" width="64" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未中奖" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5j-NB-jU8">
-                                <rect key="frame" x="11" y="16" width="43" height="17"/>
+                                <rect key="frame" x="11" y="14" width="43" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23H-rG-9zb">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="查询中..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycT-sQ-LQx">
                                         <rect key="frame" x="12.5" y="4" width="40" height="12"/>
@@ -100,16 +101,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDb-Yw-bNH">
-                                <rect key="frame" x="0.0" y="0.0" width="64" height="48"/>
+                                <rect key="frame" x="0.0" y="0.0" width="64" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="倒计时" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVJ-sM-ZGK">
-                                        <rect key="frame" x="16.5" y="8.5" width="31" height="12"/>
+                                        <rect key="frame" x="16.5" y="7.5" width="31" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--时--分" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfZ-pu-Jw2">
-                                        <rect key="frame" x="8.5" y="23" width="47.5" height="14.5"/>
+                                        <rect key="frame" x="8.5" y="20.5" width="47.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -129,7 +130,7 @@
                             <constraint firstItem="IFl-Do-vXr" firstAttribute="width" secondItem="nBd-sa-20S" secondAttribute="width" id="0t1-y5-0ja"/>
                             <constraint firstItem="hDb-Yw-bNH" firstAttribute="leading" secondItem="nBd-sa-20S" secondAttribute="leading" id="2hg-cf-qIX"/>
                             <constraint firstItem="IFl-Do-vXr" firstAttribute="centerX" secondItem="nBd-sa-20S" secondAttribute="centerX" id="Dfq-no-ZiK"/>
-                            <constraint firstAttribute="height" constant="48" id="H2M-mZ-dEb"/>
+                            <constraint firstAttribute="height" constant="44" id="H2M-mZ-dEb"/>
                             <constraint firstAttribute="trailing" secondItem="hDb-Yw-bNH" secondAttribute="trailing" id="HwA-Wc-f1Z"/>
                             <constraint firstAttribute="bottom" secondItem="hDb-Yw-bNH" secondAttribute="bottom" id="LYF-7H-yvz"/>
                             <constraint firstItem="23H-rG-9zb" firstAttribute="leading" secondItem="nBd-sa-20S" secondAttribute="leading" id="P3W-Dk-KYa"/>

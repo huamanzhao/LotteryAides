@@ -79,6 +79,7 @@ class LotteryInOpenCell: UITableViewCell {
             queryView.isHidden = true
             unLuckyLabel.isHidden = true
             priceLabel.isHidden = true
+            countView.isHidden  = false
             countLabel.isHidden = false
             
             var early = Date()
