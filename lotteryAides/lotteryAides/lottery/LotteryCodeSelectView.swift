@@ -12,6 +12,8 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     
     var ltType : LotteryType!
     var collectionView: UICollectionView!
+    var frontString: String!
+    var rearString: String!
     
     private var topView: UIView!
     private var frontLabel: UILabel!
@@ -23,8 +25,8 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     private var cellLen: CGFloat = 0
     private var margin : CGFloat = 0
     
-    private var frontList = [Int]()
-    private var rearList = [Int]()
+    var frontList = [Int]()
+    var rearList = [Int]()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,12 +46,14 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         frontLabel.textAlignment = .left
         frontLabel.backgroundColor = UIColor.white
         frontLabel.backgroundColor = UIColor(hex: 0xfff6f6)
+        frontLabel.textAlignment = .center
         
         rearLabel  = UILabel(frame: CGRect(x: width * 0.6, y: 0, width: width * 0.4, height: topHeight))
         rearLabel.textColor = UIColor.blue
         rearLabel.textAlignment = .left
         rearLabel.backgroundColor = UIColor.white
         rearLabel.backgroundColor = UIColor(hex: 0xf6f6ff)
+        rearLabel.textAlignment = .center
         
         topView.addSubview(frontLabel)
         topView.addSubview(rearLabel)
@@ -76,6 +80,9 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         
         ltType = LotteryType(type: 4)
+        
+        frontString = String()
+        rearString  = String()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -214,11 +221,16 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         
         var front = ""
         let count = frontList.count
-        for index in 0 ..< count {
-            front = front + " " + "\(frontList[index])"
+        front = "\(frontList.first!)"
+        
+        if count > 1 {
+            for index in 1 ..< count {
+                front = front + "," + "\(frontList[index])"
+            }
         }
         
         frontLabel.text = front
+        frontString = front
     }
     
     func updateRearLabel() {
@@ -230,19 +242,19 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
             break
             
         case 1:
-            rear = " \(rearList.first!)"
+            rear = "\(rearList.first!)"
             
         case 2:
             rearList.sort(by: onSort(num1:num2:))
-            rear = " \(rearList.first!)" + " \(rearList.last!)"
+            rear = "\(rearList.first!)" + ",\(rearList.last!)"
             
         default:
             break
         }
         
         rearLabel.text = rear
-    }
-    
+        rearString = rear
+    }    
 }
 
 class LotteryNumCell : UICollectionViewCell {

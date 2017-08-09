@@ -93,7 +93,7 @@ class Util: NSObject {
             display = "\(days)天"
         }
         
-        display = display + "\(hours)时\(minutes)分\(seconds)秒"
+        display = display + "\(hours)小时\(minutes)分\(seconds)秒"
         
         return display
     }

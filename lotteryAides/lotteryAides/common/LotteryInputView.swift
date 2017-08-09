@@ -18,7 +18,6 @@ protocol LotterySelectDelegate {
     func lotteryTypeDidSelect(_ type: Int)
     func lotteryMutltipleDidSet(_ multiple: Int)
     func lotteryTermDidSet(_ term: String)
-    func lotteryCodeDidSet(_ numbers: String)
     func lotterySettingDidFinished ()
 }
 
@@ -42,6 +41,8 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
     var scrollWidth: CGFloat = 0
     var scrollHeight: CGFloat = 0
     
+    var configArr = [0, 0, 0, 0, 0]
+    
     var lottery: LotteryInfo!
 
     @IBAction func previButtonPressed(_ sender: Any) {
@@ -59,6 +60,18 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
                 let dateStr = publishView.getSetPublishDate()
                 lottery.getPublishDate(dateStr)
                 delegate.updateLotteryInfo(lottery)
+                configArr[3] = 1
+            }
+            if currPage == 4 {
+                let numberString = codeView.frontString + "," + codeView.rearString
+                let frontCount = codeView.frontList.count
+                let rearCount  = codeView.rearList.count
+                if !numberString.isEmpty && frontCount + rearCount == 7 {
+                    let code = LotteryCode(numberString)
+                    lottery.codes = [code]
+                    delegate.updateLotteryInfo(lottery)
+                    configArr[4] = 1
+                }
             }
             return
         }
@@ -215,26 +228,45 @@ extension LotteryInputView : LotterySelectDelegate {
         codeView.ltType = ltType
         codeView.collectionView.reloadData()
         delegate.updateLotteryInfo(lottery)
+        
+        configArr[0] = 1
     }
     
     func lotteryMutltipleDidSet(_ multiple: Int) {
         lottery.multiple = multiple
+        lottery.cost = multiple * 2
         delegate.updateLotteryInfo(lottery)
+        
+        configArr[1] = 1
     }
     
     func lotteryTermDidSet(_ term: String) {
         lottery.term = term
         delegate.updateLotteryInfo(lottery)
-    }
-    
-    func lotteryCodeDidSet(_ numbers: String) {
-        let code = LotteryCode(numbers)
-        lottery.codes.append(code)
-        lottery.cost = lottery.multiple * 2
-        delegate.updateLotteryInfo(lottery)
+        
+        configArr[2] = 1
     }
     
     func lotterySettingDidFinished () {
+        if !checkLotteryComplete() {
+            return
+        }
+        
         delegate.lotterySettingFinished()
+    }
+    
+    func checkLotteryComplete() -> Bool {
+        for index in 0 ... 4 {
+            if configArr[index] == 0 {
+                UIView.animate(withDuration: 0.5, animations: {
+                    let offsetPoint = CGPoint(x: CGFloat(index) * self.scrollWidth, y: 0)
+                    self.scrollView.setContentOffset(offsetPoint, animated: true)
+                })
+                self.makeToast("这里还没有填好哦~")
+                return false
+            }
+        }
+        
+        return true
     }
 }

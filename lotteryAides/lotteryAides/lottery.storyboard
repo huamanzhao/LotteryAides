@@ -49,7 +49,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="121.5" id="q22-Xz-6KU"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -675,13 +675,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="红球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3w-q8-D2P">
-                                                <rect key="frame" x="119" y="24" width="25" height="14.5"/>
+                                                <rect key="frame" x="12" y="24" width="25" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蓝球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy4-x5-Qfs">
-                                                <rect key="frame" x="287.5" y="24" width="25" height="14.5"/>
+                                                <rect key="frame" x="269" y="24" width="25" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -689,12 +689,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Dy4-x5-Qfs" firstAttribute="centerX" secondItem="iB0-83-oQJ" secondAttribute="centerX" multiplier="1.6" id="Aou-2i-FCs"/>
+                                            <constraint firstItem="Dy4-x5-Qfs" firstAttribute="centerX" secondItem="iB0-83-oQJ" secondAttribute="centerX" multiplier="1.5" id="Aou-2i-FCs"/>
                                             <constraint firstAttribute="trailing" secondItem="lhh-3F-ud5" secondAttribute="trailing" constant="8" id="FPi-ql-Mbf"/>
-                                            <constraint firstItem="a3w-q8-D2P" firstAttribute="centerX" secondItem="iB0-83-oQJ" secondAttribute="centerX" multiplier="0.7" id="JKY-hI-nzh"/>
                                             <constraint firstItem="lhh-3F-ud5" firstAttribute="leading" secondItem="iB0-83-oQJ" secondAttribute="leading" constant="12" id="SOd-OI-PtB"/>
                                             <constraint firstItem="Dy4-x5-Qfs" firstAttribute="baseline" secondItem="a3w-q8-D2P" secondAttribute="baseline" id="oxT-Ek-efR"/>
                                             <constraint firstItem="lhh-3F-ud5" firstAttribute="top" secondItem="a3w-q8-D2P" secondAttribute="bottom" constant="4" id="uOd-w4-iNc"/>
+                                            <constraint firstItem="a3w-q8-D2P" firstAttribute="leading" secondItem="lhh-3F-ud5" secondAttribute="leading" id="wdI-nJ-p4G"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPY-mP-hdx">
@@ -787,7 +787,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_gray" width="320" height="538"/>
+        <image name="bg_gray" width="320" height="568"/>
         <image name="btn_add_large" width="150" height="142"/>
     </resources>
 </document>

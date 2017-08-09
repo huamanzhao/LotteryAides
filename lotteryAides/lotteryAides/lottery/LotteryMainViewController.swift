@@ -70,6 +70,8 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
         addButton.layer.shadowOffset = CGSize(width: 12, height: 12)
         addButton.layer.shadowRadius = 8.0
         addButton.layer.shadowOpacity = 0.5
+        
+        addLabel.textColor = Constants.subColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

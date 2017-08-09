@@ -126,7 +126,9 @@ class LotteryAddingViewController: UIViewController {
     }
     
     func setupViewData() {
-        titleLabel.text = lottery.lt_type.name
+        if lottery.lt_type != nil {
+            titleLabel.text = lottery.lt_type.name
+        }
         multipleText.text = "\(lottery.multiple)"
         costText.text = "\(lottery.cost)"
         if !lottery.term.isEmpty {

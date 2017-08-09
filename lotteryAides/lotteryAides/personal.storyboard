@@ -219,7 +219,7 @@
     </scenes>
     <resources>
         <image name="bg_empty" width="64" height="64"/>
-        <image name="bg_gray" width="320" height="538"/>
+        <image name="bg_gray" width="320" height="568"/>
         <image name="bg_login" width="320" height="568"/>
         <image name="image_logo_white" width="99" height="97"/>
     </resources>
