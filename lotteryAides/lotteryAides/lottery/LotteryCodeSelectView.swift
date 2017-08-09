@@ -36,15 +36,20 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         
         //TopView
         topView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: topHeight))
-        frontLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width/2, height: topHeight))
+        topView.layer.borderWidth = 1.0
+        topView.layer.borderColor = Constants.subColor.cgColor
+        
+        frontLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width * 0.6, height: topHeight))
         frontLabel.textColor = UIColor.red
         frontLabel.textAlignment = .left
         frontLabel.backgroundColor = UIColor.white
+        frontLabel.backgroundColor = UIColor(hex: 0xfff6f6)
         
-        rearLabel  = UILabel(frame: CGRect(x: width/2, y: 0, width: width/2, height: topHeight))
+        rearLabel  = UILabel(frame: CGRect(x: width * 0.6, y: 0, width: width * 0.4, height: topHeight))
         rearLabel.textColor = UIColor.blue
         rearLabel.textAlignment = .left
         rearLabel.backgroundColor = UIColor.white
+        rearLabel.backgroundColor = UIColor(hex: 0xf6f6ff)
         
         topView.addSubview(frontLabel)
         topView.addSubview(rearLabel)
@@ -70,7 +75,7 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         collectionView.register(LotteryNumCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = UIColor.groupTableViewBackground
         
-        ltType = LotteryType(type: 1)
+        ltType = LotteryType(type: 4)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -118,35 +123,49 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! LotteryNumCell
-        let selectStatus = cell.isSelect!
-        cell.isSelect = !selectStatus
+        let newSelectStatus = !cell.isSelect!   //点击之后的状态，为原选中状态的反转
         
         let row = indexPath.row
         let section = indexPath.section
+        let number = row + 1
         
         if section == 0 {
-            if !selectStatus {
-                frontListRemove(row)
+            if !newSelectStatus {
+                frontListRemove(number)
             }
             else {
-                frontListAppend(row)
+                if !frontListAppend(number) {
+                    self.makeToast("最多选择\(ltType.frontCount)个红球")
+                    return
+                }
             }
         }
         else {
-            if !selectStatus {
-                rearListRemove(row)
+            if !newSelectStatus {
+                rearListRemove(number)
             }
             else {
-                rearListAppend(row)
+                if !rearListAppend(number) {
+                    self.makeToast("最多选择\(ltType.rearCount)个蓝球")
+                }
             }
         }
         
+        cell.isSelect = newSelectStatus
     }
     
-    func frontListAppend(_ row: Int) {
+    func frontListAppend(_ row: Int) -> Bool {
+        if frontList.count == ltType.frontCount {
+            return false
+        }
+        
         if !frontList.contains(row) {
             frontList.append(row)
         }
+        
+        updateFrontLabel()
+        
+        return true
     }
     
     func frontListRemove(_ row: Int) {
@@ -154,12 +173,22 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
             let index = frontList.index(of: row)!
             frontList.remove(at: index)
         }
+        
+        updateFrontLabel()
     }
     
-    func rearListAppend(_ row: Int) {
+    func rearListAppend(_ row: Int) -> Bool {
+        if rearList.count == ltType.rearCount {
+            return false
+        }
+        
         if !rearList.contains(row) {
             rearList.append(row)
         }
+        
+        updateRearLabel()
+        
+        return true
     }
     
     func rearListRemove(_ row: Int) {
@@ -167,6 +196,51 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
             let index = rearList.index(of: row)!
             rearList.remove(at: index)
         }
+        
+        updateRearLabel()
+    }
+    
+    func onSort(num1: Int, num2: Int) -> Bool {
+        return num1 < num2
+    }
+    
+    func updateFrontLabel() {
+        if frontList.isEmpty {
+            frontLabel.text = ""
+            return
+        }
+        
+        frontList.sort(by: onSort(num1:num2:))
+        
+        var front = ""
+        let count = frontList.count
+        for index in 0 ..< count {
+            front = front + " " + "\(frontList[index])"
+        }
+        
+        frontLabel.text = front
+    }
+    
+    func updateRearLabel() {
+        let count = rearList.count
+        
+        var rear = ""
+        switch count {
+        case 0:
+            break
+            
+        case 1:
+            rear = " \(rearList.first!)"
+            
+        case 2:
+            rearList.sort(by: onSort(num1:num2:))
+            rear = " \(rearList.first!)" + " \(rearList.last!)"
+            
+        default:
+            break
+        }
+        
+        rearLabel.text = rear
     }
     
 }
@@ -207,12 +281,8 @@ class LotteryNumCell : UICollectionViewCell {
         numView.setNumber(num, region: region)
     }
     
-    func setSelected() {
-        isSelect = true
-    }
-    
-    func setUnselect() {
-        isSelect = true
+    func setCellSelect(_ status : Bool) {
+        isSelect = status
     }
     
     private func updateNumberSelect() {

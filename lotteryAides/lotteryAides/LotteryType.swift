@@ -39,8 +39,6 @@ class LotteryType : NSObject {
     }
     
     
-    
-    
     override init() {
         super.init()
     }

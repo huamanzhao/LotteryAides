@@ -60,21 +60,20 @@ class LotteryNumSelectView: UIView {
         aPath.lineWidth = 2
         aPath.stroke()
         
-        //数字
         let numStr = NSString(string: "\(number)")
         
         let font = UIFont.systemFont(ofSize: 14.0)
         let style = NSMutableParagraphStyle()
         style.alignment = NSTextAlignment.center
         
-        numStr.draw(in: CGRect(x: 0, y: rect.height * 0.2, width: rect.width, height: rect.height * 0.6), withAttributes: [NSFontAttributeName : font, NSForegroundColorAttributeName : textColor, NSParagraphStyleAttributeName: style])
+        numStr.draw(in: CGRect(x: 0, y: rect.height * 0.25, width: rect.width, height: rect.height * 0.5), withAttributes: [NSFontAttributeName : font, NSForegroundColorAttributeName : textColor, NSParagraphStyleAttributeName: style])
     }
     
     func setNumber(_ num: Int, region: Int = 0) {
         self.region = region
         self.number = num
         
-//        self.setNeedsDisplay()
+        self.setNeedsDisplay()
     }
     
     func setSelectStatus(_ status: Bool) {

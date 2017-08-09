@@ -23,6 +23,8 @@ class LotteryPublishDateSetView: UIView {
         picker.setValue(Constants.subColor, forKey: "textColor")
         picker.setValue(false, forKey: "highlightsToday")
         self.addSubview(picker)
+        
+        type = LotteryType(type: 4)
     }
     
     required init?(coder aDecoder: NSCoder) {
