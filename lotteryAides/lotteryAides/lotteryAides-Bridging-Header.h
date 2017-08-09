@@ -5,3 +5,5 @@
 #import "JPUSHService.h"
 #import "ToastUIView.h"
 #import "VTMagic.h"
+#import <BmobDataSDK/Bmob.h>
+#import <BmobDataSDK/BmobQuery.h>

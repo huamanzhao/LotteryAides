@@ -13,7 +13,7 @@ let BASIC_TYPE  = "basic"
 
 
 /*正式服务地址 */
-let serverUrl = "https://www.szlexuetang.com/"
+let serverUrl = "https://www.szlexuetang.com"
 
 
 //缓存路径

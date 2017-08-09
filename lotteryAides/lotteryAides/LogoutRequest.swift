@@ -36,6 +36,6 @@ class LogoutRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_logout", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_logout", method: .post, parameters: getRequest())
     }
 }

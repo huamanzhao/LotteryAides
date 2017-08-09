@@ -38,6 +38,6 @@ class GetLotteryListRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_getTickets", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_getTickets", method: .post, parameters: getRequest())
     }
 }

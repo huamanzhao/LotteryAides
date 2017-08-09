@@ -39,6 +39,6 @@ class RegistRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_register", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_register", method: .post, parameters: getRequest())
     }
 }

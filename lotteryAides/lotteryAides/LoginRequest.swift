@@ -41,6 +41,6 @@ class LoginRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_login", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_login", method: .post, parameters: getRequest())
     }
 }

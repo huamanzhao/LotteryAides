@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -682,7 +683,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蓝球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dy4-x5-Qfs">
-                                                <rect key="frame" x="269" y="24" width="25" height="14.5"/>
+                                                <rect key="frame" x="250" y="24" width="25" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -690,7 +691,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Dy4-x5-Qfs" firstAttribute="centerX" secondItem="iB0-83-oQJ" secondAttribute="centerX" multiplier="1.5" id="Aou-2i-FCs"/>
+                                            <constraint firstItem="Dy4-x5-Qfs" firstAttribute="centerX" secondItem="iB0-83-oQJ" secondAttribute="centerX" multiplier="1.4" id="Aou-2i-FCs"/>
                                             <constraint firstAttribute="trailing" secondItem="lhh-3F-ud5" secondAttribute="trailing" constant="8" id="FPi-ql-Mbf"/>
                                             <constraint firstItem="lhh-3F-ud5" firstAttribute="leading" secondItem="iB0-83-oQJ" secondAttribute="leading" constant="12" id="SOd-OI-PtB"/>
                                             <constraint firstItem="Dy4-x5-Qfs" firstAttribute="baseline" secondItem="a3w-q8-D2P" secondAttribute="baseline" id="oxT-Ek-efR"/>

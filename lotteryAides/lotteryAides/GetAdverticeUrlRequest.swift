@@ -29,6 +29,6 @@ class GetAdverticeUrlRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_index_json", method: .post, parameters: nil)//getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_index_json", method: .post, parameters: nil)//getRequest())
     }
 }

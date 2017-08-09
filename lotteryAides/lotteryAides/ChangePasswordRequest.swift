@@ -39,6 +39,6 @@ class ChangePasswordRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_changepwd", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_changepwd", method: .post, parameters: getRequest())
     }
 }

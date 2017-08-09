@@ -11,7 +11,7 @@ import IQKeyboardManagerSwift
 
 let refreshConsumeEvent = "refreshConsumeEvent"
 
-@UIApplicationMain
+//@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         JPUSHService.resetBadge()
         UIApplication.shared.applicationIconBadgeNumber = 0
         
+        //BMOB
+        Bmob.register(withAppKey: "8d504db92e9c4b4c7f499062f731ac2e")
+        getBmAdverticeUrl()
+        
         config = getUserConfig()
         if !config.getNeedGuide() {
             window = UIWindow(frame: UIScreen.main.bounds)
@@ -47,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         publishLotteries = [LotteryInfo]()
         luckyLotteries = [LotteryInfo]()
         publishList = [LotteryPublish]()
+        
         
         return true
     }
@@ -129,6 +134,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         publishList.append(publish)
+    }
+    
+    func getBmAdverticeUrl() {
+        let query = BmobQuery(className: "Config")
+        query?.getObjectInBackground(withId: "1e0ce6c209", block: { (object, error) in
+            if error == nil {
+                if object != nil {
+                    let appid = object!.object(forKey: "appid") as! String
+                    let show  = object!.object(forKey: "show")!
+                    let adUrl = object!.object(forKey: "url")!
+                    
+                    if appid != Bundle.main.bundleIdentifier {
+                    print(show)
+                        print(adUrl)
+                    }
+                }
+            }
+        })
     }
 }
 

@@ -15,7 +15,7 @@ class AddLotteryRequest: RequestBase {
     func getRequest() -> [String : String]{
         let request = [
             "phone" : UserConfig.getInstance().getPhone(),
-            "name" : lottery.lt_type.name!,
+            "name" : "\(lottery.lt_type.type!)",
             "term" : lottery.term,
             "publishDate" : lottery.getPublishDateString1(),
             "multiple" : "\(lottery.multiple)",
@@ -43,7 +43,7 @@ class AddLotteryRequest: RequestBase {
     }
     
     func generateRequest() -> DataRequest {
-        return Alamofire.request(Constants.serverBaseUrl + "cp_user_order", method: .post, parameters: getRequest())
+        return Alamofire.request(Constants.serverBaseUrl + "/cp_user_order", method: .post, parameters: getRequest())
     }
     
     func getCodesString() -> String {
