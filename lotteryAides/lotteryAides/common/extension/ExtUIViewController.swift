@@ -110,8 +110,8 @@ extension UIViewController: UIGestureRecognizerDelegate {
         let baseController = VTMagicController()
         //        baseController.view.autoresizingMask = UIViewAutoresizing.FlexibleHeight | UIViewAutoresizing.FlexibleWidth
         baseController.magicView.navigationInset = UIEdgeInsetsMake(0, 0, 0, 0);
-        baseController.magicView.navigationColor = Constants.cellColor
-        baseController.magicView.sliderColor = Constants.subColor
+        baseController.magicView.navigationColor = Constants.subColor
+        baseController.magicView.sliderColor = UIColor.white
         baseController.magicView.separatorColor = Constants.textColor
         baseController.magicView.switchStyle = .default
         baseController.magicView.layoutStyle = .center

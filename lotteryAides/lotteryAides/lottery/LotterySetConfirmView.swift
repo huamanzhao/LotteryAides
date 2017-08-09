@@ -16,7 +16,7 @@ class LotterySetConfirmView: UIView {
         
         let confirmButton = UIButton(frame: CGRect(x: 0, y: 0, width: 128, height: 128))
         confirmButton.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
-        confirmButton.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        confirmButton.backgroundColor = UIColor(white: 1, alpha: 0.65)
         confirmButton.layer.cornerRadius = 64
         confirmButton.setImage(UIImage(named: "btn_confirm"), for: .normal)
         confirmButton.tintColor = Constants.subColor

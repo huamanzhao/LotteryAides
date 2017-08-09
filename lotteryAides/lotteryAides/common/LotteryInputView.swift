@@ -63,7 +63,11 @@ class LotteryInputView: UIView, UIScrollViewDelegate {
                 configArr[3] = 1
             }
             if currPage == 4 {
-                let numberString = codeView.frontString + "," + codeView.rearString
+                var numberString = codeView.frontString!
+                if !codeView.rearString.isEmpty {
+                    numberString = numberString + "," + codeView.rearString!
+                }
+                
                 let frontCount = codeView.frontList.count
                 let rearCount  = codeView.rearList.count
                 if !numberString.isEmpty && frontCount + rearCount == 7 {

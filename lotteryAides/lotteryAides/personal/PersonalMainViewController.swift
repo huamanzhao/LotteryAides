@@ -98,7 +98,7 @@ class PersonalMainViewController: UIViewController, VTMagicViewDataSource, VTMag
         if menuBtn == nil {
             menuBtn = UIButton(type: .custom)
             menuBtn?.setTitleColor(UIColor.darkText, for: UIControlState())
-            menuBtn?.setTitleColor(Constants.subColor, for: .selected)
+            menuBtn?.setTitleColor(UIColor.white, for: .selected)
             menuBtn?.titleLabel?.font = UIFont.systemFont(ofSize: 14)
         }
         

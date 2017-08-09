@@ -128,6 +128,11 @@ class LotteryAddingViewController: UIViewController {
     func setupViewData() {
         if lottery.lt_type != nil {
             titleLabel.text = lottery.lt_type.name
+            let type = lottery.lt_type.type
+            if type == 2 || type == 4 {
+                redBallLabel.isHidden = true
+                blueBallLabel.isHidden = true
+            }
         }
         multipleText.text = "\(lottery.multiple)"
         costText.text = "\(lottery.cost)"
@@ -154,6 +159,7 @@ class LotteryAddingViewController: UIViewController {
             
             if isOK && response.code == "0" {
                 self.view.makeToast("上传成功")
+                self.navigationController?.popViewController(animated: true)
             }
             else {
                 self.view.makeToast("上传失败：\(response.message)")
