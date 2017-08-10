@@ -37,6 +37,7 @@ class LotteryInfoViewController: UIViewController {
     @IBOutlet weak var redBallLabel: UILabel!
     @IBOutlet weak var blueBallLabel: UILabel!
     @IBOutlet weak var lotteryCodeView: LotteryCodeView!
+    @IBOutlet weak var resultView: UIView!
     @IBOutlet weak var resultViewWidthCS: NSLayoutConstraint!
     @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var prizeLabel: UILabel!
@@ -54,6 +55,7 @@ class LotteryInfoViewController: UIViewController {
         
         publishCodeView.backgroundColor = UIColor.white
         lotteryCodeView.backgroundColor = UIColor.white
+        countTimeLabel.textColor  = Constants.subColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,6 +101,9 @@ class LotteryInfoViewController: UIViewController {
         costText.text = "\(lottery.cost)"
         termText.text = lottery.term
         openDateText.text = lottery.getPublishDateString()
+        if !lottery.codes.isEmpty {
+            lotteryCodeView.setupCodeView(lottery: lottery, status: 2)
+        }
 
         if checkNeedsPublish() {
             if lottery.isLucky {
@@ -122,6 +127,7 @@ class LotteryInfoViewController: UIViewController {
             
             publishView.isHidden = true
             publishViewHeightCS.constant = 0
+            resultView.isHidden = true
             resultViewWidthCS.constant = 0
         }
         
@@ -170,7 +176,7 @@ class LotteryInfoViewController: UIViewController {
     func waitingPublishCountDown() {
         if checkNeedCountdown() {
             let currDate = Date()
-            let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: currDate)
+            let countdown = Util.getCountdownTime(earlyDate: currDate, lateDate: lottery.publishDate)
             countTimeLabel.text = countdown
         }
         else {

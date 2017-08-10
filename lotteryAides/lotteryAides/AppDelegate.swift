@@ -159,9 +159,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let show  = object!.object(forKey: "show")!
                     let adUrl = object!.object(forKey: "url")!
                     
-                    if appid != Bundle.main.bundleIdentifier {
-                    print(show)
-                        print(adUrl)
+                    if appid == Bundle.main.bundleIdentifier {
+                        //print(show)
+                        //print(adUrl)
                     }
                 }
             }

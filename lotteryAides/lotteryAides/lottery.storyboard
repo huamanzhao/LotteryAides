@@ -470,6 +470,7 @@
                         <outlet property="publishView" destination="Ye3-An-rwP" id="0gf-uW-Qg3"/>
                         <outlet property="publishViewHeightCS" destination="S6a-wp-h4p" id="DlO-yc-YMF"/>
                         <outlet property="redBallLabel" destination="Nlu-Wk-7V9" id="UzP-cx-ldZ"/>
+                        <outlet property="resultView" destination="bve-ZI-O9J" id="bSJ-X0-T1g"/>
                         <outlet property="resultViewWidthCS" destination="cfI-IC-3Xw" id="Lpy-LM-nVA"/>
                         <outlet property="termText" destination="1Qn-nt-rAS" id="nzu-LT-WfP"/>
                         <outlet property="termView" destination="7Ot-vN-0EY" id="GSW-VU-EKs"/>

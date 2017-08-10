@@ -49,6 +49,7 @@ class LotteryCodeView: UIView {
         }
     }
     
+    //status: 0-未中奖 1-中奖  2-不关心是否中奖，只显示圆圈+数字（红、蓝）
     func setupCodeView(lottery: LotteryInfo, status: Int, white: Bool = false) {
         let code = lottery.codes.first
         if code == nil {
@@ -69,10 +70,11 @@ class LotteryCodeView: UIView {
         setupCodeView(code!, type: publish.type, status: 2)
     }
     
+    //status: 0-未中奖 1-中奖  2-不关心是否中奖，只显示圆圈+数字（红、蓝）
     private func setupCodeView(_ code: LotteryCode, type: Int, status: Int) {
-        if code.numbers.count != 7 {
-            return
-        }
+//        if code.numbers.count != 7 {
+//            return
+//        }
         
         for view in numberViewList {
             view.removeFromSuperview()
