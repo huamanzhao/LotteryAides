@@ -26,8 +26,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         
         //极光推送
-        JPUSHService.register(forRemoteNotificationTypes: UIUserNotificationType.alert.rawValue | UIUserNotificationType.sound.rawValue | UIUserNotificationType.badge.rawValue, categories: nil)
-        JPUSHService.setup(withOption: launchOptions, appKey: "3f83347939ed7375e64e48b8", channel: "APPLESTORE", apsForProduction: false)
+        let types = UIUserNotificationType.badge.rawValue | UIUserNotificationType.sound.rawValue | UIUserNotificationType.alert.rawValue
+        JPUSHService.register(forRemoteNotificationTypes: types, categories: nil)
+        JPUSHService.setup(withOption: launchOptions, appKey: "cd49c9cce793e5b42214d95e", channel: "APPLESTORE", apsForProduction: false)
+        
+        //注册本地通知
+//        let version = Util.getSystemVersion()
+        
         JPUSHService.resetBadge()
         UIApplication.shared.applicationIconBadgeNumber = 0
         
@@ -93,6 +98,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         let localNotification = Notification(name: Notification.Name(rawValue: "localNotification"), object: nil, userInfo: notification.userInfo)
         NotificationCenter.default.post(localNotification)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        JPUSHService.registerDeviceToken(deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        JPUSHService.handleRemoteNotification(userInfo)
+        completionHandler(.newData)
     }
     
     func getUserConfig() -> UserConfig {

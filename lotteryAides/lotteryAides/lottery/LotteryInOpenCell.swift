@@ -35,10 +35,6 @@ class LotteryInOpenCell: UITableViewCell {
          
         statusView.backgroundColor = Constants.cellColor
         statusView.addCorner(radius: 4, borderWidth: 1, backColor: UIColor(hex: 0xfff5d0), borderColor: UIColor(hex: 0xfffdfe))
-        queryView.isHidden = false
-        priceLabel.isHidden = true
-        unLuckyLabel.isHidden = true
-        countView.isHidden = true
     }
     
     override func layoutSubviews() {
@@ -51,6 +47,11 @@ class LotteryInOpenCell: UITableViewCell {
     //status = 0:未中奖  1：已中奖  2: 不关心是否中奖  3: 未开奖
     func setupViewWith(lottery: LotteryInfo, status: Int) {
         self.lottery = lottery
+        
+        queryView.isHidden = false
+        priceLabel.isHidden = true
+        unLuckyLabel.isHidden = true
+        countView.isHidden = true
         
         nameLabel.text = lottery.lt_type.name
         termLabel.text = lottery.term + "期"
