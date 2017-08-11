@@ -108,21 +108,22 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row = indexPath.row
         let section = indexPath.section
+        let number = row + 1
         var region = 0  //默认前区
         var select = false
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! LotteryNumCell
         
         if section == 0 {
-            select = frontList.contains(row)
+            select = frontList.contains(number)
             region = 0
         }
         else {
-            select = rearList.contains(row)
+            select = rearList.contains(number)
             region = 1
         }
         
-        cell.setNumber(row + 1, region: region)
+        cell.setNumber(number, region: region)
         cell.isSelect = select
         
         return cell
@@ -161,13 +162,13 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         cell.isSelect = newSelectStatus
     }
     
-    func frontListAppend(_ row: Int) -> Bool {
+    func frontListAppend(_ number: Int) -> Bool {
         if frontList.count == ltType.frontCount {
             return false
         }
         
-        if !frontList.contains(row) {
-            frontList.append(row)
+        if !frontList.contains(number) {
+            frontList.append(number)
         }
         
         updateFrontLabel()
@@ -175,22 +176,22 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         return true
     }
     
-    func frontListRemove(_ row: Int) {
-        if frontList.contains(row) {
-            let index = frontList.index(of: row)!
+    func frontListRemove(_ number: Int) {
+        if frontList.contains(number) {
+            let index = frontList.index(of: number)!
             frontList.remove(at: index)
         }
         
         updateFrontLabel()
     }
     
-    func rearListAppend(_ row: Int) -> Bool {
+    func rearListAppend(_ number: Int) -> Bool {
         if rearList.count == ltType.rearCount {
             return false
         }
         
-        if !rearList.contains(row) {
-            rearList.append(row)
+        if !rearList.contains(number) {
+            rearList.append(number)
         }
         
         updateRearLabel()
@@ -198,9 +199,9 @@ class LotteryCodeSelectView: UIView, UICollectionViewDelegate, UICollectionViewD
         return true
     }
     
-    func rearListRemove(_ row: Int) {
-        if rearList.contains(row) {
-            let index = rearList.index(of: row)!
+    func rearListRemove(_ number: Int) {
+        if rearList.contains(number) {
+            let index = rearList.index(of: number)!
             rearList.remove(at: index)
         }
         
