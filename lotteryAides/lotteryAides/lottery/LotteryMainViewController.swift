@@ -181,7 +181,7 @@ class LotteryMainViewController: UIViewController, UITableViewDataSource, UITabl
             let request = UpdateLotteryRequest()
             request.id = lotery.id
             request.isRead = true
-            request.isLucky = lotery.level == -1 ? false : true
+            request.isLucky = lotery.prize == 0 ? false : true
             request.level = lotery.level
             request.prize = lotery.prize
             request.doRequest({ (isOK, response) in

@@ -71,13 +71,19 @@ class LotteryInfo: NSObject {
                 addDate = addDateJS.stringValue.toDate(format: LOTTERY_WHOLE_DATE)!
             }
             if let isReadJS = data!["isRead"] {
-                isRead = isReadJS.intValue == 1 ? true : false
+                if !isReadJS.stringValue.isEmpty {
+                    isRead = isReadJS.intValue == 1 ? true : false
+                }
             }
             if let isLuckyJS = data!["isLucky"] {
-                isLucky = isLuckyJS.intValue == 1 ? true : false
+                if !isLuckyJS.stringValue.isEmpty {
+                    isLucky = isLuckyJS.intValue == 1 ? true : false
+                }
             }
             if let levelJS = data!["level"] {
-                level = levelJS.intValue
+                if !levelJS.stringValue.isEmpty {
+                    level = levelJS.intValue
+                }
             }
             if let prizeJS = data!["prize"] {
                 prize = prizeJS.intValue
@@ -271,19 +277,19 @@ class LotteryInfo: NSObject {
             return [Int]()
         }
         
-        let preLtNumbers = ltNumbers[0 ... 5]
-        let prePbNumbers = pbNumbers[0 ... 5]
+//        let preLtNumbers = ltNumbers[0 ... 5]
+//        let prePbNumbers = pbNumbers[0 ... 5]
         
         var preResults = [Int]()
-        for number in preLtNumbers {
-            if prePbNumbers.contains(number) {
-                preResults.append(prePbNumbers.index(of: number)!)
+        for number in ltNumbers {
+            if pbNumbers.contains(number) {
+                preResults.append(pbNumbers.index(of: number)!)
             }
         }
         
-        if ltNumbers[6] == pbNumbers[6] {
-            preResults.append(6)
-        }
+//        if ltNumbers[6] == pbNumbers[6] {
+//            preResults.append(6)
+//        }
         
         
         return preResults
@@ -350,6 +356,10 @@ class LotteryInfo: NSObject {
         default:
             break
         }
+        
+        if prize != 0 {
+            isLucky = true
+        }
     }
     
     
@@ -384,6 +394,10 @@ class LotteryInfo: NSObject {
             
         default:
             break
+        }
+        
+        if prize != 0 {
+            isLucky = true
         }
     }
     
@@ -422,6 +436,10 @@ class LotteryInfo: NSObject {
             
         default:
             break
+        }
+        
+        if prize != 0 {
+            isLucky = true
         }
     }
     
