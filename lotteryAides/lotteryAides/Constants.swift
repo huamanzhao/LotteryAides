@@ -8,8 +8,8 @@
 
 import Foundation
 
-let SENIOR_TYPE = "senior"
-let BASIC_TYPE  = "basic"
+let USER_TYPE_SENIOR = "senior"
+let USER_TYPE_BASIC  = "basic"
 
 
 /*正式服务地址 */

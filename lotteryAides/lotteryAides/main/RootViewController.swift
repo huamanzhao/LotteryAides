@@ -36,7 +36,8 @@ class RootViewController: UIViewController {
             let imageView = UIImageView(frame: CGRect(origin: originPoint, size: Constants.screenSize))
             
             let name = type + "_guide_" + "\(index)"
-            imageView.image = UIImage(named: name)
+            let image = UIImage(named: name)
+            imageView.image = image
             scroll.addSubview(imageView)
         }
         
@@ -44,8 +45,8 @@ class RootViewController: UIViewController {
     }
     
     func setupStartButton() {
-        startButton.backgroundColor = UIColor(white: 1, alpha: 0.37)
-        startButton.setTitleColor(Constants.subColor, for: .normal)
+        startButton.backgroundColor = UIColor(white: 0.5, alpha: 0.7)
+        startButton.setTitleColor(UIColor.white, for: .normal)
         
         startButton.layer.masksToBounds = true
         startButton.layer.cornerRadius = 5.0
@@ -56,7 +57,8 @@ class RootViewController: UIViewController {
     }
 
     func getUserUpdateType() -> String {
-        return BASIC_TYPE
+        let config = UserConfig.getInstance()
+        return config.getUserType()
     }
     
     @IBAction func startButtonPressed(_ sender: Any) {
@@ -66,6 +68,7 @@ class RootViewController: UIViewController {
         
         self.performSegue(withIdentifier: "showAdvertice", sender: self)
     }
+    
 }
 
 extension RootViewController : UIScrollViewDelegate {

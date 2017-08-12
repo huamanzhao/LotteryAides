@@ -14,7 +14,7 @@ class UserConfig: AnyObject {
     private var password = ""
     private var adUrl = ""
     private var promptStatus = "0"  //协约状态，0：正常，1：异常
-    private var userType = BASIC_TYPE
+    private var userType = USER_TYPE_BASIC
     private var needGuide = true
     private var notifyOn = true
     
